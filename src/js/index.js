@@ -46,3 +46,4 @@ $('img').each(function(){
 });
 
 
+console.log('aaaa')

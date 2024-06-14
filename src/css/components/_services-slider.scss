@@ -1,0 +1,38 @@
+
+.services-slider{
+  &_slide:not(:last-of-type){
+    border-right: 1px solid #000;
+    @media (min-width: 768px) and (max-width: 991px){
+      &:nth-child(even){
+        border-right: none;
+      }
+    }
+  }
+
+  &_slide * {
+    transition: all 0.3s ease;
+  }
+
+  &_slide:hover{
+    background-color: #000;
+    --swatch--dark-1: #fff;
+    --color--text-primary: #fff;
+    --color--text-secondary: #fff;
+  }
+}
+
+.swiper-scrollbar {
+  position: static !important;
+  width: 100% !important;
+  border-bottom: 1px solid #000;
+  height: 0.7rem !important;
+  padding: 0.12rem 0;
+  border-radius: 0;
+  background-color: transparent;
+
+  &-drag {
+    background: #9fa5b2; /* Color of the scrollbar thumb */
+    border-radius: 0px;
+  }
+}
+

@@ -28,12 +28,19 @@ module.exports = {
         }
       },
       {
-        test: /\.scss$/i,
+        test: /\.css$/i, // Rule for .css files
         use: [
-          "style-loader",
-          "css-loader",
+          'style-loader', // Injects styles into the DOM
+          'css-loader'    // Interprets @import and url() like import/require() and will resolve them
+        ],
+      },
+      {
+        test: /\.scss$/i, // Rule for .scss files
+        use: [
+          "style-loader", // Injects styles into the DOM
+          "css-loader",   // Interprets @import and url() like import/require() and will resolve them
           'postcss-loader',
-          "sass-loader"
+          "sass-loader"   // Loads and compiles a SASS/SCSS file
         ],
       },
     ]
