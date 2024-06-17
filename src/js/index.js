@@ -45,5 +45,3 @@ $('img').each(function(){
 	$(this).removeAttr('srcset');
 });
 
-
-console.log('aaaa')

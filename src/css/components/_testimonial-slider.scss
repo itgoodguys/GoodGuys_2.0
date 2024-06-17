@@ -1,0 +1,70 @@
+.testimonials-slide{
+  &.active-testimonial{
+    width: calc(58.3% - 16px);
+    background-color: #F5F5F5;
+
+    .testimonial-slide_content{
+      max-width: calc(57% - 12px);
+    }
+
+    .testimonial-slide_media{
+      max-width: calc(43% - 12px);
+      display: block;
+      position: relative;
+
+      &:before{
+        content: '';
+        position: absolute;
+        width: 7.5625rem;
+        height: 7.5625rem;
+        top: -4.75rem;
+        right: 0.75rem;
+        background-image: url('https://uploads-ssl.webflow.com/6666fa328cf6c110c9e90c20/667019dc946e67e168e0d312_bxs_quote-left.svg');
+        @media screen and (max-width: 991px){
+          width: 5.0625rem;
+          height: 5.0625rem;
+          top: -2.56rem;
+          right: 1.25rem;
+        }
+        @media screen and (max-width: 767px){
+          width: 3.1875rem;
+          height: 3.1875rem;
+          top: -1.87rem;
+          right: 0.63rem;
+        }
+      }
+    }
+  }
+  &:before{
+    content: '';
+    background-color:black;
+    width: 2px;
+    height: 100%;
+    position: absolute;
+    bottom: 0px;
+    left: -12px;
+    @media screen and (width: 991px){
+      left: -8px;
+    }
+    @media screen and (width: 767px){
+      width: 1px;
+      left: -4px;
+    }
+  }
+}
+
+// removed separator from the first slide
+.swiper-slide-active{
+  &:before{
+    display: none;
+  }
+}
+
+// dummy slide on the end, so that the real last slide can be opened
+// when you click on it (needed to create some space)
+.empty-testimonial{
+  visibility: hidden;
+  pointer-events: none;
+}
+
+
