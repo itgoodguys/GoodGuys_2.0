@@ -1,16 +1,35 @@
-.testimonials-slide{
+.testimonials-card{
+  max-width: 33.25rem;
+  @media screen and (max-width: 991px){
+    max-width: 21.5rem;
+  }
+  @media screen and (max-width: 767px){
+    max-width: none;
+  }
+  .testimonial-slide_media{
+    max-width: 0px;
+    @media screen and (max-width: 767px){
+      max-width: 100%;
+    }
+  }
   &.active-testimonial{
-    width: calc(58.3% - 16px);
+    max-width: 56.75rem;
+    @media screen and (max-width: 991px){
+      max-width: 43.875rem;
+    }
+    @media screen and (max-width: 767px){
+      max-width: none;
+    }
     background-color: #F5F5F5;
 
-    .testimonial-slide_content{
-      max-width: calc(57% - 12px);
-    }
-
     .testimonial-slide_media{
-      max-width: calc(43% - 12px);
-      display: block;
-      position: relative;
+      max-width: 23.5rem;
+      @media screen and (max-width: 991px){
+        max-width: 21.875rem;
+      }
+      @media screen and (max-width: 767px){
+        max-width: none;
+      }
 
       &:before{
         content: '';
@@ -19,6 +38,7 @@
         height: 7.5625rem;
         top: -4.75rem;
         right: 0.75rem;
+        background-size: contain;
         background-image: url('https://uploads-ssl.webflow.com/6666fa328cf6c110c9e90c20/667019dc946e67e168e0d312_bxs_quote-left.svg');
         @media screen and (max-width: 991px){
           width: 5.0625rem;
@@ -43,10 +63,10 @@
     position: absolute;
     bottom: 0px;
     left: -12px;
-    @media screen and (width: 991px){
+    @media screen and (max-width: 991px){
       left: -8px;
     }
-    @media screen and (width: 767px){
+    @media screen and (max-width: 767px){
       width: 1px;
       left: -4px;
     }
@@ -65,6 +85,9 @@
 .empty-testimonial{
   visibility: hidden;
   pointer-events: none;
+  @media screen and (max-width: 767px){
+    display: none !important;
+  }
 }
 
 

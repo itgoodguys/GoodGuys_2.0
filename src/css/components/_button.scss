@@ -86,9 +86,9 @@
  Button small
 ***************************************/
 .button-small{
-  .button-small-icon{
-    display: none;
-  }
+  // .button-small-icon{
+  //   display: none;
+  // }
   &:has(.button-link:hover){
     .button-small-icon{
       display: block;
