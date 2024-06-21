@@ -1,7 +1,7 @@
 .blog-list{
   --gap: 24px;
   --line-offset: calc(var(--gap)/2 + 1px);
-  --line-thickness: 2px;
+  --line-thickness: 1px;
   --line-color: #000;
   @media screen and (max-width: 991px){
     --gap: 16px;
