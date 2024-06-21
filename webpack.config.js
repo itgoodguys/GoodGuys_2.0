@@ -1,5 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
   mode: "production",
@@ -61,9 +63,35 @@ module.exports = {
       },
     ]
   },
+
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Development'
+      title: 'Production',
+      minify: {
+        collapseWhitespace: true, // Minifies HTML
+        removeComments: true,
+        removeRedundantAttributes: true,
+        useShortDoctype: true,
+      },
     }),
   ],
+
+  optimization: {
+    minimize: true, // Enable minification
+    minimizer: [
+      new TerserPlugin({
+        terserOptions: {
+          compress: {
+            drop_console: true, // Removes console statements
+          },
+        },
+      }),
+      new CssMinimizerPlugin(),
+    ],
+  },
+
+  devServer: {
+    static: './',
+  },
+
 };
