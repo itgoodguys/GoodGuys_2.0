@@ -1,17 +1,21 @@
 .blog-list{
-  --gap: 24px;
-  --line-offset: calc(var(--gap)/2 + 1px);
+  --gap-column: 24px;
+  --gap-row: 4rem;
+  --column-line-offset: calc(var(--gap-column)/2 + 1px);
+  --row-line-offset: calc(var(--gap-row)/2 + 1px);
   --line-thickness: 1px;
   --line-color: #000;
   @media screen and (max-width: 991px){
-    --gap: 16px;
+    --gap-column: 16px;
+    --gap-row: 3rem;
   }
   @media screen and (max-width: 767px){
-    --gap: 8px;
+    --gap-column: 8px;
+    --gap-row: 2rem;
     --line-thickness: 1px;
     --line-offset: calc(var(--gap)/2);
   }
-  gap: var(--gap);
+  gap: var(--gap-row) var(--gap-column);
   overflow: hidden;
 }
 
@@ -28,37 +32,17 @@
     inline-size: 100vw;
     block-size: var(--line-thickness);
     inset-inline-start: 0;
-    inset-block-start: calc(var(--line-offset) * -1);
+    inset-block-start: calc(var(--row-line-offset) * -1);
   }
   &:before{
     inline-size: var(--line-thickness);
     block-size: 100%;
-    inset-inline-start: calc(var(--line-offset) * -1);
+    inset-inline-start: calc(var(--column-line-offset) * -1);
     @media (min-width: 768px) and (max-width: 991px){
       block-size: calc(100% - 1rem);
     }
   }
 
-  &:last-child{
-    @media (min-width: 768px) and (max-width: 991px){
-      grid-area: span 1 / span 8 / span 1 / span 8 !important;
-      display: flex;
-      gap: 16px;
-    }
-    .blog_media{
-      @media (min-width: 768px) and (max-width: 991px){
-        width: 50%;
-      }
-    }
-    .blog_content{
-      @media (min-width: 768px) and (max-width: 991px){
-        width: 50%;
-        justify-content: space-between;
-        padding-top: 0px;
-        padding-bottom: 0px;
-      }
-    }
-  }
 
   .blog-arrow{
     transform: scale(0);
@@ -87,6 +71,29 @@
     }
     .blog-arrow{
       transform: scale(1);
+    }
+  }
+}
+
+.home_resources{
+  .blog:last-child{
+    @media (min-width: 768px) and (max-width: 991px){
+      grid-area: span 1 / span 8 / span 1 / span 8 !important;
+      display: flex;
+      gap: 16px;
+    }
+    .blog_media{
+      @media (min-width: 768px) and (max-width: 991px){
+        width: 50%;
+      }
+    }
+    .blog_content{
+      @media (min-width: 768px) and (max-width: 991px){
+        width: 50%;
+        justify-content: space-between;
+        padding-top: 0px;
+        padding-bottom: 0px;
+      }
     }
   }
 }

@@ -1,0 +1,1 @@
+import '../../css/components/_blog-single.scss';

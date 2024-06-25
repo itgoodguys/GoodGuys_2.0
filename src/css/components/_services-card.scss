@@ -1,0 +1,83 @@
+.services_card{
+
+  .button-wrapper {
+    opacity: 0.3;
+    transition: all 0.3s ease;
+  }
+
+  &:hover{
+    .services_card-heading-arrow{
+      transform: rotate(-45deg);
+      &-path{
+        opacity: 1;
+      }
+    }
+    .button-wrapper { 
+      opacity: 1;
+    }
+
+    .services_card-logo-large{
+      opacity: 0;
+    }
+
+    .services_card-logo-small{
+      opacity: 1;
+    }
+  }
+
+  &[background-color="green"]{
+    --swatch--dark-1: #fff;
+    --color--text-primary: #fff;
+    --color--text-secondary: #fff;
+    &:hover{
+      --swatch--dark-1: #000;
+      --color--text-primary: #000;
+      --color--text-secondary: #000;
+      background: linear-gradient(to bottom right, rgba(0, 184, 73, 0.60) 0%, rgba(4, 244, 100, 0.60) 50%) bottom right / 50% 50% no-repeat, 
+                  linear-gradient(to bottom left, rgba(0, 184, 73, 0.60) 0%, rgba(4, 244, 100, 0.60) 50%) bottom left / 50% 50% no-repeat, 
+                  linear-gradient(to top left, rgba(0, 184, 73, 0.60) 0%, rgba(4, 244, 100, 0.60) 50%) top left / 50% 50% no-repeat, 
+                  linear-gradient(to top right, rgba(0, 184, 73, 0.60) 0%, rgba(4, 244, 100, 0.60) 50%) top right / 50% 50% no-repeat, #00DE59;
+    }
+  }
+
+  &[background-color="yellow"]{
+    &:hover{
+      background: linear-gradient(to bottom right, rgba(250, 255, 192, 0.60) 0%, rgba(238, 255, 50, 0.60) 50%) bottom right / 50% 50% no-repeat, 
+                  linear-gradient(to bottom left,  rgba(250, 255, 192, 0.60) 0%,  rgba(238, 255, 50, 0.60) 50%) bottom left / 50% 50% no-repeat, 
+                  linear-gradient(to top left, rgba(250, 255, 192, 0.60) 0%,  rgba(238, 255, 50, 0.60) 50%) top left / 50% 50% no-repeat, 
+                  linear-gradient(to top right, rgba(250, 255, 192, 0.60) 0%,   rgba(238, 255, 50, 0.60) 50%) top right / 50% 50% no-repeat, #EEFF32;
+    }
+  }
+
+  &[background-color="blue"]{
+    --swatch--dark-1: #fff;
+    --color--text-primary: #fff;
+    --color--text-secondary: #fff;
+    .services_card-heading-arrow{
+      display: none;
+    }
+    .services_card-logo-large{
+      display: block;
+    }
+    .services_card-logo-small{
+      display: block;
+    }
+    .button-text{
+      color: #fff;
+    }
+    .button-wrapper{
+      border-top: 1px solid #fff;
+    }
+    .button-icon path{
+      stroke: #fff;
+    }
+    &:hover{
+      background: linear-gradient(to bottom right, rgba(3, 45, 107, 0.60) 0%, rgba(6, 135, 255, 0.60) 50%) bottom right / 50% 50% no-repeat, 
+                  linear-gradient(to bottom left, rgba(3, 45, 107, 0.60) 0%, rgba(6, 135, 255, 0.60) 50%) bottom left / 50% 50% no-repeat, 
+                  linear-gradient(to top left, rgba(3, 45, 107, 0.60) 0%, rgba(6, 135, 255, 0.60) 50%) top left / 50% 50% no-repeat, 
+                  linear-gradient(to top right, rgba(3, 45, 107, 0.60) 0%, rgba(6, 135, 255, 0.60) 50%) top right / 50% 50% no-repeat, #146EF5;
+      box-shadow: 0px 12px 20px 0px rgba(20, 110, 245, 0.20);
+    }
+  }
+
+}
