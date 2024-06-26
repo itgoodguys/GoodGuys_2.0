@@ -1,0 +1,10 @@
+.discovery-icon{
+  &:hover{
+    path{
+      fill: #EFFF32;
+    }
+  }
+  path{
+    transition: all 0.2s ease;
+  }
+}

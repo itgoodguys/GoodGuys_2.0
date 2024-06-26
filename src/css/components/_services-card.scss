@@ -1,9 +1,5 @@
 .services_card{
-
-  .button-wrapper {
-    opacity: 0.3;
-    transition: all 0.3s ease;
-  }
+  border: 2px solid transparent;
 
   &:hover{
     .services_card-heading-arrow{
@@ -25,6 +21,7 @@
     }
   }
 
+  /* Background Green */
   &[background-color="green"]{
     --swatch--dark-1: #fff;
     --color--text-primary: #fff;
@@ -37,18 +34,24 @@
                   linear-gradient(to bottom left, rgba(0, 184, 73, 0.60) 0%, rgba(4, 244, 100, 0.60) 50%) bottom left / 50% 50% no-repeat, 
                   linear-gradient(to top left, rgba(0, 184, 73, 0.60) 0%, rgba(4, 244, 100, 0.60) 50%) top left / 50% 50% no-repeat, 
                   linear-gradient(to top right, rgba(0, 184, 73, 0.60) 0%, rgba(4, 244, 100, 0.60) 50%) top right / 50% 50% no-repeat, #00DE59;
+      box-shadow: 0px 12px 20px 0px rgba(36, 36, 36, 0.06);
+      border: 2px solid #B7FED4;
     }
   }
 
+  /* Background Yellow */
   &[background-color="yellow"]{
     &:hover{
       background: linear-gradient(to bottom right, rgba(250, 255, 192, 0.60) 0%, rgba(238, 255, 50, 0.60) 50%) bottom right / 50% 50% no-repeat, 
                   linear-gradient(to bottom left,  rgba(250, 255, 192, 0.60) 0%,  rgba(238, 255, 50, 0.60) 50%) bottom left / 50% 50% no-repeat, 
                   linear-gradient(to top left, rgba(250, 255, 192, 0.60) 0%,  rgba(238, 255, 50, 0.60) 50%) top left / 50% 50% no-repeat, 
                   linear-gradient(to top right, rgba(250, 255, 192, 0.60) 0%,   rgba(238, 255, 50, 0.60) 50%) top right / 50% 50% no-repeat, #EEFF32;
+      border: 2px solid #EEFF32;
+      box-shadow: 0px 12px 20px 0px rgba(238, 255, 50, 0.21);
     }
   }
 
+  /* Background Blue */
   &[background-color="blue"]{
     --swatch--dark-1: #fff;
     --color--text-primary: #fff;
@@ -77,7 +80,12 @@
                   linear-gradient(to top left, rgba(3, 45, 107, 0.60) 0%, rgba(6, 135, 255, 0.60) 50%) top left / 50% 50% no-repeat, 
                   linear-gradient(to top right, rgba(3, 45, 107, 0.60) 0%, rgba(6, 135, 255, 0.60) 50%) top right / 50% 50% no-repeat, #146EF5;
       box-shadow: 0px 12px 20px 0px rgba(20, 110, 245, 0.20);
+      border: 2px solid #EFFF32;
     }
   }
 
+  .button-wrapper {
+    opacity: 0.3;
+    transition: all 0.3s ease;
+  }
 }
