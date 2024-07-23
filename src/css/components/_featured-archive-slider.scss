@@ -1,0 +1,11 @@
+.portfolio-featured_slider{
+  .swiper-button-next,
+  .swiper-button-prev{
+    position: static !important;
+    &:after{
+      display: none !important;
+    }
+  }
+}
+
+

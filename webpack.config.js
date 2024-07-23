@@ -82,7 +82,7 @@ module.exports = {
       new TerserPlugin({
         terserOptions: {
           compress: {
-            drop_console: false, // Removes console statements
+            drop_console: false, // Removes console statements if true
           },
         },
       }),
