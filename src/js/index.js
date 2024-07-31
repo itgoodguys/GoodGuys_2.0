@@ -4,6 +4,7 @@ import '../css/main.scss'
 
 // JavaScript import
 import './components/breadcrumbs.js'
+import './components/navbar.js'
 
 /////////////////////////////////////////
 // Disable submitting form fields during development

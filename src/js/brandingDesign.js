@@ -1,6 +1,7 @@
 
 // CSS import
 import '../css/branding-design.scss'
+import '../css/components/_cta.scss'
 
 // JavaScript import
 import './components/testimonialSlider.js'

@@ -1,0 +1,320 @@
+.nav-drop-wrapper{
+  &:hover{
+    .nav-main-link-inner{
+      padding-left: 1.5rem;
+    }
+    .nav-drop-underline{
+      max-width: 100%;
+    }
+    .nav-main-link-arrow{
+      transform:rotate(180deg);
+    }
+    .nav-main-link-star{
+      max-width: 100%;
+      opacity: 1;
+    }
+  }
+  @media screen and (max-width: 767px){
+    width: 100%;
+  }
+  .nav-main-link-inner{
+    @media screen and (max-width: 767px){
+      justify-content: space-between;
+    }
+  }
+  .nav-drop-underline{
+    @media screen and (max-width: 767px){
+      display: none;
+    }
+  }
+}
+
+.nav-dropdown-link_bellow{
+  opacity: 0;
+  max-height: 0px;
+  overflow: hidden;
+  transition: 0.2s ease;
+  &:hover{
+    .nav-dropdown-link_bellow-arrow{
+      opacity: 1;
+    }
+  }
+}
+
+// migration & integration listings
+.nav-drop_link-wrapper{
+  &:hover{
+    .nav-dropdown-link{
+      padding: 0 0 0 1rem;
+      .nav-dropdown-link-star{
+        opacity: 1;
+        max-width: 1000px;
+      }
+      .nav-dropdown-link-text{
+        opacity: 1;
+      }
+  
+      & + .nav-dropdown-link_bellow{
+        max-height: 1000px;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+// migration & integration listings
+.nav-dropdown-link{
+  &:hover{
+    padding: 0 0 0 1rem;
+    .nav-dropdown-link-star{
+      opacity: 1;
+      max-width: 1000px;
+    }
+    .nav-dropdown-link-text{
+      opacity: 1;
+    }
+
+    & + .nav-dropdown-link_bellow{
+      max-height: 1000px;
+      opacity: 1;
+    }
+  }
+}
+
+// migration & integration listing sidebar scroll styling for media links
+.nav-drop_content-media_sublinks,
+.nav-drop_content-media_sublinks-mobile{
+  &::-webkit-scrollbar {
+    width: 8px; /* Controls the overall width of the scrollbar */
+    padding: 2.5px; /* Controls the padding of the Scrollbar */
+    border-right: 1px solid #e6e6e6;
+    border-left: 1px solid #e6e6e6;
+  }
+
+  /* Track - This is the part that contains the bit you click and drag */
+  &::-webkit-scrollbar-track {
+    background: transparent; /* Sets the background to transparent, change to a Hex or RGB value if you would like */
+  }
+
+  /* Handle - This is the bit you actually click and drag */
+  &::-webkit-scrollbar-thumb {
+    background: #b1a9a9; /* Change the Hex value to change the scroll handle */
+    border-radius: 6px; /* Change the "px" to adjust the scroll handle's border radius*/
+    border-right: 1px solid #e6e6e6;
+    border-left: 1px solid #e6e6e6;
+  }
+}
+
+.nav-drop_content-media_sublinks-mobile{
+  overflow: hidden;
+  max-height: 0px;
+  transition: all 0.2s;
+  display: none;
+  overflow: auto;
+  @media screen and (max-width: 991px){
+    display: flex;
+  }
+  .nav-drop-link-wrapper:first-child{
+    padding-top: 1.5rem;
+  }
+}
+
+.active-link-wrapper{
+  .nav-drop_content-media_sublinks-mobile{
+    max-height: 11rem;
+  }
+}
+
+
+.nav-drop_content-media:has(.nav-drop_content-media_sublinks){
+  border-radius: 0px;
+}
+
+.nav-drop_content-media-image { 
+  // opacity: 0;
+  transition: all 1s ease;
+  scale: 1.1;
+  z-index: 10;
+}
+
+.nav-drop_content-media-image.show {
+  // opacity: 1;
+  scale: 1;
+  z-index: 20;
+}
+
+// dropdown content blocks fade and show
+.nav-drop_content {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  transform: translateY(-10px);
+}
+
+.nav-drop-wrapper:hover .nav-drop_content {
+  // on smaller screen we handle this with JavaScript with click event
+  // by adding and removing the class show-drop-content
+  @media screen and (min-width: 992px){
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+
+// small screen drop content showing
+.show-drop-content.nav-drop_content{
+  @media screen and (max-width: 991px){
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    max-height: 1000px;
+  }
+  @media screen and (max-width: 767px){
+    width: 100%;
+  }
+  .nav-drop_content-links{
+    padding-top: 0.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--swatch--ufo-blue);
+  }
+}
+
+
+.w-nav-overlay{
+  top: 0px;
+}
+
+.menu-button{
+  position: relative;
+  z-index: 1000;
+  @media screen and (max-width: 991px){
+    display: flex !important;
+  }
+}
+
+.navbar_logo{
+  position: relative;
+  z-index: 1000;
+  .navbar_logo-svg{
+    @media screen and (max-width: 991px){
+      width: 3.4375rem;
+      height: 2.64906rem;
+    }
+  }
+
+}
+
+// When main menu is open
+.menu-open{
+  .nav-menu{
+    padding-top: 8rem;
+    min-height: 70vh;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #fff;
+    padding-bottom: 3rem;
+    padding-left: 2.4375rem;
+    padding-right: 2.4375rem;
+    width: 100%;
+    max-width: 151.69rem;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid !important;
+    grid-column-gap: 24px;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-columns: 1fr;
+    width: 100%;
+    @media screen and (max-width: 991px){
+      padding-top: 6rem;
+      grid-template-columns: repeat(8, 1fr);
+      grid-column-gap: 12px;
+      min-height: 90vh;
+    }
+    @media screen and (max-width: 767px){
+      padding-top: 6rem;
+      display: flex !important;
+      min-height: 100vh;
+    }
+  }
+
+  .nav-menu_links-container{
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: baseline;
+    background-color: var(--swatch--light-1);
+    grid-column: 2 / 13;
+    @media screen and (max-width: 991px){
+      grid-column: 2 / 9;
+    }
+    @media screen and (max-width: 991px){
+      grid-column: 1 / 4;
+    }
+    .nav-drop-wrapper{
+      position: static;
+      // when menu is open, we set the content to be relative to the nav-menu
+      // and not to the nav-drop-wrapper, so we can place them all in the same place on the right side
+      .nav-drop_content{
+        top: 8rem;
+        // nav-menu padding + nav-menu grid gap + nav-drop-wrapper width + nav-menu grid column width
+        left: calc(2.4375rem + 1.5rem + 9rem + 8.333% ); 
+        box-shadow: none;
+        padding: 0px;
+        @media screen and (max-width: 991px){
+          top: 6rem;
+          left:calc(1rem + 0.75rem + 9rem + 12.5% ); 
+        }
+      }
+      .nav-main-link-star{
+        display: none;
+      }
+      &:hover{
+        .nav-main-link-inner{
+          padding-left: 0px !important;
+        }
+        .nav-main-link-arrow{
+          transform: rotate(90deg);
+        }
+      }
+      &.dim{
+        filter: blur(1px);
+        opacity: 0.7;
+      }
+    }
+  }
+
+  .nav-menu_social{
+    display: flex;
+    grid-column: 2 / 13;
+    @media screen and (max-width: 991px){
+      grid-column: 1 / 9;
+    }
+  }
+
+  .nav-drop-list{
+    .nav-drop_content-media{
+      overflow: visible;
+      @media screen and (max-width: 991px){
+        display: none;
+      }
+      .nav-drop_content-media_sublinks{
+        height: 50vh;
+      }
+    }
+  }
+}
+
+.nav-drop-list{
+  .nav-drop_content-media{
+    .nav-drop_content-media-image {
+      background-color: var(--swatch--light-1);
+      scale: 1;
+    }
+  }
+}
+
+.w-nav-button.w--open{
+  background-color: var(--swatch--light-1);
+}
+
+

@@ -1,0 +1,36 @@
+.dark-background{
+  .container-global{
+    border-right: 1px solid #fff;
+    border-left: 1px solid #fff;
+  }
+  .cta_info h2{
+    color: #fff;
+  }
+}
+
+.portfolio-challenge_right{
+  position: relative;
+  &:before{
+    content: '';
+    left: -12px;
+    top: 0px;
+    height: 100%;
+    width: 1px;
+    background-color: #fff;
+  }
+}
+
+.portfolio-single_service:not(:first-child){
+  border-left: 1px solid #fff;
+  @media screen and (max-width: 991px){
+    border-left: 0px solid #fff;
+  }
+}
+.portfolio-single_service:nth-child(even){
+  @media screen and (max-width: 991px){
+    border-left: 1px solid #fff;
+  }
+  @media screen and (max-width: 767px){
+    border-left: 0px solid #fff;
+  }
+}

@@ -1,6 +1,7 @@
 
 // CSS import
 import '../css/home.scss'
+import '../css/components/_cta.scss'
 
 // JavaScript import
 import './components/servicesSlider.js'

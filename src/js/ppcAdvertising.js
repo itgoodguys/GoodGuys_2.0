@@ -1,6 +1,7 @@
 
 // CSS import
 import '../css/ppc-advertising.scss'
+import '../css/components/_cta.scss'
 
 
 // JavaScript import

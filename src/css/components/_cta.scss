@@ -1,0 +1,17 @@
+[cta-vertical="true"]{
+  .cta{
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 3rem;
+    @media screen and (max-width: 991px){
+      gap: 1rem;
+    }
+  }
+  .spacer-4{
+    display: none;
+  }
+  .cta_info-text{
+    display: none;
+  }
+}

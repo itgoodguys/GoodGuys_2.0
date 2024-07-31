@@ -1,6 +1,7 @@
 
 // CSS import
 import '../css/migrations-single.scss'
+import '../css/components/_cta.scss'
 
 
 // JavaScript import

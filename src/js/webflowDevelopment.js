@@ -1,6 +1,7 @@
 
 // CSS import
 import '../css/webflow-development.scss'
+import '../css/components/_cta.scss'
 
 
 // JavaScript import
