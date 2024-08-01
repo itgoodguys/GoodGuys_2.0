@@ -245,3 +245,29 @@ linkWrappers.forEach(wrapper => {
         wrapper.classList.add('active-link-wrapper');
     });
 });
+
+///////////////////////////////////////////////
+// menu peekaboo
+///////////////////////////////////////////////
+var lastScrollTop = 0;
+window.addEventListener('scroll', function() {
+  var currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+  var navbar = document.querySelector('.navbar');
+
+  console.log('navbar',navbar)
+  
+  if (currentScroll > 100 && currentScroll > lastScrollTop) {
+    console.log('scroll')
+    navbar.classList.add('menu-hidden');
+  } else if (currentScroll < lastScrollTop) {
+    navbar.classList.remove('menu-hidden');
+  }
+  
+  if (currentScroll > 0) {
+    navbar.classList.add('menu-background');
+  } else {
+    navbar.classList.remove('menu-background');
+  }
+  
+  lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
+});
