@@ -108,27 +108,6 @@ hamburgerBtn.addEventListener('click', function () {
   navbar.classList.toggle('menu-open');
 });
 
-///////////////////////////////////////////////
-// adding dim class for blur effect on dropdown links
-// when a dropdown is open all siblings get blured
-///////////////////////////////////////////////
-const wrappers = document.querySelectorAll('.nav-drop-wrapper');
-
-wrappers.forEach(wrapper => {
-  wrapper.addEventListener('mouseenter', () => {
-      wrappers.forEach(sibling => {
-          if (sibling !== wrapper) {
-              sibling.classList.add('dim');
-          }
-      });
-  });
-
-  wrapper.addEventListener('mouseleave', () => {
-      wrappers.forEach(sibling => {
-          sibling.classList.remove('dim');
-      });
-  });
-});
 
 
 /////////////
@@ -152,6 +131,7 @@ function showContent(content) {
 
 // when we click on element we add / remove the show drop content class
 function toggleContent(event) {
+  // event.currentTarget.classList.toggle('nav-drop-wrapper_active');
   const content = event.currentTarget.querySelector('.nav-drop_content');
   if (content) {
     if (content.classList.contains('show-drop-content')) {
@@ -183,8 +163,62 @@ function applyNavDropWrapperEventListeners() {
 
   if (mediaQuery.matches) {
     addClickEventListeners();
+    navDropWrapper.forEach(wrapper => {
+      wrapper.removeEventListener('mouseenter', navDropWrapperMouseEnter);
+      wrapper.removeEventListener('mouseleave', navDropWrapperMouseLeave);
+      wrapper.addEventListener('click', navDropWrapperClick);
+    });
   } else {
     removeClickEventListeners();
+    navDropWrapper.forEach(wrapper => {
+      wrapper.addEventListener('mouseenter', navDropWrapperMouseEnter);
+      wrapper.addEventListener('mouseleave', navDropWrapperMouseLeave);
+      wrapper.removeEventListener('click', navDropWrapperClick);
+    });
+  }
+}
+
+// adding dim class for blur effect on dropdown links
+// when a dropdown is open all siblings get blured
+function navDropWrapperMouseEnter() {
+  navDropWrapper.forEach(sibling => {
+    if (sibling !== this) {
+      sibling.classList.add('dim');
+    }
+  });
+}
+
+function navDropWrapperMouseLeave() {
+  navDropWrapper.forEach(sibling => {
+    sibling.classList.remove('dim');
+  });
+}
+
+// on click we add a dim class to all sibling elements 
+// here we first check if we clicked again on the same element
+let lastClickedwrapper = null;
+
+function navDropWrapperClick(event) {
+  const wrapper = event.currentTarget;
+  const isClickedAgain = lastClickedwrapper === wrapper;
+
+  navDropWrapper.forEach(sibling => {
+    if (sibling !== wrapper) {
+        sibling.classList.remove('dim');
+    } else {
+      wrapper.classList.remove('dim');
+    }
+  });
+
+  if (!isClickedAgain) {
+      navDropWrapper.forEach(sibling => {
+          if (sibling !== wrapper) {
+              sibling.classList.add('dim');
+          }
+      });
+      lastClickedwrapper = wrapper;
+  } else {
+      lastClickedwrapper = null;
   }
 }
 
