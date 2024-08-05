@@ -158,3 +158,24 @@
   }
 }
 
+
+/**************************************
+ small button
+***************************************/
+.small-link-wrapper{
+  transition: all 0.2s;
+  &:hover{
+    color: #fff;
+    background-color: #000;
+    .small-link_arrow{
+      opacity: 1;
+    }
+  }
+  .small-link_arrow{
+    transition: all 0.2s;
+  }
+}
+
+
+
+

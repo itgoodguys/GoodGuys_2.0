@@ -9,3 +9,8 @@ import './components/testimonialSlider.js'
 import './components/blogList.js'
 import './components/featuredWork.js'
 
+import './animations/wordBackgroundHighlight.js'
+import './animations/scrubOpacity.js'
+import './animations/heroImageFlip.js'
+import './animations/lenisSmoothScroll.js'
+

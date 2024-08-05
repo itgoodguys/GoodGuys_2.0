@@ -88,4 +88,10 @@
     opacity: 0.3;
     transition: all 0.3s ease;
   }
+
+  &[dark-page="false"]{
+    --swatch--dark-1: #000;
+    --color--text-primary: #000;
+    --color--text-secondary: #000;
+  }
 }

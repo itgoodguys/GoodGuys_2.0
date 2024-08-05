@@ -254,10 +254,8 @@ window.addEventListener('scroll', function() {
   var currentScroll = window.pageYOffset || document.documentElement.scrollTop;
   var navbar = document.querySelector('.navbar');
 
-  console.log('navbar',navbar)
   
   if (currentScroll > 100 && currentScroll > lastScrollTop) {
-    console.log('scroll')
     navbar.classList.add('menu-hidden');
   } else if (currentScroll < lastScrollTop) {
     navbar.classList.remove('menu-hidden');

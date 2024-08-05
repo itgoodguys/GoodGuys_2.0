@@ -1,0 +1,14 @@
+[data-attribute='mask-text'] .word{
+  position: relative;
+}
+
+.line-mask {
+  background-color: #fff;
+  height: 110%;
+  opacity: .8;
+  position: absolute;
+  right: -5%;
+  top: 0;
+  width: 110%;
+  z-index: 2;
+}
