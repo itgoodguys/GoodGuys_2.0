@@ -1,4 +1,4 @@
-import '../../css/animations/_scrubOpacity.scss'
+import '../../css/animations/_scrub-opacity.scss'
 
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';

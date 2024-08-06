@@ -1,4 +1,4 @@
-import '../../css/animations/_wordBackgroundHighlight.scss'
+import '../../css/animations/_word-background-highlight.scss'
 
 // Import gsap and ScrollTrigger
 import gsap from 'gsap';
@@ -9,7 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 // Function to initialize the animation
 function initializeHighlightAnimation() {
-  const paragraph = document.querySelector('.animated');
+  const paragraph = document.querySelector('[data-attribute="text-background-animation"]');
   const highlight = paragraph.querySelector('.highlight');
 
   ScrollTrigger.create({
@@ -30,7 +30,8 @@ function animateHighlight(highlight) {
     scale: 1,
     opacity: 1,
     duration: 0.4,
-    ease: 'power1.out'
+    ease: 'power1.out',
+    delay: 1
   });
 
   // Animate the :after pseudo-element
@@ -38,8 +39,9 @@ function animateHighlight(highlight) {
     '--after-width': '0%',
   }, {
     '--after-width': '100%',
-    duration: 0.2,
+    duration: 0.5,
     ease: 'power1.out',
+    delay: 1,
     onUpdate: function () {
       highlight.style.setProperty('--after-width', this.targets()[0].style.getPropertyValue('--after-width'));
     }

@@ -1,0 +1,16 @@
+.section_featured-work{
+  .featured-slider{
+    transform: rotate(5deg);
+    width: 100%;
+    .featured-slider_wrapper{
+      .feature-slider_card{
+        transition: transform 0.3s ease;
+        transform: scale(0.6);
+        width: 70%;
+      }
+      .swiper-slide-active {
+        transform: scale(1);
+      }
+    }
+  }
+}

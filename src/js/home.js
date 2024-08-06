@@ -8,9 +8,11 @@ import './components/servicesSlider.js'
 import './components/testimonialSlider.js'
 import './components/blogList.js'
 import './components/featuredWork.js'
+import './components/featuredWorkSlider.js'
 
 import './animations/wordBackgroundHighlight.js'
 import './animations/scrubOpacity.js'
 import './animations/heroImageFlip.js'
 import './animations/lenisSmoothScroll.js'
+import './animations/homeHeroText.js'
 

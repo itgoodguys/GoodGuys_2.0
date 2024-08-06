@@ -1,5 +1,5 @@
 
-import '../../css/animations/_lenisSmoothScroll.scss'
+import '../../css/animations/_lenis-smooth-scroll.scss'
 
 import Lenis from 'lenis';
 
