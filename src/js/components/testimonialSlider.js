@@ -3,36 +3,35 @@
 
 // import Swiper JS
 import Swiper from 'swiper';
+import { Pagination } from 'swiper/modules';
 
 // import Swiper styles
 import 'swiper/css';
+import 'swiper/css/pagination';
 
 // import custom styling
 import '../../css/components/_testimonial-slider.scss';
 
 const screenWidth = window.innerWidth;
 let testimonialSlider = new Swiper('.testimonials-slider', {
+  modules: [Pagination],
   direction: 'horizontal',
-  slidesPerView: screenWidth < 767 ? 1.2 : 'auto',
+  slidesPerView: 'auto',
   spaceBetween: screenWidth < 767 ? 8 : 24,
   // centeredSlides: true,
   // centeredSlidesBounds: true,
   initialSlide: 0,
+  loop: true,
+  pagination: {
+    el: ".testimonial-pagination.desktop-pagination",
+    clickable: true
+  },
   on: {
     slideChange: function () {
       updateActiveTestimonial();
     },
     init() {
       updateActiveTestimonial();
-      // Select the last slide element
-      const slides = this.slides;
-      const lastSlide = slides[slides.length - 1];
-
-      // Add the class 'empty-testimonial' to the last slide
-      // need to create space for a real last slide to be opened on click
-      if (lastSlide || secondLast) {
-        lastSlide.classList.add('empty-testimonial');
-      }
     },
     click() {
       // set clicked slide to be active slide

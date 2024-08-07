@@ -1,42 +1,45 @@
-import '../../css/animations/_scrub-opacity.scss'
-
+import '../../css/animations/_scrub-opacity.scss';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import SplitType from 'split-type';
 
 gsap.registerPlugin(ScrollTrigger);
 
-
-let typeSplit;
-
-// Split the text up
-// add data-attribute 'mask-text' to the element
 function runSplit() {
-  typeSplit = new SplitType("[data-attribute='mask-text']", {
-    types: "lines, words"
+  // Target each element with data-attribute='mask-text'
+  document.querySelectorAll("[data-attribute='mask-text']").forEach(element => {
+    // Split the text for each element
+    const typeSplit = new SplitType(element, {
+      types: "lines, words"
+    });
+
+    // Add line mask to each word
+    element.querySelectorAll(".word").forEach(word => {
+      const lineMask = document.createElement('div');
+      lineMask.classList.add('line-mask');
+      word.appendChild(lineMask);
+    });
+
+    // Create animation for each element
+    createAnimation(element);
   });
-  $("[data-attribute='mask-text'] .word").append("<div class='line-mask'></div>");
-  createAnimation();
 }
 
-runSplit();
+function createAnimation(element) {
+  // Select all line masks for the given element
+  const allMasks = Array.from(element.querySelectorAll(".word .line-mask"));
 
-
-// Create staggered animation
-function createAnimation() {
-  let allMasks = $("[data-attribute='mask-text'] .word").map(function() {
-    return $(this).find(".line-mask");
-  }).get();
-
-  let tl = gsap.timeline({
+  // Create a timeline for the given element
+  const tl = gsap.timeline({
     scrollTrigger: {
-      trigger: "[data-attribute='mask-text']",
+      trigger: element,
       start: "top 90%",
       end: "bottom 80%",
       scrub: 1
     }
   });
 
+  // Animate the line masks
   tl.to(allMasks, {
     width: "0%",
     duration: 1,
@@ -44,8 +47,12 @@ function createAnimation() {
   });
 }
 
+// Run the split and animation setup
+runSplit();
+
+
 // ovo je druga varijanta gde ne koristimo pseudo element .line-mask
-// vec samo manipulisemo sa opcitijem
+// vec samo manipulisemo sa opacitijem
 // ova opcija nije toliko smooth
 
 // // Function to initialize the scrub opacity animation

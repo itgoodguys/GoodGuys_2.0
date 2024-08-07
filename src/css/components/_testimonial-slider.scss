@@ -1,36 +1,8 @@
 .testimonials-card{
-  max-width: 33.25rem;
-  @media screen and (max-width: 991px){
-    max-width: 21.5rem;
-  }
-  @media screen and (max-width: 767px){
-    max-width: none;
-  }
-  .testimonial-slide_media{
-    max-width: 0px;
-    @media screen and (max-width: 767px){
-      max-width: 100%;
-    }
-  }
+  // background-color: #fff;
   &.active-testimonial{
-    max-width: 56.75rem;
-    @media screen and (max-width: 991px){
-      max-width: 43.875rem;
-    }
-    @media screen and (max-width: 767px){
-      max-width: none;
-    }
     background-color: #F5F5F5;
-
     .testimonial-slide_media{
-      max-width: 23.5rem;
-      @media screen and (max-width: 991px){
-        max-width: 21.875rem;
-      }
-      @media screen and (max-width: 767px){
-        max-width: none;
-      }
-
       &:before{
         content: '';
         position: absolute;
@@ -80,14 +52,26 @@
   }
 }
 
-// dummy slide on the end, so that the real last slide can be opened
-// when you click on it (needed to create some space)
-.empty-testimonial{
-  visibility: hidden;
-  pointer-events: none;
+.testimonial-pagination{
+  width: fit-content !important;
+  padding: 2px 0;
+  display: flex;
+  align-items: center;
   @media screen and (max-width: 767px){
-    display: none !important;
+    left: 50% !important;
+  }
+  .swiper-pagination-bullet{
+    width: 12px;
+    height: 12px;
+    transition: 0.3s ease;
+  }
+
+  .swiper-pagination-bullet-active{
+    width: 16px;
+    height: 16px;
+    background: #000;
   }
 }
+
 
 

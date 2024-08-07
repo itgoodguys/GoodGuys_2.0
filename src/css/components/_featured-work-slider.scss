@@ -13,4 +13,11 @@
       }
     }
   }
+
+  .featured-slider_info-title-link.active-name {
+    top: 0; /* Active slide */
+  }
+  .featured-slider_info-text.active-name {
+    top: 0; /* Active slide */
+  }
 }
