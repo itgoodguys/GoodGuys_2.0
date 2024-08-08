@@ -4,6 +4,16 @@
   position: relative;
   display: inline-block;
   --after-width: 0;
+  transition: all 0.2s;
+  &.highlight-blue{
+    color: #fff;
+    &:after{
+      background-color: #0040f5;
+    }
+  }
+  &.highlight-yellow:after{
+    background-color: #f1f935;
+  }
 }
 
 .highlight::after {
@@ -13,7 +23,9 @@
   left: 0;
   width: var(--after-width);
   height: 100%;
-  background-color: yellow;
   z-index: -1; /* Ensure it is behind the text */
   transition: width 0.8s ease-out;
 }
+
+
+

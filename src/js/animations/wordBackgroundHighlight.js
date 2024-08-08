@@ -9,8 +9,12 @@ gsap.registerPlugin(ScrollTrigger);
 
 // Function to initialize the animation
 function initializeHighlightAnimation() {
-  const paragraph = document.querySelector('[data-attribute="text-background-animation"]');
+  const paragraph = document.querySelector('[text-background-animation="true"]');
+  
+  // Check if paragraph and highlight exist
+  if (!paragraph) return;
   const highlight = paragraph.querySelector('.highlight');
+  if (!highlight) return;
 
   ScrollTrigger.create({
     trigger: paragraph,
@@ -38,7 +42,7 @@ function animateHighlight(highlight) {
   gsap.fromTo(highlight, {
     '--after-width': '0%',
   }, {
-    '--after-width': '100%',
+    '--after-width': '101%',
     duration: 0.5,
     ease: 'power1.out',
     delay: 1,
@@ -46,11 +50,7 @@ function animateHighlight(highlight) {
       highlight.style.setProperty('--after-width', this.targets()[0].style.getPropertyValue('--after-width'));
     }
   });
-
 }
 
 // Initialize the animation
 initializeHighlightAnimation();
-
-
-
