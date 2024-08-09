@@ -8,7 +8,7 @@ $(".process").each(function () {
   let track = $(this).find(".process_track");
   let inner = $(this).find(".process_inner");
 
-  // Set section height
+  // Set section height based on track width
   function setScrollDistance() {
     wrap.css("height", "calc(" + track.outerWidth() + "px + 100vh)");
   }
@@ -29,48 +29,22 @@ $(".process").each(function () {
 
   tl.to(track, { xPercent: -100 });
 
-  let mediaImage = document.querySelector(".process_media-image");
-  let mediaContainer = document.querySelector(".process_media");
+  // Define trigger points as percentages of the total scroll distance
+  const triggerPoints = [0, 0.1665, 0.333, 0.5, 0.6665, 0.833, 1];
+  const totalScrollDistance = track.outerWidth();
 
-  // Create a ScrollTrigger for each process_screen element
-  wrap.find(".process_screen").each(function (index) {
-    let screen = $(this);
-
-    // Calculate the start position dynamically and convert to negative
-    let startPosition = screen.offset().left - inner.offset().left;
-    let start = `left ${-startPosition}px top`;
-
-    console.log('index', index);
-
-    // Create a ScrollTrigger for each screen
+  triggerPoints.forEach(point => {
     ScrollTrigger.create({
-      trigger: screen[0],
-      start: start, // Use the negative start position
-      end: "left+=50% center", // Adjust the end point as needed
-      scrub: true,
+      trigger: wrap[0],
+      start: `top ${-point * totalScrollDistance}px`, // Adjust for negative translation
+      end: `top ${-point * totalScrollDistance + 1}px`, // Small end point to ensure trigger
       onEnter: () => {
-        if (index % 2 === 0) {
-          console.log('even enter', index);
-          gsap.to(mediaImage, { maxWidth: "100%" });
-          gsap.to(mediaContainer, { justifyContent: "flex-end" });
-        } else {
-          console.log('odd enter', index);
-          gsap.to(mediaImage, { maxWidth: "33%" });
-          gsap.to(mediaContainer, { justifyContent: "flex-start" });
-        }
+        console.log(`Triggered at ${point * 100}% of scroll distance`);
+        // Add your animation logic here
       },
       onLeaveBack: () => {
-        if (index % 2 === 0) {
-          console.log('even leave', index);
-          gsap.to(mediaImage, { maxWidth: "100%" });
-          gsap.to(mediaContainer, { justifyContent: "flex-end" });
-          
-        } else {
-          console.log('odd leave', index);
-          gsap.to(mediaImage, { maxWidth: "33%" });
-          gsap.to(mediaContainer, { justifyContent: "flex-start" });
-         
-        }
+        console.log(`Leaving ${point * 100}% of scroll distance`);
+        // Optional: Add your animation logic for leaving here
       }
     });
   });
