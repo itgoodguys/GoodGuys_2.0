@@ -7,6 +7,8 @@ $(".process").each(function () {
   let wrap = $(this);
   let track = $(this).find(".process_track");
   let inner = $(this).find(".process_inner");
+  let mediaImage = $(".process_media-image");
+  let mediaContainer = $(".process_media");
 
   // Set section height based on track width
   function setScrollDistance() {
@@ -33,19 +35,119 @@ $(".process").each(function () {
   const triggerPoints = [0, 0.1665, 0.333, 0.5, 0.6665, 0.833, 1];
   const totalScrollDistance = track.outerWidth();
 
-  triggerPoints.forEach(point => {
+  triggerPoints.forEach((point, index) => {
+    const startPos = -point * totalScrollDistance;
+    const endPos = -point * totalScrollDistance + 1;
+
+    // Create ScrollTrigger for each trigger point
     ScrollTrigger.create({
       trigger: wrap[0],
-      start: `top ${-point * totalScrollDistance}px`, // Adjust for negative translation
-      end: `top ${-point * totalScrollDistance + 1}px`, // Small end point to ensure trigger
+      start: `top ${startPos}px`,
+      end: `top ${endPos}px`,
       onEnter: () => {
-        console.log(`Triggered at ${point * 100}% of scroll distance`);
-        // Add your animation logic here
+        console.log('enter', index)
+        handleEnter(index);
       },
       onLeaveBack: () => {
-        console.log(`Leaving ${point * 100}% of scroll distance`);
-        // Optional: Add your animation logic for leaving here
+        console.log('leave', index)
+        handleLeaveBack(index);
       }
     });
   });
+
+  function handleEnter(index) {
+    switch (index) {
+      case 0:
+        gsap.timeline()
+          .to(mediaImage, { maxWidth: "100%" })
+          .to(mediaContainer, { justifyContent: "flex-start" }, "+=1");
+        break;
+      case 1:
+        gsap.timeline()
+          .to(mediaImage, { maxWidth: "33%" })
+          .to(mediaContainer, { justifyContent: "flex-start" }, "+=1");
+        break;
+      case 2:
+        gsap.timeline()
+          .to(mediaImage, { maxWidth: "100%" })
+          .to(mediaContainer, { justifyContent: "flex-end" }, "+=1");
+        break;
+      case 3:
+        gsap.timeline()
+          .to(mediaImage, { maxWidth: "33%" })
+          .to(mediaContainer, { justifyContent: "flex-end" }, "+=1");
+        break;
+      case 4:
+        gsap.timeline()
+          .to(mediaImage, { maxWidth: "100%" })
+          .to(mediaContainer, { justifyContent: "flex-start" }, "+=1");
+        break;
+      case 5:
+        gsap.timeline()
+          .to(mediaImage, { maxWidth: "33%" })
+          .to(mediaContainer, { justifyContent: "flex-start" }, "+=1");
+        break;
+      case 6:
+        gsap.timeline()
+          .to(mediaImage, { maxWidth: "100%" })
+          .to(mediaContainer, { justifyContent: "flex-end" }, "+=1");
+        break;
+      case 7:
+        gsap.timeline()
+          .to(mediaImage, { maxWidth: "33%" })
+          .to(mediaContainer, { justifyContent: "flex-end" }, "+=1");
+        break;
+      // Repeat for additional cases if needed
+      default:
+        break;
+    }
+  }
+
+  function handleLeaveBack(index) {
+    switch (index) {
+      case 0:
+        gsap.timeline()
+          .to(mediaContainer, { justifyContent: "flex-end" })
+          .to(mediaImage, { maxWidth: "33%" }, "+=1");
+        break;
+      case 1:
+        gsap.timeline()
+          .to(mediaImage, { maxWidth: "100%" })
+          .to(mediaContainer, { justifyContent: "flex-end" }, "+=1");
+        break;
+      case 2:
+        gsap.timeline()
+          .to(mediaContainer, { justifyContent: "flex-start" })
+          .to(mediaImage, { maxWidth: "33%" }, "+=1");
+        break;
+      case 3:
+        gsap.timeline()
+          .to(mediaImage, { maxWidth: "100%" })
+          .to(mediaContainer, { justifyContent: "flex-start" }, "+=1");
+        break;
+      case 4:
+        gsap.timeline()
+          .to(mediaContainer, { justifyContent: "flex-end" })
+          .to(mediaImage, { maxWidth: "33%" }, "+=1");
+        break;
+      case 5:
+        gsap.timeline()
+          .to(mediaImage, { maxWidth: "100%" })
+          .to(mediaContainer, { justifyContent: "flex-end" }, "+=1");
+        break;
+      case 6:
+        gsap.timeline()
+          .to(mediaContainer, { justifyContent: "flex-start" })
+          .to(mediaImage, { maxWidth: "33%" }, "+=1");
+        break;
+      case 7:
+        gsap.timeline()
+          .to(mediaImage, { maxWidth: "100%" })
+          .to(mediaContainer, { justifyContent: "flex-start" }, "+=1");
+        break;
+      // Repeat for additional cases if needed
+      default:
+        break;
+    }
+  }
 });
