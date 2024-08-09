@@ -6,6 +6,7 @@ gsap.registerPlugin(ScrollTrigger);
 $(".process").each(function () {
   let wrap = $(this);
   let track = $(this).find(".process_track");
+  let inner = $(this).find(".process_inner");
 
   // Set section height
   function setScrollDistance() {
@@ -31,32 +32,46 @@ $(".process").each(function () {
   let mediaImage = document.querySelector(".process_media-image");
   let mediaContainer = document.querySelector(".process_media");
 
-  // Create a timeline for each process_screen element
+  // Create a ScrollTrigger for each process_screen element
   wrap.find(".process_screen").each(function (index) {
     let screen = $(this);
 
-    // Create a timeline for mediaImage's width animation
-    let screenTl = gsap.timeline({
-      scrollTrigger: {
-        trigger: screen,
-        start: "center center",
-        end: "left+=50% center", // Adjust the end point as needed
-        scrub: true,
-        duration: 1,
-      },
-      defaults: { ease: "none" },
-    });
+    // Calculate the start position dynamically and convert to negative
+    let startPosition = screen.offset().left - inner.offset().left;
+    let start = `left ${-startPosition}px top`;
 
-    if (index % 2 === 0) {
-      console.log('even')
-      // Even index: maxWidth 33%, justify-content flex-start
-      screenTl.to(mediaImage, { maxWidth: "33%" })
-              .to(mediaContainer, { justifyContent: "flex-start" }, 0);
-    } else {
-      console.log('odd')
-      // Odd index: maxWidth 100%, justify-content flex-end
-      screenTl.to(mediaImage, { maxWidth: "100%" })
-              .to(mediaContainer, { justifyContent: "flex-end" }, 0);
-    }
+    console.log('index', index);
+
+    // Create a ScrollTrigger for each screen
+    ScrollTrigger.create({
+      trigger: screen[0],
+      start: start, // Use the negative start position
+      end: "left+=50% center", // Adjust the end point as needed
+      scrub: true,
+      onEnter: () => {
+        if (index % 2 === 0) {
+          console.log('even enter', index);
+          gsap.to(mediaImage, { maxWidth: "100%" });
+          gsap.to(mediaContainer, { justifyContent: "flex-end" });
+        } else {
+          console.log('odd enter', index);
+          gsap.to(mediaImage, { maxWidth: "33%" });
+          gsap.to(mediaContainer, { justifyContent: "flex-start" });
+        }
+      },
+      onLeaveBack: () => {
+        if (index % 2 === 0) {
+          console.log('even leave', index);
+          gsap.to(mediaImage, { maxWidth: "100%" });
+          gsap.to(mediaContainer, { justifyContent: "flex-end" });
+          
+        } else {
+          console.log('odd leave', index);
+          gsap.to(mediaImage, { maxWidth: "33%" });
+          gsap.to(mediaContainer, { justifyContent: "flex-start" });
+         
+        }
+      }
+    });
   });
 });
