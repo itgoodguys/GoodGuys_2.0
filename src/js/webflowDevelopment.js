@@ -17,5 +17,5 @@ import './animations/wordBackgroundHighlight.js'
 import './animations/fadeTextFromLeft.js'
 import './animations/scrubOpacity.js'
 import './animations/developmentProcess.js'
-
+import './animations/lenisSmoothScroll.js'
 

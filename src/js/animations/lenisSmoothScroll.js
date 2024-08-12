@@ -13,8 +13,8 @@ const lenis = new Lenis({
 })
   
 function raf(time) {
-lenis.raf(time)
-requestAnimationFrame(raf)
+  lenis.raf(time)
+  requestAnimationFrame(raf)
 }
 
 requestAnimationFrame(raf)
@@ -33,3 +33,5 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
   })
 })
+
+export { lenis };
