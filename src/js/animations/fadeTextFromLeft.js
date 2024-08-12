@@ -21,12 +21,13 @@ function initializeAnimations() {
       opacity: 0,
       x: -100,
       duration: 1,
-      stagger: 0.2,
+      stagger: element instanceof Array ? 0.2 : 0, // Apply stagger only if it's an array
       ease: "back.inOut",
       scrollTrigger: {
         trigger: element,
         start: "top 80%",
         once: true, // This ensures the animation only plays once
+        invalidateOnRefresh: true, // Recalculate positions on screen resize
       }
     });
   });
