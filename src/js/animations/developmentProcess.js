@@ -90,7 +90,7 @@ createAnimationTrigger(28.57, (timeline) => {
   timeline
     .to(stickyImage, {
       maxWidth: '100%',
-      duration: 1,
+      duration: 0.6,
       ease: "power2.out",
     })
     .to(slide1.children, {
@@ -100,16 +100,16 @@ createAnimationTrigger(28.57, (timeline) => {
     }, "<")
     .to(processMedia, {
       justifyContent: 'flex-start',
-    }, ">0.5")
+    }, ">")
     .to(slide1numbers, {
       top: '-100%',
       ease: "power2.out",
     }, ">")
     .to(stickyImage, {
       maxWidth: '33%',
-      duration: 0.4,
+      duration: 0.2,
       ease: "power2.out",
-    }, "<")
+    }, 0.6)
     .to(slide2.children, {
       opacity: 1,
       duration: 0.8,

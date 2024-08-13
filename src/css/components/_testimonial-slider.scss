@@ -2,28 +2,15 @@
   // background-color: #fff;
   &.active-testimonial{
     background-color: #F5F5F5;
-    .testimonial-slide_media{
-      &:before{
-        content: '';
-        position: absolute;
-        width: 7.5625rem;
-        height: 7.5625rem;
-        top: -4.75rem;
-        right: 0.75rem;
-        background-size: contain;
-        background-image: url('https://uploads-ssl.webflow.com/6666fa328cf6c110c9e90c20/667019dc946e67e168e0d312_bxs_quote-left.svg');
-        @media screen and (max-width: 991px){
-          width: 5.0625rem;
-          height: 5.0625rem;
-          top: -2.56rem;
-          right: 1.25rem;
-        }
-        @media screen and (max-width: 767px){
-          width: 3.1875rem;
-          height: 3.1875rem;
-          top: -1.87rem;
-          right: 0.63rem;
-        }
+    .testimonial-slide_media-quote{
+      top: -5rem;
+      z-index: 30;
+      opacity: 1;
+      @media screen and (max-width: 991px){
+        top: -4rem;
+      }
+      @media screen and (max-width: 767px){
+        top: -2rem;
       }
     }
   }
@@ -72,6 +59,39 @@
     background: #000;
   }
 }
+
+[quote-color="green"]{
+  .testimonial-slide_media-quote{
+    path{
+      fill: #04F464;
+    }
+  }
+}
+
+[quote-color="yellow"]{
+  .testimonial-slide_media-quote{
+    path{
+      fill: #EFFF32;
+    }
+  }
+}
+
+[quote-color="blue"]{
+  .testimonial-slide_media-quote{
+    path{
+      fill: #1318F5;
+    }
+  }
+}
+
+[quote-color="pink"]{
+  .testimonial-slide_media-quote{
+    path{
+      fill: #FF16BE;
+    }
+  }
+}
+
 
 
 

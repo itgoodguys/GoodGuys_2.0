@@ -36,6 +36,9 @@
                   linear-gradient(to top right, rgba(0, 184, 73, 0.60) 0%, rgba(4, 244, 100, 0.60) 50%) top right / 50% 50% no-repeat, #00DE59;
       box-shadow: 0px 12px 20px 0px rgba(36, 36, 36, 0.06);
       border: 2px solid #B7FED4;
+      .services_card-number{
+        color: #fff;
+      }
     }
   }
 
@@ -48,6 +51,9 @@
                   linear-gradient(to top right, rgba(250, 255, 192, 0.60) 0%,   rgba(238, 255, 50, 0.60) 50%) top right / 50% 50% no-repeat, #EEFF32;
       border: 2px solid #EEFF32;
       box-shadow: 0px 12px 20px 0px rgba(238, 255, 50, 0.21);
+      .services_card-number{
+        color: #fff;
+      }
     }
   }
 
@@ -56,15 +62,6 @@
     --swatch--dark-1: #fff;
     --color--text-primary: #fff;
     --color--text-secondary: #fff;
-    .services_card-heading-arrow{
-      display: none;
-    }
-    .services_card-logo-large{
-      display: block;
-    }
-    .services_card-logo-small{
-      display: block;
-    }
     .button-text{
       color: #fff;
     }
@@ -81,6 +78,13 @@
                   linear-gradient(to top right, rgba(3, 45, 107, 0.60) 0%, rgba(6, 135, 255, 0.60) 50%) top right / 50% 50% no-repeat, #146EF5;
       box-shadow: 0px 12px 20px 0px rgba(20, 110, 245, 0.20);
       border: 2px solid #EFFF32;
+      
+      .services_card-heading-text,
+      .services_card-text,
+      .services_card-heading-arrow,
+      .services_card-number{
+        color: #fff;
+      }
     }
   }
 
@@ -94,4 +98,53 @@
     --color--text-primary: #000;
     --color--text-secondary: #000;
   }
+
+  &[show="arrow"]{
+    .services_card-heading-arrow{
+      display: block;
+    }
+    .services_card-logo-large{
+      display: none;
+    }
+    .services_card-logo-small{
+      display: none;
+    }
+    .services_card-number{
+      display: none;
+    }
+  }
+
+  &[show="number"]{
+    .services_card-heading-arrow{
+      display: none;
+    }
+    .services_card-logo-large{
+      display: none;
+    }
+    .services_card-logo-small{
+      display: none;
+    }
+    .services_card-number{
+      display: block;
+    }
+  }
+
+  &[show="image"]{
+    .services_card-heading-arrow{
+      display: none;
+    }
+    .services_card-logo-large{
+      display: block;
+    }
+    .services_card-logo-small{
+      display: block;
+    }
+    .services_card-number{
+      display: none;
+    }
+    
+  }
 }
+
+
+
