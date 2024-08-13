@@ -95,9 +95,9 @@ createAnimationTrigger(28.57, (timeline) => {
     })
     .to(slide1.children, {
       opacity: 0,
-      duration: 0.5,
+      duration: 0.6,
       ease: "power2.out",
-    }, "<")
+    }, '<')
     .to(processMedia, {
       justifyContent: 'flex-start',
     }, ">")
@@ -109,7 +109,7 @@ createAnimationTrigger(28.57, (timeline) => {
       maxWidth: '33%',
       duration: 0.2,
       ease: "power2.out",
-    }, 0.6)
+    }, ">")
     .to(slide2.children, {
       opacity: 1,
       duration: 0.8,
@@ -126,17 +126,17 @@ createAnimationTrigger(28.57, (timeline) => {
   leaveBackTimeline
     .to(stickyImage, {
       maxWidth: '100%',
-      duration: 1,
+      duration: 0.6,
       ease: "power2.out",
     })
     .to(slide2.children, {
       opacity: 0,
-      duration: 0.5,
+      duration: 0.6,
       ease: "power2.out",
-    }, "<")
+    }, '<')
     .to(processMedia, {
       justifyContent: 'flex-end',
-    }, ">0.5")
+    }, ">")
     .to(slide2numbers, {
       top: '0%',
       duration: 0.2,
@@ -146,7 +146,7 @@ createAnimationTrigger(28.57, (timeline) => {
       maxWidth: '33%',
       duration: 0.4,
       ease: "power2.out",
-    }, "<")
+    }, '>')
     .to(slide1.children, {
       opacity: 1,
       duration: 0.8,
@@ -165,17 +165,17 @@ createAnimationTrigger(42.85, (timeline) => {
   timeline
     .to(stickyImage, {
       maxWidth: '100%',
-      duration: 1,
+      duration: 0.6,
       ease: "power2.out",
     })
     .to(slide2.children, {
       opacity: 0,
-      duration: 0.5,
+      duration: 0.6,
       ease: "power2.out",
-    }, "<")
+    }, '<')
     .to(processMedia, {
       justifyContent: 'flex-end',
-    }, ">0.5")
+    }, ">")
     .to(slide2numbers, {
       top: '-200%',
       ease: "power2.out",
@@ -184,7 +184,7 @@ createAnimationTrigger(42.85, (timeline) => {
       maxWidth: '33%',
       duration: 0.4,
       ease: "power2.out",
-    }, "<")
+    }, ">")
     .to(slide3.children, {
       opacity: 1,
       duration: 0.8,
@@ -201,17 +201,17 @@ createAnimationTrigger(42.85, (timeline) => {
   leaveBackTimeline
     .to(stickyImage, {
       maxWidth: '100%',
-      duration: 1,
+      duration: 0.6,
       ease: "power2.out",
     })
     .to(slide3.children, {
       opacity: 0,
-      duration: 0.5,
+      duration: 0.6,
       ease: "power2.out",
-    }, "<")
+    }, '<')
     .to(processMedia, {
       justifyContent: 'flex-start',
-    }, ">0.5")
+    }, ">")
     .to(slide3numbers, {
       top: '-0%',
       duration: 0.2,
@@ -221,7 +221,7 @@ createAnimationTrigger(42.85, (timeline) => {
       maxWidth: '33%',
       duration: 0.4,
       ease: "power2.out",
-    }, "<")
+    }, ">")
     .to(slide2.children, {
       opacity: 1,
       duration: 0.8,
@@ -240,17 +240,17 @@ createAnimationTrigger(57.14, (timeline) => {
   timeline
     .to(stickyImage, {
       maxWidth: '100%',
-      duration: 1,
+      duration: 0.6,
       ease: "power2.out",
     })
     .to(slide3.children, {
       opacity: 0,
-      duration: 0.5,
+      duration: 0.6,
       ease: "power2.out",
-    }, "<")
+    }, '<')
     .to(processMedia, {
       justifyContent: 'flex-start',
-    }, ">0.5")
+    }, ">")
     .to(slide3numbers, {
       top: '-200%',
       ease: "power2.out",
@@ -259,7 +259,7 @@ createAnimationTrigger(57.14, (timeline) => {
       maxWidth: '33%',
       duration: 0.4,
       ease: "power2.out",
-    }, "<")
+    }, ">")
     .to(slide4.children, {
       opacity: 1,
       duration: 0.8,
@@ -276,14 +276,14 @@ createAnimationTrigger(57.14, (timeline) => {
   leaveBackTimeline
     .to(stickyImage, {
       maxWidth: '100%',
-      duration: 1,
+      duration: 0.6,
       ease: "power2.out",
     })
     .to(slide4.children, {
       opacity: 0,
-      duration: 0.5,
+      duration: 0.6,
       ease: "power2.out",
-    }, "<")
+    }, '<')
     .to(processMedia, {
       justifyContent: 'flex-end',
     }, ">0.5")
@@ -296,7 +296,7 @@ createAnimationTrigger(57.14, (timeline) => {
       maxWidth: '33%',
       duration: 0.4,
       ease: "power2.out",
-    }, "<")
+    }, ">")
     .to(slide3.children, {
       opacity: 1,
       duration: 0.8,
@@ -315,17 +315,17 @@ createAnimationTrigger(71.42, (timeline) => {
   timeline
   .to(stickyImage, {
     maxWidth: '100%',
-    duration: 1,
+    duration: 0.6,
     ease: "power2.out",
   })
   .to(slide4.children, {
     opacity: 0,
-    duration: 0.5,
+    duration: 0.6,
     ease: "power2.out",
-  }, "<")
+  }, '<')
   .to(processMedia, {
     justifyContent: 'flex-end',
-  }, ">0.5")
+  }, ">")
   .to(slide4numbers, {
     top: '-200%',
     ease: "power2.out",
@@ -334,7 +334,7 @@ createAnimationTrigger(71.42, (timeline) => {
     maxWidth: '0%',
     duration: 0.4,
     ease: "power2.out",
-  }, "<")
+  }, ">")
   .to(slide5.children, {
     opacity: 1,
     duration: 0.8,
@@ -354,17 +354,17 @@ createAnimationTrigger(71.42, (timeline) => {
 leaveBackTimeline
   .to(stickyImage, {
     maxWidth: '100%',
-    duration: 1,
+    duration: 0.6,
     ease: "power2.out",
   })
   .to(slide5.children, {
     opacity: 0,
-    duration: 0.5,
+    duration: 0.6,
     ease: "power2.out",
-  }, "<")
+  }, '<')
   .to(processMedia, {
     justifyContent: 'flex-start',
-  }, ">0.5")
+  }, ">")
   .add(() => {
     document.querySelector('.page-wrapper').classList.remove('dark-background');
   }, "<")

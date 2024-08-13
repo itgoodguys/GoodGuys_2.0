@@ -42,7 +42,7 @@ function animateHighlight(highlight) {
   gsap.fromTo(highlight, {
     '--after-width': '0%',
   }, {
-    '--after-width': '101%',
+    '--after-width': '102%',
     duration: 0.5,
     ease: 'power1.out',
     delay: 1,
