@@ -26,7 +26,7 @@ let lastAnimation = Promise.resolve();
 
 // Function to disable scroll
 function disableScroll() {
-    document.body.style.overflow = 'hidden'; 
+    document.body.style.overflow = 'clip'; 
     document.body.style.height = '100%';
 }
 
@@ -85,7 +85,7 @@ function createAnimationTrigger(percentage, animationCallback, leaveBackCallback
   });
 }
 
-// First animation (second trigger) - flex-start and then flex-end
+// First animation is the second trigger
 createAnimationTrigger(28.57, (timeline) => {
   timeline
     .to(stickyImage, {

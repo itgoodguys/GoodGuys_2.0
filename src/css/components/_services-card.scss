@@ -42,6 +42,30 @@
     }
   }
 
+    /* Background Green */
+    &[background-color="pink"]{
+      &:hover{
+        .button-text{
+          color: #fff;
+        }
+        .button-wrapper{
+          border-top: 1px solid #fff;
+        }
+        .button-icon path{
+          stroke: #fff;
+        }
+        background: linear-gradient(to bottom right, rgba(102, 0, 74, 0.60) 0%, rgba(255, 22, 190, 0.60) 50%) bottom right / 50% 50% no-repeat, 
+                    linear-gradient(to bottom left, rgba(102, 0, 74, 0.60) 0%, rgba(255, 22, 190, 0.60) 50%) bottom left / 50% 50% no-repeat, 
+                    linear-gradient(to top left, rgba(102, 0, 74, 0.60) 0%, rgba(255, 22, 190, 0.60) 50%) top left / 50% 50% no-repeat, 
+                    linear-gradient(to top right, rgba(102, 0, 74, 0.60) 0%, rgba(255, 22, 190, 0.60) 50%) top right / 50% 50% no-repeat, #FF16BE;
+        box-shadow: 0px 12px 20px 0px rgba(255, 22, 190, 0.21);
+        border: 2px solid #FF16BE;
+        .services_card-number{
+          color: #fff;
+        }
+      }
+    }
+
   /* Background Yellow */
   &[background-color="yellow"]{
     &:hover{
