@@ -1,0 +1,50 @@
+// .steps_line-2-path {
+//   stroke-dasharray: 500; /* Length of the path, adjust as needed */
+//   stroke-dashoffset: 500; /* Initially hide the stroke */
+// }
+
+// .steps_line-1-path {
+//   stroke-dasharray: 500; /* Length of the path, adjust as needed */
+//   stroke-dashoffset: 500; /* Initially hide the stroke */
+// }
+
+.section_steps{
+  --step-color: #000;
+}
+
+[steps-color="pink"]{
+  --step-color: #FF16BE;
+}
+
+.step_line{
+  stroke: var(--step-color);
+}
+
+.step{
+  &_number{
+    transition: all 0.2s ease;
+    &-icon{
+      max-width: 0px;
+      transition: all 0.2s ease;
+      visibility: hidden;
+      opacity: 0;
+    }
+  }
+
+  &.active-step{
+    --color--text-primary: var(--step-color);
+    --color--text-secondary: var(--step-color);
+    .step_number{
+      gap: 0.5rem;
+      .step_number-icon{
+        max-width: 100px;
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+
+    .step-title{
+      color: var(--step-color);
+    }
+  }
+}

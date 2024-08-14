@@ -21,7 +21,7 @@ module.exports = {
     migrationsSingle: { import: './src/js/migrationsSingle.js' },
     portfolioArchive: { import: './src/js/portfolioArchive.js' },
     portfolioSingle: { import: './src/js/portfolioSingle.js' },
-    ppcAdvertising: { import: './src/js/ppcAdvertising.js' },
+    googleAds: { import: './src/js/googleAds.js' },
     webflowDevelopment: { import: './src/js/webflowDevelopment.js' },
     webflowSeo: { import: './src/js/webflowSeo.js' },
   }, 
