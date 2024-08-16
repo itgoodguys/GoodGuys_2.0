@@ -12,6 +12,7 @@ import './components/servicesCard.js'
 import './components/discovery.js'
 import './components/faq.js'
 import './components/splitImage.js'
+import './components/adsSlider.js'
 
 // animations
 import './animations/wordBackgroundHighlight.js'
@@ -20,6 +21,5 @@ import './animations/scrubOpacity.js'
 import './animations/lenisSmoothScroll.js'
 import './animations/animateFromBottom.js'
 
-console.log('aaa')
 
 

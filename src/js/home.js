@@ -16,5 +16,5 @@ import './animations/wordBackgroundHighlight.js'
 import './animations/scrubOpacity.js'
 import './animations/heroImageFlip.js'
 import './animations/lenisSmoothScroll.js'
-import './animations/homeHeroText.js'
+import './animations/fadeTextFromLeft.js'
 
