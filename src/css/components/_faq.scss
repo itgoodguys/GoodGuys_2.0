@@ -62,6 +62,19 @@
 }
 
 /**************
+  yellow
+**************/
+[faq-color="yellow"]{
+  --color--faq: #EFFF32;
+  .faq_accordion-block{
+    border-bottom: 1px solid #EFFF32;
+  }
+  .faq_accordion-answer-inner-line{
+    background-color: #EFFF32;
+  }
+}
+
+/**************
   Blue
 **************/
 [faq-color="blue"]{

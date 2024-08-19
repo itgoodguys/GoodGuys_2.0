@@ -11,7 +11,7 @@ import './components/breadcrumbs.js'
 import './components/servicesCard.js'
 import './components/discovery.js'
 import './components/faq.js'
-import './components/splitImage.js'
+import './components/imageParallax.js'
 import './components/adsSlider.js'
 
 // animations

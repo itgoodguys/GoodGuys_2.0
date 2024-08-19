@@ -16,9 +16,9 @@ const slideNumbersTracks = document.querySelectorAll('.process_slide-numbers-tra
 const scrollWidth = horizontalScroll.scrollWidth;
 const viewportWidth = process.offsetWidth;
 
-console.log('scrollWidth', scrollWidth);
-console.log('viewportWidth', viewportWidth);
-console.log('panels.length', panels.length);
+// console.log('scrollWidth', scrollWidth);
+// console.log('viewportWidth', viewportWidth);
+// console.log('panels.length', panels.length);
 
 // Function to update classes based on the active slide
 function updateActiveSlideClasses(slideIndex) {
@@ -40,7 +40,7 @@ gsap.to(horizontalScroll, {
     pin: true,
     anticipatePin: 1,
     snap: {
-      snapTo: 1 / (panels.length - 1), // 0, 0.20, 0.5, 0.75, 1 based on number of panels
+      snapTo: 1 / (panels.length - 1), // 0, 0.20, 0.4, 0.6, 0.8 based on number of panels
       duration: { min: 0.2, max: 0.6 }, // Duration range for the snapping
       ease: "power1.inOut" // Easing function for snapping
     },
