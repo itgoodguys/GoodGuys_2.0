@@ -31,10 +31,17 @@ function createTimeline(zones, target) {
       endTrigger: zones[zones.length - 1],
       end: "top 30%",
       scrub: true,
+      //self.direction === 1: This condition checks if the user is scrolling downwards
+      //self.direction === -1: This checks if the user is scrolling upwards
+      // self.progress > (1 / zones.length): This checks whether the progress of the scroll is greater than a certain threshold.
+      // The progress is a value between 0 and 1 representing how far the scroll has advanced between the start and end points. 
+      // The threshold (1 / zones.length) is calculated based on the number of zones, 
+      // ensuring the clip-path is removed after scrolling past a specific point.
+      // we added the  + 0.1 because iOS has some timing issues 
       onUpdate: (self) => {
-        if (self.direction === 1 && self.progress > (1 / zones.length)) {
+        if (self.direction === 1 && self.progress > (1 / zones.length) + 0.1) {
           target.style.clipPath = 'none';
-        } else if (self.direction === -1 && self.progress <= (1 / zones.length)) {
+        } else if (self.direction === -1 && self.progress <= (1 / zones.length) + 0.1) {
           target.style.clipPath = originalClipPath;
         }
       },

@@ -21,7 +21,7 @@ function initializeAnimations() {
 
     // If the element has the split-lines='true' attribute, split the text into lines
     if (element.hasAttribute('split-lines')) {
-      const splitTypeInstance = new SplitType(element, { types: 'lines' });
+      const splitTypeInstance = new SplitType(element, { types: 'lines', tagName: 'span' });
       targets = splitTypeInstance.lines;
     }
 
