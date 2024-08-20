@@ -39,9 +39,9 @@ function createTimeline(zones, target) {
       // ensuring the clip-path is removed after scrolling past a specific point.
       // we added the  + 0.1 because iOS has some timing issues 
       onUpdate: (self) => {
-        if (self.direction === 1 && self.progress > (1 / zones.length) + 0.1) {
+        if (self.direction === 1 && self.progress > (1 / zones.length) + 0.2) {
           target.style.clipPath = 'none';
-        } else if (self.direction === -1 && self.progress <= (1 / zones.length) + 0.1) {
+        } else if (self.direction === -1 && self.progress <= (1 / zones.length) + 0.2) {
           target.style.clipPath = originalClipPath;
         }
       },

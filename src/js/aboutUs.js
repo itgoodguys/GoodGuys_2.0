@@ -25,16 +25,26 @@ const navbarLogo = document.querySelector('.navbar_logo-svg');
 // Calculate the target position and scale of the stickyElement
 const navbarLogoRect = navbarLogo.getBoundingClientRect();
 
+// Define an array of 7 positions with x and y coordinates
+const positions = [
+  { x: -100, y: -50 },  // Position for the first letter
+  { x: -50, y: -150 },    // Position for the second letter
+  { x: 0, y: -100 },  // Position for the third letter
+  { x: 250, y: -120 },  // Position for the fourth letter
+  { x: 100, y: 50 },  // Position for the fifth letter
+  { x: 20, y: 200 },  // Position for the sixth letter
+  { x: 100, y: 100 }   // Position for the seventh letter
+];
+
 letters.forEach((letter, index) => {
-   // Generate random positions for X and Y within the specified ranges
-   const randomY = gsap.utils.random(-100, 100, 1) * window.innerHeight / 100;
-   const randomX = gsap.utils.random(-100, 100, 1) * window.innerWidth / 100;
+  // Get the corresponding position from the array
+  const { x, y } = positions[index % positions.length]; // Use modulo to prevent out-of-bounds access
 
   gsap.fromTo(
     letter,
     {
-      y: randomY,       // Start from a random Y position
-      x: randomX,       // Start from a random X position
+      y: y * window.innerHeight / 100, // Start from the specified Y position
+      x: x * window.innerWidth / 100,  // Start from the specified X position
       scale: 6,         // Start with each letter scaled up
       opacity: 0        // Start with each letter invisible
     },
