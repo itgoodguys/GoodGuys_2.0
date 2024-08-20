@@ -11,7 +11,6 @@ import './components/testimonialSlider.js'
 import './components/discovery.js'
 import './components/faq.js'
 import './components/servicesCard.js'
-import './components/imageParallax.js'
 import './components/steps.js'
 
 // animations
@@ -20,4 +19,5 @@ import './animations/fadeTextFromLeft.js'
 import './animations/scrubOpacity.js'
 import './animations/lenisSmoothScroll.js'
 import './animations/animateFromBottom.js'
+import './animations/imageParallax.js'
 

@@ -37,7 +37,7 @@ function createTimeline(zones, target) {
       // The progress is a value between 0 and 1 representing how far the scroll has advanced between the start and end points. 
       // The threshold (1 / zones.length) is calculated based on the number of zones, 
       // ensuring the clip-path is removed after scrolling past a specific point.
-      // we added the  + 0.1 because iOS has some timing issues 
+      // we added the  + 0.2 because iOS has some timing issues 
       onUpdate: (self) => {
         if (self.direction === 1 && self.progress > (1 / zones.length) + 0.2) {
           target.style.clipPath = 'none';

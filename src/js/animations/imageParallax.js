@@ -1,4 +1,4 @@
-import '../../css/components/_image-parallax.scss';
+import '../../css/animations/_image-parallax.scss';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import gsap from 'gsap';

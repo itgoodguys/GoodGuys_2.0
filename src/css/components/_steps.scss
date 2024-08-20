@@ -32,8 +32,9 @@
   }
 
   &.active-step{
-    --color--text-primary: var(--step-color);
-    --color--text-secondary: var(--step-color);
+    .step_number-text{
+      color: var(--step-color);
+    }
     .step_number{
       gap: 0.5rem;
       .step_number-icon{
@@ -41,10 +42,6 @@
         visibility: visible;
         opacity: 1;
       }
-    }
-
-    .step-title{
-      color: var(--step-color);
     }
   }
 }

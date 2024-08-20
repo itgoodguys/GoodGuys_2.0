@@ -10,7 +10,7 @@ import './components/breadcrumbs.js'
 import './components/servicesCard.js'
 import './components/discovery.js'
 import './components/faq.js'
-import './components/imageParallax.js'
+
 
 
 // animations
@@ -19,3 +19,4 @@ import './animations/animateFromBottom.js'
 import './animations/wordBackgroundHighlight.js'
 import './animations/fadeTextFromLeft.js'
 import './animations/scrubOpacity.js'
+import './animations/imageParallax.js'
