@@ -12,6 +12,8 @@ import './animations/lenisSmoothScroll.js'
 import './animations/fadeTextFromBottom.js'
 import './animations/imageParallax.js'
 import './animations/animateFromBottom.js'
+import './animations/fadeTextFromLeft.js'
+import './animations/fadeTextFromRight.js'
 
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -27,6 +29,7 @@ hero logo animation
 // Select all SVGs representing the letters
 const letters = document.querySelectorAll('.logo-letter');
 const stickyElement = document.querySelector('.about-hero_sticky');
+const introText = document.querySelector('.about-hero_sticky-intro');
 
 
 // Define an array of 7 positions with x and y coordinates
@@ -67,6 +70,21 @@ letters.forEach((letter, index) => {
       }
     }
   );
+
+  gsap.fromTo(introText, 
+    {
+      opacity: 1  
+    },
+    {
+    opacity: 0, 
+    ease: "power2.inOut", // Easing function (optional)
+    scrollTrigger: {
+      trigger: '.about-hero', // Trigger the animation when stickyElement is in view
+      start: 'center 90%',      
+      end: 'center 80%',        
+      scrub: 1,   
+    }
+  });
 
   gsap.fromTo(stickyElement, 
     {
@@ -160,3 +178,144 @@ const init = () => {
 };
 
 init();
+
+
+/************************************
+        Line animations
+**************************************/
+// Function to initialize the animations
+function initAnimations() {
+  // Select all SVG paths with the class name 'steps_line'
+  const paths = document.querySelectorAll('.about_line > :first-child');
+
+  // Check if any elements are found
+  if (paths.length > 0) {
+    // Loop through each path and create the animation
+    paths.forEach(path => {
+      // we need to check if the element parent is set to display none
+      // if it is, we will not calculate getTotalLength() for that line because it will throw an error
+      let pathParent = path.parentElement;
+      let calculate = true;
+      if (pathParent) {
+        const parentStyle = window.getComputedStyle(pathParent);
+        if (parentStyle.display === 'none') {
+          calculate = false; // A parent has display: none
+        }
+      }
+
+      let pathLength;
+      if (calculate) {
+        pathLength = path.getTotalLength();
+      } else {
+        return; // Skip if the parent has display: none
+      }
+
+      // Determine if the path should fill from right to left by checking a custom attribute or class
+      const fillDirection = path.classList.contains('fill-reverse') ? -1 : 1;
+
+      gsap.fromTo(path, 
+        {
+          strokeDasharray: pathLength, // Set the strokeDasharray to the length of the path
+          strokeDashoffset: fillDirection * pathLength // Start with the stroke hidden, reverse for right to left
+        },
+        {
+          strokeDashoffset: 0, // Fill the stroke by reducing dashoffset to 0
+          scrollTrigger: {
+            trigger: path, // Trigger the animation when the path is in view
+            start: "top 60%", // Start the animation when the top of the SVG is 60% from the top of the viewport
+            end: "top 20%", // End the animation when the top of the SVG is 20% from the top
+            scrub: true, // Smoothly animate in sync with the scroll position
+          }
+        }
+      );
+    });
+  }
+}
+
+// Initialize animations on page load
+initAnimations();
+
+// recalculate the elements for animation when screen resize
+let resizeTimeout;
+window.addEventListener('resize', () => {
+  // Clear the existing timeout
+  clearTimeout(resizeTimeout);
+
+  // Set a new timeout to reinitialize animations after 1 second
+  resizeTimeout = setTimeout(() => {
+    // Clear existing ScrollTriggers
+    ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+
+    // Reinitialize animations
+    initAnimations();
+  }, 1000); // 1000 milliseconds = 1 second
+});
+
+
+/************************************
+      floating images
+**************************************/ 
+
+// GSAP Animation for scaling and opacity when the element is scrolled into view
+gsap.fromTo(".strength_media", 
+  { scale: 0, opacity: 0 }, 
+  { 
+    scale: 1, 
+    opacity: 1, 
+    duration: 1.5, 
+    ease: "power2.out",
+    onComplete: floatElement,
+    scrollTrigger: {
+      trigger: ".strength_media",
+      start: "top 80%",  // Adjust this value based on when you want the animation to trigger
+      once: true,        // Ensure the animation only happens once
+    }
+  }
+);
+
+
+function floatElement() {
+  const radius = 50;
+  const numPoints = 5; // Number of coordinates to move through
+  const minDuration = 5; // Minimum duration in seconds
+  const maxDuration = 7; // Maximum duration in seconds
+
+  // Get all elements with the class 'strength_media'
+  const elements = document.querySelectorAll(".strength_media");
+
+  elements.forEach(element => {
+    // Generate random points for each element
+    const points = Array.from({ length: numPoints }, () => {
+      return {
+        x: Math.random() * 2 * radius - radius, // Random x between -radius and radius
+        y: Math.random() * 2 * radius - radius  // Random y between -radius and radius
+      };
+    });
+
+     // Generate a random duration for this element
+    const duration = Math.random() * (maxDuration - minDuration) + minDuration;
+
+    // Create a GSAP timeline for the floating animation
+    const tl = gsap.timeline({ repeat: -1, yoyo: true });
+
+    // Add animations for each point
+    points.forEach((point, index) => {
+      tl.to(element, {
+        x: point.x,
+        y: point.y,
+        duration: duration,
+        ease: "power1.inOut",
+        delay: index === 0 ? 0 : 1 // Ensure there is no delay on the first point
+      });
+    });
+
+    // To ensure the last point animates back to the starting position before yoyo
+    tl.to(element, {
+      x: points[0].x,
+      y: points[0].y,
+      duration: duration, 
+      ease: "power1.inOut"
+    });
+  });
+}
+

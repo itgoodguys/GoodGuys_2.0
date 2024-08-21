@@ -24,6 +24,7 @@ module.exports = {
     googleAds: { import: './src/js/googleAds.js' },
     webflowDevelopment: { import: './src/js/webflowDevelopment.js' },
     webflowSeo: { import: './src/js/webflowSeo.js' },
+    author: { import: './src/js/author.js' },
   }, 
   output: {
     clean: true,
