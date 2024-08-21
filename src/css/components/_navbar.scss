@@ -146,15 +146,13 @@
 }
 
 .nav-drop_content-media-image { 
-  // opacity: 0;
+  opacity: 0;
   transition: all 1s ease;
-  scale: 1.1;
   z-index: 10;
 }
 
 .nav-drop_content-media-image.show {
-  // opacity: 1;
-  scale: 1;
+  opacity: 1;
   z-index: 20;
 }
 
@@ -377,7 +375,7 @@
   .nav-drop_content-media{
     .nav-drop_content-media-image {
       background-color: var(--swatch--light-1);
-      scale: 1;
+
     }
   }
 }
