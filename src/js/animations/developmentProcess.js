@@ -52,14 +52,14 @@ gsap.to(horizontalScroll, {
       updateActiveSlideClasses(slideIndex);
 
       // Update page-wrapper class for the last slide
-      const lastPanelIndex = panels.length - 1;
-      const lastPanelStart = lastPanelIndex / panels.length;
+      // const lastPanelIndex = panels.length - 1;
+      // const lastPanelStart = lastPanelIndex / panels.length;
       
-      if (currentProgress >= lastPanelStart) {
-        pageWrapper.classList.add('dark-background');
-      } else {
-        pageWrapper.classList.remove('dark-background');
-      }
+      // if (currentProgress >= lastPanelStart) {
+      //   pageWrapper.classList.add('dark-background');
+      // } else {
+      //   pageWrapper.classList.remove('dark-background');
+      // }
     }
   }
 });

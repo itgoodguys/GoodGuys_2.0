@@ -129,6 +129,12 @@
     --color--text-secondary: #000;
   }
 
+  &[dark-page="true"]{
+    --swatch--dark-1: #fff;
+    --color--text-primary: #fff;
+    --color--text-secondary: #fff;
+  }
+
   &[show="arrow"]{
     .services_card-heading-arrow{
       display: block;

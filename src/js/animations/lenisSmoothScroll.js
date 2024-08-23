@@ -39,3 +39,25 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 export { lenis };
 
 
+
+// scroll is not working on other elements, this is the fix
+const navInnerLinks = document.querySelectorAll('[data-lenis-prevent]');
+
+// Loop through each element and add the event listener
+navInnerLinks.forEach(element => {
+  element.addEventListener('wheel', (event) => {
+    event.stopPropagation(); // Stop the event from propagating
+  });
+
+  element.addEventListener('mousedown', (event) => {
+    event.stopPropagation(); // Stop the event from propagating for mousedown as well
+  });
+
+  element.addEventListener('mousemove', (event) => {
+    event.stopPropagation(); // Stop the event from propagating for mousemove
+  });
+
+  element.style.touchAction = 'auto'; // Ensure touch-action is set to auto for touch devices
+});
+
+

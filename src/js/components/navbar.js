@@ -293,16 +293,6 @@ window.addEventListener('scroll', function() {
 });
 
 
-// scroll on .nav-drop_content-media_sublinks element was not working
-// this is the fix
-// Select all elements with both class names
-const navInnerLinks = document.querySelectorAll('.nav-drop_content-media_sublinks, .nav-drop_content-media_sublinks-mobile');
 
-// Loop through each element and add the event listener
-navInnerLinks.forEach(element => {
-  element.addEventListener('wheel', (event) => {
-    event.stopPropagation(); // Stop the event from propagating
-  });
-});
 
 
