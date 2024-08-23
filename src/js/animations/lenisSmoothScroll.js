@@ -34,4 +34,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   })
 })
 
+
+
 export { lenis };
+
+

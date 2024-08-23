@@ -18,3 +18,5 @@ html.lenis {
 .lenis.lenis-scrolling iframe {
   pointer-events: none;
 }
+
+[data-lenis-prevent] { overscroll-behavior: contain; }

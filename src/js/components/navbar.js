@@ -1,4 +1,5 @@
 import '../../css/components/_navbar.scss';
+import { lenis } from '../animations/lenisSmoothScroll.js';
 
 // Code for all menu dropdown links and the media content on the right side of each dropdown content
 // we check the index of the nav-dropdown-link that is hovered
@@ -78,24 +79,24 @@ window.addEventListener('resize', applyEventListeners);
 // if the list has a scroll bar
 // we check the fixed height of the element and compare with the height of its children
 ///////////////////////////////////////////////
-function checkOverflow() {
-  const sublinksWrapper = document.querySelectorAll('.nav-drop_content-media_sublinks');
+// function checkOverflow() {
+//   const sublinksWrapper = document.querySelectorAll('.nav-drop_content-media_sublinks');
 
-  sublinksWrapper.forEach(sublinks => {
-    const overlay = sublinks.previousElementSibling;
+//   sublinksWrapper.forEach(sublinks => {
+//     const overlay = sublinks.previousElementSibling;
 
-    if (sublinks.scrollHeight > sublinks.clientHeight) {
-      overlay.style.display = 'block';
-    } else {
-      overlay.style.display = 'none';
-    }
-  });
-}
+//     if (sublinks.scrollHeight > sublinks.clientHeight) {
+//       overlay.style.display = 'block';
+//     } else {
+//       overlay.style.display = 'none';
+//     }
+//   });
+// }
 
-// Run the overflow check on page load
-checkOverflow()
-// on screen reseize
-window.addEventListener('resize', checkOverflow);
+// // Run the overflow check on page load
+// checkOverflow()
+// // on screen reseize
+// window.addEventListener('resize', checkOverflow);
 
 
 ///////////////////////////////////////////////
@@ -106,6 +107,11 @@ const navbar = document.querySelector('.navbar');
 
 hamburgerBtn.addEventListener('click', function () {
   navbar.classList.toggle('menu-open');
+  if (navbar.classList.contains('menu-open')) {
+    disablePageScroll();
+  } else {
+    enablePageScroll();
+  }
 });
 
 
@@ -178,12 +184,27 @@ function applyNavDropWrapperEventListeners() {
   }
 }
 
+function disablePageScroll(){
+  lenis.stop();
+  document.body.style.overflow = 'hidden';
+  document.body.style.touchAction= "none";
+  document.body.style.position= "fixed";
+}
+
+function enablePageScroll(){
+  lenis.start();
+  document.body.style.overflow = 'auto';
+  document.body.style.touchAction= "auto";
+  document.body.style.position= "static";
+}
+
 // adding dim class for blur effect on dropdown links
 // when a dropdown is open all siblings get blured
 function navDropWrapperMouseEnter() {
   navDropWrapper.forEach(sibling => {
     if (sibling !== this) {
       sibling.classList.add('dim');
+      disablePageScroll()
     }
   });
 }
@@ -191,6 +212,7 @@ function navDropWrapperMouseEnter() {
 function navDropWrapperMouseLeave() {
   navDropWrapper.forEach(sibling => {
     sibling.classList.remove('dim');
+    enablePageScroll()
   });
 }
 
@@ -269,3 +291,18 @@ window.addEventListener('scroll', function() {
   
   lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
 });
+
+
+// scroll on .nav-drop_content-media_sublinks element was not working
+// this is the fix
+// Select all elements with both class names
+const navInnerLinks = document.querySelectorAll('.nav-drop_content-media_sublinks, .nav-drop_content-media_sublinks-mobile');
+
+// Loop through each element and add the event listener
+navInnerLinks.forEach(element => {
+  element.addEventListener('wheel', (event) => {
+    event.stopPropagation(); // Stop the event from propagating
+  });
+});
+
+
