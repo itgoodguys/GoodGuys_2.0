@@ -5,7 +5,6 @@ import '../css/components/_cta.scss'
 
 // JavaScript import
 // components
-import './components/breadcrumbs.js'
 
 // animations
 import './animations/lenisSmoothScroll.js'

@@ -102,10 +102,7 @@
       stroke: #fff;
     }
     &:hover{
-      background: linear-gradient(to bottom right, rgba(3, 45, 107, 0.60) 0%, rgba(6, 135, 255, 0.60) 50%) bottom right / 50% 50% no-repeat, 
-                  linear-gradient(to bottom left, rgba(3, 45, 107, 0.60) 0%, rgba(6, 135, 255, 0.60) 50%) bottom left / 50% 50% no-repeat, 
-                  linear-gradient(to top left, rgba(3, 45, 107, 0.60) 0%, rgba(6, 135, 255, 0.60) 50%) top left / 50% 50% no-repeat, 
-                  linear-gradient(to top right, rgba(3, 45, 107, 0.60) 0%, rgba(6, 135, 255, 0.60) 50%) top right / 50% 50% no-repeat, #146EF5;
+      background: radial-gradient(94.64% 108.53% at 52.36% 100%, rgba(3, 45, 107, 0.60) 0%, rgba(6, 135, 255, 0.60) 100%), #146EF5;
       box-shadow: 0px 12px 20px 0px rgba(20, 110, 245, 0.20);
       border: 2px solid #EFFF32;
       

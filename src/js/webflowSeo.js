@@ -6,7 +6,6 @@ import '../css/components/_cta.scss'
 
 // JavaScript import
 // components
-import './components/breadcrumbs.js'
 import './components/testimonialSlider.js'
 import './components/discovery.js'
 import './components/faq.js'

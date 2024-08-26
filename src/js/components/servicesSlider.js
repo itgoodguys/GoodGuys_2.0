@@ -31,7 +31,7 @@ function initSwiper() {
           draggable: true,
           dragSize: 'auto',
           snapOnRelease: true
-        }
+        },
       });
       // console.log('Swiper initialized');
     }
