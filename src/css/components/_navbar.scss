@@ -478,5 +478,21 @@
       background-color: #fff;
     }
   }
+
+  .locale-list{
+    background-color: #4D4D4D;
+    .locale-link{
+      color: #B7B7B7;
+      &.w--current{
+        color: #fff;
+        background-color: #FF16BE;
+      }  
+    }
+  }
+
+}
+
+.locale-link:first-of-type.w--current{
+  border-radius: 1.25rem 0rem 1rem 1.25rem;
 }
 

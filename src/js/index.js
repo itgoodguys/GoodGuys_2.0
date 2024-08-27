@@ -11,10 +11,10 @@ import './components/customCursor.js'
 // Disable submitting form fields during development
 // remove this code when site goes live
 ////////////////////////////////////////
-$('form').submit(function() {
-	alert('Form submissions have been disabled during development.');
-	return false;
-});
+// $('form').submit(function() {
+// 	alert('Form submissions have been disabled during development.');
+// 	return false;
+// });
 
 /////////////////////////////////////////
 // Adding titles to images
