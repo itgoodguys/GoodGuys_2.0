@@ -12,6 +12,7 @@ if (textBottomToTop.length > 0) {
   textBottomToTop.forEach(element => {
     let targets = element;
 
+
     // Check if the element has the data attribute 'animate-children-elements'
     if (element.hasAttribute('animate-children-elements')) {
       targets =  Array.from(element.children); // Convert HTMLCollection to an array
@@ -28,7 +29,7 @@ if (textBottomToTop.length > 0) {
       stagger: targets.length > 1 ? 0.2 : 0, // Apply stagger only if it's a collection of elements
       scrollTrigger: {
         trigger: element, // Use the element as the trigger
-        start: "top 80%", // Start the animation when the top of the element is 80% from the top of the viewport
+        start: "top 90%", // Start the animation when the top of the element is 80% from the top of the viewport
         toggleActions: "play none none none", // Play only when scrolling down, do nothing on reverse
       }
     });

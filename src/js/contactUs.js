@@ -88,7 +88,7 @@ updateSubmitButton();
 
 
 
-////
+// we are adding the value of the select field in the hidden input field
 document.querySelector('.custom-select-trigger').addEventListener('click', function() {
   document.querySelector('.custom-options').classList.toggle('show');
   document.querySelector('.custom-select-trigger-icon').classList.toggle('dropdown-open');
@@ -126,3 +126,18 @@ form.addEventListener('submit', function (e) {
         lottieAnimationRight.play(); // Play the Lottie animation
     });
 });
+
+
+// Select the hidden language input element
+const languageInput = document.querySelector('.contact-hidden-language-input');
+
+if (languageInput) {
+  // Check if the URL contains '/en/'
+  if (window.location.pathname.includes('/en/')) {
+    // Set the value to "english" if '/en/' is in the URL
+    languageInput.value = "english";
+  } else {
+    // Set the value to "swedish" if '/en/' is not in the URL
+    languageInput.value = "swedish";
+  }
+}

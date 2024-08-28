@@ -20,6 +20,11 @@
       background-color: #ff1cbe;
     }
   }
+  &.highlight-green{
+    &:after{
+      background-color: #04f464;
+    }
+  }
 
 }
 
