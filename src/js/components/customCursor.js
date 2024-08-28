@@ -43,6 +43,10 @@ $('[custom-cursor]').on('mouseenter', function(){
     let cursorText = $(this).attr('cursor-text');
 
     $('.cursor_dot').css('background-color', cursorColor);
+    // Check if the URL contains '/en/'
+    if (window.location.href.indexOf('/en/') !== -1 && cursorText.trim().toLowerCase() === "se mer") {
+        cursorText = "view";
+    }
     $('.cursor-text').text(cursorText);
 
     $('.cursor_dot').addClass('custom-cursor');

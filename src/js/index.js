@@ -6,6 +6,7 @@ import '../css/main.scss'
 import './components/breadcrumbs.js'
 import './components/navbar.js'
 import './components/customCursor.js'
+import './animations/animateFromBottom.js'
 
 /////////////////////////////////////////
 // Disable submitting form fields during development

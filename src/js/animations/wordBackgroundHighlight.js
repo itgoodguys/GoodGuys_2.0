@@ -27,16 +27,16 @@ function initializeHighlightAnimation() {
 // Function to animate the highlight span and its :after pseudo-element
 function animateHighlight(highlight) {
   // Animate the span element
-  gsap.fromTo(highlight, {
-    scale: 0.5,
-    opacity: 0
-  }, {
-    scale: 1,
-    opacity: 1,
-    duration: 0.4,
-    ease: 'power1.out',
-    delay: 1
-  });
+  // gsap.fromTo(highlight, {
+  //   scale: 0.5,
+  //   opacity: 0
+  // }, {
+  //   scale: 1,
+  //   opacity: 1,
+  //   duration: 0.4,
+  //   ease: 'power1.out',
+  //   delay: 1
+  // });
 
   // Animate the :after pseudo-element
   gsap.fromTo(highlight, {
@@ -45,7 +45,7 @@ function animateHighlight(highlight) {
     '--after-width': '102%',
     duration: 0.5,
     ease: 'power1.out',
-    delay: 1,
+    // delay: 1,
     onUpdate: function () {
       highlight.style.setProperty('--after-width', this.targets()[0].style.getPropertyValue('--after-width'));
     }

@@ -110,3 +110,19 @@ document.addEventListener('click', function(event) {
       document.querySelector('.custom-select-trigger-icon').classList.remove('dropdown-open');
   }
 });
+
+
+
+const form = document.querySelector('.contact-form'); // Select the form element
+const lottieAnimationLeft = document.querySelector('.contact-form_success-confeti-left');
+const lottieAnimationRight = document.querySelector('.contact-form_success-confeti-right'); 
+
+form.addEventListener('submit', function (e) {
+    // e.preventDefault(); // Prevent the form from submitting immediately
+
+    form.addEventListener('wfFormDone', function () {
+        // The form has been successfully submitted and success message is displayed
+        lottieAnimationLeft.play(); // Play the Lottie animation
+        lottieAnimationRight.play(); // Play the Lottie animation
+    });
+});
