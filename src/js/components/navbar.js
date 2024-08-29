@@ -272,25 +272,34 @@ linkWrappers.forEach(wrapper => {
 // menu peekaboo
 ///////////////////////////////////////////////
 var lastScrollTop = 0;
+var scrollThreshold = 10; // Set a threshold for scroll detection
+
 window.addEventListener('scroll', function() {
   var currentScroll = window.pageYOffset || document.documentElement.scrollTop;
   var navbar = document.querySelector('.navbar');
 
-  
-  if (currentScroll > 100 && currentScroll > lastScrollTop) {
-    navbar.classList.add('menu-hidden');
-  } else if (currentScroll < lastScrollTop) {
-    navbar.classList.remove('menu-hidden');
+  if (Math.abs(currentScroll - lastScrollTop) > scrollThreshold) { // Only proceed if the scroll is significant
+    if (currentScroll > 100 && currentScroll > lastScrollTop) {
+      if (!navbar.classList.contains('menu-hidden')) {
+        navbar.classList.add('menu-hidden');
+      }
+    } else if (currentScroll < lastScrollTop) {
+      if (navbar.classList.contains('menu-hidden')) {
+        navbar.classList.remove('menu-hidden');
+      }
+    }
   }
-  
+
+  // Adding background class when scrolled down
   if (currentScroll > 0) {
     navbar.classList.add('menu-background');
   } else {
     navbar.classList.remove('menu-background');
   }
-  
+
   lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
 });
+
 
 
 

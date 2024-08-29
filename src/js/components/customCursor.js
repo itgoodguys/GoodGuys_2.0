@@ -3,11 +3,11 @@ import '../../css/components/_custom-cursor.scss';
 /************************************
 when hovering over any links we add / remove is larger class
 ************************************/
-$('a, .faq_accordion-question, .contact-form-submit-button, .footer_submit-button, .testimonials-card').on('mouseenter', function(){
+$('a, .faq_accordion-question, .contact-form-submit-button, .footer_submit-button, .testimonials-card, w-checkbox-input, custom-select-wrapper').on('mouseenter', function(){
     $('.cursor_dot').addClass('is-larger');
 });
 
-$('a, .faq_accordion-question, .contact-form-submit-button, .footer_submit-button, .testimonials-card').on('mouseleave', function(){
+$('a, .faq_accordion-question, .contact-form-submit-button, .footer_submit-button, .testimonials-card, w-checkbox-input , custom-select-wrapper').on('mouseleave', function(){
     $('.cursor_dot').removeClass('is-larger');
 });
 

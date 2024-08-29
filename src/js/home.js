@@ -15,6 +15,5 @@ import './components/featuredWorkSlider.js'
 import './animations/wordBackgroundHighlight.js'
 import './animations/scrubOpacity.js'
 import './animations/heroImageFlip.js'
-import './animations/lenisSmoothScroll.js'
 
 

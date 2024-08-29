@@ -30,12 +30,9 @@
       --swatch--dark-1: #000;
       --color--text-primary: #000;
       --color--text-secondary: #000;
-      background: linear-gradient(to bottom right, rgba(0, 184, 73, 0.60) 0%, rgba(4, 244, 100, 0.60) 50%) bottom right / 50% 50% no-repeat, 
-                  linear-gradient(to bottom left, rgba(0, 184, 73, 0.60) 0%, rgba(4, 244, 100, 0.60) 50%) bottom left / 50% 50% no-repeat, 
-                  linear-gradient(to top left, rgba(0, 184, 73, 0.60) 0%, rgba(4, 244, 100, 0.60) 50%) top left / 50% 50% no-repeat, 
-                  linear-gradient(to top right, rgba(0, 184, 73, 0.60) 0%, rgba(4, 244, 100, 0.60) 50%) top right / 50% 50% no-repeat, #00DE59;
+      background: radial-gradient(94.64% 108.53% at 52.36% 100%, rgba(0, 184, 73, 0.60) 0%, rgba(4, 244, 100, 0.60) 100%), #04F464;
       box-shadow: 0px 12px 20px 0px rgba(36, 36, 36, 0.06);
-      border: 2px solid #B7FED4;
+      border: 1px #00B700;
       .services_card-number{
         color: #fff;
       }
@@ -45,12 +42,8 @@
   /* Background Green */
   &[background-color="pink"]{
     &:hover{
-      background: linear-gradient(to bottom right, rgba(102, 0, 74, 0.60) 0%, rgba(255, 22, 190, 0.60) 50%) bottom right / 50% 50% no-repeat, 
-      linear-gradient(to bottom left, rgba(102, 0, 74, 0.60) 0%, rgba(255, 22, 190, 0.60) 50%) bottom left / 50% 50% no-repeat, 
-      linear-gradient(to top left, rgba(102, 0, 74, 0.60) 0%, rgba(255, 22, 190, 0.60) 50%) top left / 50% 50% no-repeat, 
-      linear-gradient(to top right, rgba(102, 0, 74, 0.60) 0%, rgba(255, 22, 190, 0.60) 50%) top right / 50% 50% no-repeat, #FF16BE;
-      box-shadow: 0px 12px 20px 0px rgba(255, 22, 190, 0.21);
-      border: 2px solid #FF16BE;
+      background: radial-gradient(94.64% 108.53% at 52.36% 100%, rgba(102, 0, 74, 0.60) 0%, rgba(255, 22, 190, 0.60) 100%), #FF16BE;
+      border: 1px #FF7ADA;
       .button-wrapper{
         border-top: 1px solid #fff;
       }
@@ -75,11 +68,8 @@
   /* Background Yellow */
   &[background-color="yellow"]{
     &:hover{
-      background: linear-gradient(to bottom right, rgba(250, 255, 192, 0.60) 0%, rgba(238, 255, 50, 0.60) 50%) bottom right / 50% 50% no-repeat, 
-                  linear-gradient(to bottom left,  rgba(250, 255, 192, 0.60) 0%,  rgba(238, 255, 50, 0.60) 50%) bottom left / 50% 50% no-repeat, 
-                  linear-gradient(to top left, rgba(250, 255, 192, 0.60) 0%,  rgba(238, 255, 50, 0.60) 50%) top left / 50% 50% no-repeat, 
-                  linear-gradient(to top right, rgba(250, 255, 192, 0.60) 0%,   rgba(238, 255, 50, 0.60) 50%) top right / 50% 50% no-repeat, #EEFF32;
-      border: 2px solid #EEFF32;
+      background: radial-gradient(94.64% 108.53% at 52.36% 100%, rgba(238, 215, 0, 0.60) 0%, rgba(238, 255, 50, 0.60) 100%), #EEFF32;
+      border: 1px #FAFFC0;
       box-shadow: 0px 12px 20px 0px rgba(238, 255, 50, 0.21);
       .services_card-number{
         color: #fff;

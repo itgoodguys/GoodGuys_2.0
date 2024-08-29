@@ -7,10 +7,19 @@ import '../../css/components/_featured-work-slider.scss'
 
 let featuredWorkSlider;
 
+let spaceBetweenValue = -250; // Default value
+
+// Adjust spaceBetween based on screen size
+if (window.innerWidth < 767) {
+  spaceBetweenValue = -100;
+} else if (window.innerWidth < 991) {
+  spaceBetweenValue = -200;
+}
+
 featuredWorkSlider = new Swiper('.featured-slider', {
   slidesPerView: 'auto', // Adjust based on how many slides you want to show
   centeredSlides: true,
-  spaceBetween: -100, // Adjust space between slides
+  spaceBetween: spaceBetweenValue, // Adjust space between slides
   loop: true,
   on: {
     slideChange: function () {

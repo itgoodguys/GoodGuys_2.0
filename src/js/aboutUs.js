@@ -7,7 +7,6 @@ import '../css/components/_cta.scss'
 // components
 
 // animations
-import './animations/lenisSmoothScroll.js'
 import './animations/fadeTextFromBottom.js'
 import './animations/imageParallax.js'
 import './animations/animateFromBottom.js'

@@ -40,7 +40,22 @@ gsap.to(horizontalScroll, {
     pin: true,
     anticipatePin: 1,
     snap: {
-      snapTo: 1 / (panels.length - 1), //  based on number of panels
+      // we want to snap to next / prev slide only if you scroll more than 10%
+      // else we snap back to the current slide
+      snapTo: (progress) => {
+        const slideIndex = Math.round(progress * (panels.length - 1));
+        const slideStart = slideIndex / (panels.length - 1);
+        const slideEnd = (slideIndex + 1) / (panels.length - 1);
+        const slideProgress = (progress - slideStart) / (slideEnd - slideStart);
+
+        if (slideProgress > 0.10) {
+          return slideEnd; // Snap to the next slide
+        } else if (slideProgress < -0.10) {
+          return slideStart - (1 / (panels.length - 1)); // Snap to the previous slide
+        } else {
+          return slideStart; // Snap back to the current slide
+        }
+      },
       duration: { min: 0.2, max: 0.6 }, // Duration range for the snapping
       ease: "power1.inOut" // Easing function for snapping
     },

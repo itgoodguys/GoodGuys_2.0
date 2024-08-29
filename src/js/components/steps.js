@@ -103,9 +103,9 @@ if (steps.length > 0) {
           onEnter: () => {
             // Add the 'active-step' class when the animation starts
             let activeStep = document.querySelector('.active-step');
-            if(activeStep){
-              activeStep.classList.remove('active-step');
-            }
+            // if(activeStep){
+            //   activeStep.classList.remove('active-step');
+            // }
             step.classList.add('active-step');
           },
           onLeaveBack: () => {

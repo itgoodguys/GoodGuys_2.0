@@ -24,23 +24,25 @@
   &_number{
     transition: all 0.2s ease;
     &-icon{
-      max-width: 0px;
       transition: all 0.2s ease;
-      visibility: hidden;
-      opacity: 0;
+      path{
+        fill: #000;
+        stroke: #000;
+      }
     }
   }
+
 
   &.active-step{
     .step_number-text{
       color: var(--step-color);
     }
     .step_number{
-      gap: 0.5rem;
       .step_number-icon{
-        max-width: 100px;
-        visibility: visible;
-        opacity: 1;
+        path{
+          fill: #FF16BE;
+          stroke: #FF16BE;
+        }
       }
     }
   }

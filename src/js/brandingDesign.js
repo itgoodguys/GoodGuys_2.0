@@ -13,7 +13,6 @@ import './components/faq.js'
 
 
 // animations
-import './animations/lenisSmoothScroll.js'
 import './animations/animateFromBottom.js'
 import './animations/wordBackgroundHighlight.js'
 import './animations/fadeTextFromLeft.js'

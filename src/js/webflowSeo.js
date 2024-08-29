@@ -16,7 +16,6 @@ import './components/steps.js'
 import './animations/wordBackgroundHighlight.js'
 import './animations/fadeTextFromLeft.js'
 import './animations/scrubOpacity.js'
-import './animations/lenisSmoothScroll.js'
 import './animations/animateFromBottom.js'
 import './animations/imageParallax.js'
 
