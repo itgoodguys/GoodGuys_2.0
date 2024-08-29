@@ -273,31 +273,36 @@ linkWrappers.forEach(wrapper => {
 ///////////////////////////////////////////////
 var lastScrollTop = 0;
 var scrollThreshold = 10; // Set a threshold for scroll detection
+var isScrolling; // Variable to hold the timeout
 
 window.addEventListener('scroll', function() {
-  var currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-  var navbar = document.querySelector('.navbar');
+  clearTimeout(isScrolling); // Clear the timeout on each scroll event
 
-  if (Math.abs(currentScroll - lastScrollTop) > scrollThreshold) { // Only proceed if the scroll is significant
-    if (currentScroll > 100 && currentScroll > lastScrollTop) {
-      if (!navbar.classList.contains('menu-hidden')) {
-        navbar.classList.add('menu-hidden');
-      }
-    } else if (currentScroll < lastScrollTop) {
-      if (navbar.classList.contains('menu-hidden')) {
-        navbar.classList.remove('menu-hidden');
+  isScrolling = setTimeout(function() {
+    var currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+    var navbar = document.querySelector('.navbar');
+
+    if (Math.abs(currentScroll - lastScrollTop) > scrollThreshold) { // Only proceed if the scroll is significant
+      if (currentScroll > 100 && currentScroll > lastScrollTop) {
+        if (!navbar.classList.contains('menu-hidden')) {
+          navbar.classList.add('menu-hidden');
+        }
+      } else if (currentScroll < lastScrollTop) {
+        if (navbar.classList.contains('menu-hidden')) {
+          navbar.classList.remove('menu-hidden');
+        }
       }
     }
-  }
 
-  // Adding background class when scrolled down
-  if (currentScroll > 0) {
-    navbar.classList.add('menu-background');
-  } else {
-    navbar.classList.remove('menu-background');
-  }
+    // Adding background class when scrolled down
+    if (currentScroll > 0) {
+      navbar.classList.add('menu-background');
+    } else {
+      navbar.classList.remove('menu-background');
+    }
 
-  lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
+  }, 100); // Set a 100ms delay to limit frequency of scroll detection
 });
 
 
