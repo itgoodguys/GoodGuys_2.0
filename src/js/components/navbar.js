@@ -204,7 +204,7 @@ function navDropWrapperMouseEnter() {
   navDropWrapper.forEach(sibling => {
     if (sibling !== this) {
       sibling.classList.add('dim');
-      disablePageScroll()
+      // disablePageScroll()
     }
   });
 }
@@ -212,7 +212,7 @@ function navDropWrapperMouseEnter() {
 function navDropWrapperMouseLeave() {
   navDropWrapper.forEach(sibling => {
     sibling.classList.remove('dim');
-    enablePageScroll()
+    // enablePageScroll()
   });
 }
 
