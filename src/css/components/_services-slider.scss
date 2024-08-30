@@ -14,7 +14,10 @@
   }
 
   &_slide:hover{
-    background-color: #000;
+    .services-slide_background{
+      opacity: 1;
+    }
+    // background-color: #000;
     --swatch--dark-1: #fff;
     --color--text-primary: #fff;
     --color--text-secondary: #fff;
