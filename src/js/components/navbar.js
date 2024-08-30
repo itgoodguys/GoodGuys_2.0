@@ -306,6 +306,27 @@ window.addEventListener('scroll', function() {
 });
 
 
+///////////////////////////////////////////////
+// adding numbers to each CMS sublink
+///////////////////////////////////////////////
+const mediaSublinks = document.querySelectorAll('.nav-drop_content-media_sublinks, .nav-drop_content-media_sublinks-mobile');
+
+// Loop through each 'nav-drop_content-media_sublinks' element
+mediaSublinks.forEach((mediaSublink) => {
+  // Select all 'w-dyn-item' elements inside this 'nav-drop_content-media_sublinks' element
+  const dynItems = mediaSublink.querySelectorAll('.w-dyn-item');
+  
+  // Loop through each 'w-dyn-item' and update the content of the 'nav-drop_listing-sublink-small'
+  dynItems.forEach((dynItem, index) => {
+    // Select the 'nav-drop_listing-sublink-small' inside this 'w-dyn-item'
+    const sublinkSmall = dynItem.querySelector('.nav-drop_listing-sublink-small');
+    
+    // Update the content with the index, formatted as '01.', '02.', etc.
+    if (sublinkSmall) {
+      sublinkSmall.textContent = (index + 1).toString().padStart(2, '0') + '.';
+    }
+  });
+});
 
 
 

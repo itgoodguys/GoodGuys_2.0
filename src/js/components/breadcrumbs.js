@@ -24,7 +24,9 @@ if (document.querySelector(".breadcrumbs")) {
 
     // If this is the last part of the URL, add the page title to the breadcrumbs string
     if (i === pathArray.length - 1) {
-      breadcrumbs += '<span class="breadcrumb-link">' + document.title + '</span>';
+      var fileName = part.split('.')[0];
+      breadcrumbs += '<span class="breadcrumb-link">' + fileName + '</span>';
+      // breadcrumbs += '<span class="breadcrumb-link">' + document.title + '</span>';
     } else {
       // Otherwise, add a link to the current part of the URL to the breadcrumbs string
       breadcrumbs += '<a href="/' + pathArray.slice(0, i + 1).join("/") + '" class="breadcrumb-link">' +  part  + '</a>' + separator;
