@@ -1,5 +1,6 @@
 import '../../css/components/_navbar.scss';
 import { lenis } from '../animations/lenisSmoothScroll.js';
+// import gsap from 'gsap';
 
 // Code for all menu dropdown links and the media content on the right side of each dropdown content
 // we check the index of the nav-dropdown-link that is hovered
@@ -268,42 +269,71 @@ linkWrappers.forEach(wrapper => {
     });
 });
 
-///////////////////////////////////////////////
+/////////////////////////////////////////////
 // menu peekaboo
-///////////////////////////////////////////////
+/////////////////////////////////////////////
 var lastScrollTop = 0;
-var scrollThreshold = 10; // Set a threshold for scroll detection
-var isScrolling; // Variable to hold the timeout
+// var scrollThreshold = 10; // Set a threshold for scroll detection
+// var isScrolling; // Variable to hold the timeout
 
 window.addEventListener('scroll', function() {
-  clearTimeout(isScrolling); // Clear the timeout on each scroll event
 
-  isScrolling = setTimeout(function() {
-    var currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-    var navbar = document.querySelector('.navbar');
+  var currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+  var navbar = document.querySelector('.navbar');
 
-    if (Math.abs(currentScroll - lastScrollTop) > scrollThreshold) { // Only proceed if the scroll is significant
-      if (currentScroll > 100 && currentScroll > lastScrollTop) {
-        if (!navbar.classList.contains('menu-hidden')) {
-          navbar.classList.add('menu-hidden');
-        }
-      } else if (currentScroll < lastScrollTop) {
-        if (navbar.classList.contains('menu-hidden')) {
-          navbar.classList.remove('menu-hidden');
-        }
-      }
-    }
+  // if (Math.abs(currentScroll - lastScrollTop) > scrollThreshold) { // Only proceed if the scroll is significant
+  //   console.log('currentScroll', currentScroll)
+  //   console.log('lastScrollTop', lastScrollTop)
+  //   if (currentScroll > 100 && currentScroll > lastScrollTop) {
+  //     if (!navbar.classList.contains('menu-hidden')) {
+  //       navbar.classList.add('menu-hidden');
+  //     }
+  //   } else if (currentScroll < lastScrollTop) {
+  //     if (navbar.classList.contains('menu-hidden')) {
+  //       navbar.classList.remove('menu-hidden');
+  //     }
+  //   }
+  // }
 
-    // Adding background class when scrolled down
-    if (currentScroll > 0) {
-      navbar.classList.add('menu-background');
-    } else {
-      navbar.classList.remove('menu-background');
-    }
+  // Adding background class when scrolled down
+  if (currentScroll > 0) {
+    navbar.classList.add('menu-background');
+  } else {
+    navbar.classList.remove('menu-background');
+  }
 
-    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
-  }, 100); // Set a 100ms delay to limit frequency of scroll detection
+  lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
+
 });
+
+// Initializing GSAP animation variables
+// var lastScrollTop = 0;
+// var scrollThreshold = 100; // Set a threshold of 100px from the top
+
+// // Scroll event listener
+// window.addEventListener('scroll', function() {
+//   var currentScroll = window.scrollY; // Use window.scrollY to get the current scroll position
+//   var navbar = document.querySelector('.navbar');
+
+//   // Check if the user has scrolled more than 100px
+//   if (currentScroll > scrollThreshold) {
+//     // If the user is scrolling down
+//     if (currentScroll > lastScrollTop) {
+//       gsap.to(navbar, { y: '-100%', duration: 0.5, ease: 'power2.out' });
+//     } 
+//     // If the user is scrolling up
+//     else {
+//       gsap.to(navbar, { y: '0%', duration: 0.5, ease: 'power2.out' });
+//     }
+//   } 
+//   // Ensure the navbar is visible when near the top of the page
+//   else {
+//     gsap.to(navbar, { y: '0%', duration: 0.5, ease: 'power2.out' });
+//   }
+
+//   // Update lastScrollTop with the current scroll position
+//   lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+// });
 
 
 ///////////////////////////////////////////////
