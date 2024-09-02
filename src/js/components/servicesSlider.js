@@ -32,6 +32,10 @@ function initSwiper() {
           dragSize: 'auto',
           snapOnRelease: true
         },
+        navigation: {
+          nextEl: '.services-slider-next',
+          prevEl: '.services-slider-prev',
+        },
       });
       // console.log('Swiper initialized');
     }

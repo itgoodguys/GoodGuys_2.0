@@ -1,3 +1,4 @@
+
 .nav-drop-wrapper{
   // .nav-main-link-arrow{
   //   transform: rotate(0deg);
@@ -241,6 +242,9 @@
 .navbar_logo{
   position: relative;
   z-index: 1000;
+  @media screen and (max-width: 1024){
+    padding: 1.5rem 1rem 1.5rem 1rem
+  }
   .navbar_logo-svg{
     @media screen and (max-width: 991px){
       width: 3.4375rem;
@@ -399,7 +403,7 @@
 
 .dark-background{
   .navbar{
-    --swatch--light-1: #000;
+    --swatch--light-1: #212121;
     --swatch--ufo-blue: #FF16BE;
     --swatch--text-black-dark: #F6F6F6;
     --swatch--dark-1: #fff;

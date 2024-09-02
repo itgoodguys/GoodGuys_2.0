@@ -91,14 +91,14 @@ letters.forEach((letter, index) => {
       opacity: 1  
     },
     {
-    maxWidth: "75px", // Change this value to your desired max-width
-    maxHeight: "59px", // Change this value to your desired max-height
+    // maxWidth: "0px", // Change this value to your desired max-width
+    // maxHeight: "0px", // Change this value to your desired max-height
     ease: "power2.inOut", // Easing function (optional)
     opacity: 0, 
     scrollTrigger: {
       trigger: '.about-hero', // Trigger the animation when stickyElement is in view
-      start: 'center 40%',       // Start the animation at 50% scroll progress
-      end: 'bottom 10%',         // End the animation at 20% scroll progress
+      start: 'center 40%',       // Start the animation at 40% scroll progress
+      end: 'bottom 25%',         // End the animation at 10% scroll progress
       scrub: 1,               // Smoothly animate with scrolling
       // markers: true, // Enable markers to visualize trigger points
     }

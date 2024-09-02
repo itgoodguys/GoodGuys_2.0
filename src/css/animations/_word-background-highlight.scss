@@ -15,7 +15,6 @@
     background-color: #f1f935;
   }
   &.highlight-pink{
-    color: #fff;
     &:after{
       background-color: #ff1cbe;
     }
@@ -34,7 +33,7 @@
   top: 0;
   left: 0;
   width: var(--after-width);
-  height: 100%;
+  height: 108%;
   z-index: -1; /* Ensure it is behind the text */
   transition: width 0.8s ease-out;
 }

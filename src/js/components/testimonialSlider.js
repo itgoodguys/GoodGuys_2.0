@@ -17,7 +17,7 @@ let testimonialSlider = new Swiper('.testimonials-slider', {
   modules: [Pagination],
   direction: 'horizontal',
   slidesPerView: 'auto',
-  spaceBetween: screenWidth < 767 ? 0 : 24,
+  spaceBetween: screenWidth < 767 ? 0 : screenWidth < 991 ? 16 : 24,
   // centeredSlides: true,
   // centeredSlidesBounds: true,
   initialSlide: 0,
