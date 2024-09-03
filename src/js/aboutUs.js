@@ -9,7 +9,6 @@ import '../css/components/_cta.scss'
 // animations
 import './animations/fadeTextFromBottom.js'
 import './animations/imageParallax.js'
-import './animations/animateFromBottom.js'
 import './animations/fadeTextFromLeft.js'
 import './animations/fadeTextFromRight.js'
 
@@ -91,8 +90,8 @@ letters.forEach((letter, index) => {
       opacity: 1  
     },
     {
-    // maxWidth: "0px", // Change this value to your desired max-width
-    // maxHeight: "0px", // Change this value to your desired max-height
+    maxWidth: "0px", // Change this value to your desired max-width
+    maxHeight: "0px", // Change this value to your desired max-height
     ease: "power2.inOut", // Easing function (optional)
     opacity: 0, 
     scrollTrigger: {

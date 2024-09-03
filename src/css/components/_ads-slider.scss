@@ -9,7 +9,9 @@
     .asd-swiper-wrapper{
       padding-bottom: 4rem;
       .ads-swiper-slide:nth-child(even) {
-        transform: translateY(4rem);
+        @media screen and (min-width: 768px){
+          transform: translateY(4rem);
+        }
       }
     }
         
