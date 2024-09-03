@@ -133,4 +133,46 @@
   }
 }
 
+.contact-form-submit{
+  position: relative;
+  overflow: hidden;
+  padding-top: 0.5rem;
+  padding-right: 0.75rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.75rem;
+}
+
+.contact-form-submit:before{
+  pointer-events: none;
+  background-color: #000;
+  transform: translateY(-5em);
+  content: "";
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  padding-bottom: 100%;
+  left: 0%;
+  top: auto;
+  right: 0%;
+  bottom: 0%;
+  border-radius: 50%;
+  transition: border-radius 0.15s cubic-bezier(0.12, 0, 0.39, 0) 0.0s, transform 0.2s cubic-bezier(0.12, 0, 0.39, 0);
+}
+
+.contact-form-submit:hover::before{
+  transform: translateY(0em);
+  border-radius: 0%;
+  transition: border-radius 0.15s cubic-bezier(0.61, 1, 0.88, 1) 0.15s, 0.2s cubic-bezier(0.61, 1, 0.88, 1);
+}
+
+.contact-form-submit:hover{
+  color: #fff;
+  svg {
+    transform: rotate(45deg);
+    path {
+      stroke: #EFFF32;
+    }
+  }
+}
+
 
