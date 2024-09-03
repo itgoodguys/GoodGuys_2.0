@@ -4,12 +4,19 @@
   border: 1px solid black;
   gap: 0.625rem;
   border-radius: 6.25rem; 
+  @media screen and (max-width: 767px){
+    padding: 0.6rem;
+  }
   
   .breadcrumb-link{
     font-size: 1.125rem;
     font-family: 'DM-Mono';
     text-transform: uppercase;
     line-height: 1.2;
+    @media screen and (max-width: 767px){
+      font-size: 0.875rem;
+      line-height: 1.125rem;
+    }
   } 
 }
 
