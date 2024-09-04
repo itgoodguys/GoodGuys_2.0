@@ -33,9 +33,6 @@
       background: radial-gradient(94.64% 108.53% at 52.36% 100%, rgba(0, 184, 73, 0.60) 0%, rgba(4, 244, 100, 0.60) 100%), #04F464;
       box-shadow: 0px 12px 20px 0px rgba(36, 36, 36, 0.06);
       border: 1px #00B700;
-      .services_card-number{
-        color: #fff;
-      }
     }
   }
 
@@ -71,9 +68,6 @@
       background: radial-gradient(94.64% 108.53% at 52.36% 100%, rgba(238, 215, 0, 0.60) 0%, rgba(238, 255, 50, 0.60) 100%), #EEFF32;
       border: 1px #FAFFC0;
       box-shadow: 0px 12px 20px 0px rgba(238, 255, 50, 0.21);
-      .services_card-number{
-        color: #fff;
-      }
     }
   }
 
@@ -107,6 +101,15 @@
       .button-wrapper:hover{
         .button-text{
           color: #fff;
+        }
+      }
+    }
+  }
+  &[background-color="blue"][dark-page="true"]{
+    &:hover{
+      .button-wrapper:hover{
+        .button-text{
+          color: #000;
         }
       }
     }

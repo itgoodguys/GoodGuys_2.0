@@ -106,6 +106,9 @@
 }
 .dark-background{
   --color--text-primary: #fff;
+  .faq_accordion-question-text{
+    color: #fff;
+  }
   .faq_accordion-answer-inner p{
     color: #B7B7B7;
   }

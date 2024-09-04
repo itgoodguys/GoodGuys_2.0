@@ -2,6 +2,10 @@
 // CSS import
 import '../css/contact-us.scss'
 
+// JavaScript import
+// animations
+import './animations/wordBackgroundHighlight.js'
+
 // Selecting form elements
 const nameForm = document.querySelector("#full-name");
 const companyForm = document.querySelector("#company-name");
