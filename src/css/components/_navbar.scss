@@ -10,17 +10,25 @@
   // }
   &:hover{
     .nav-main-link-inner{
-      padding-left: 1.5rem;
+      @media screen and (min-width: 992px){
+        padding-left: 1.5rem;
+      }
     }
     .nav-drop-underline{
-      max-width: 100%;
+      @media screen and (min-width: 992px){
+        max-width: 100%;
+      }
     }
     .nav-main-link-arrow{
-      transform:rotate(180deg);
+      @media screen and (min-width: 992px){
+        transform:rotate(180deg);
+      }
     }
     .nav-main-link-star{
-      max-width: 100%;
-      opacity: 1;
+      @media screen and (min-width: 992px){
+        max-width: 100%;
+        opacity: 1;
+      }
     }
   }
   &.dim{
@@ -49,7 +57,9 @@
   transition: 0.2s ease;
   &:hover{
     .nav-dropdown-link_bellow-arrow{
-      opacity: 1;
+      @media screen and (min-width: 992px){
+        opacity: 1;
+      }
     }
   }
   @media screen and (max-width: 991px){
@@ -61,38 +71,55 @@
 .nav-drop_link-wrapper{
   &:hover{
     .nav-dropdown-link{
-      padding: 0 0 0 1rem;
+      @media screen and (min-width: 992px){
+        padding: 0 0 0 1rem;
+      }
       .nav-dropdown-link-star{
-        opacity: 1;
-        max-width: 1000px;
+        @media screen and (min-width: 992px){
+          opacity: 1;
+          max-width: 1000px;
+        }
       }
       .nav-dropdown-link-text{
-        opacity: 1;
+        @media screen and (min-width: 992px){
+          opacity: 1;
+        }
       }
   
       & + .nav-dropdown-link_bellow{
-        max-height: 1000px;
-        opacity: 1;
+        @media screen and (min-width: 992px){
+          max-height: 1000px;
+          opacity: 1;
+        }
       }
     }
+    
   }
 }
 
 // migration & integration listings
 .nav-dropdown-link{
   &:hover{
-    padding: 0 0 0 1rem;
+    @media screen and (min-width: 992px){
+      padding: 0 0 0 1rem;
+    }
     .nav-dropdown-link-star{
-      opacity: 1;
-      max-width: 1000px;
+      @media screen and (min-width: 992px){
+        opacity: 1;
+        max-width: 1000px;
+      }
     }
     .nav-dropdown-link-text{
-      opacity: 1;
+      @media screen and (min-width: 992px){
+        opacity: 1;
+      }
     }
 
     & + .nav-dropdown-link_bellow{
-      max-height: 1000px;
-      opacity: 1;
+      @media screen and (min-width: 992px){
+        max-height: 1000px;
+        opacity: 1;
+      }
     }
   }
 }
@@ -115,7 +142,6 @@
   /* Handle - This is the bit you actually click and drag */
   &::-webkit-scrollbar-thumb {
     background: #b1a9a9; /* Change the Hex value to change the scroll handle */
-    border-radius: 6px; /* Change the "px" to adjust the scroll handle's border radius*/
     border-right: 1px solid #e6e6e6;
     border-left: 1px solid #e6e6e6;
   }
@@ -285,7 +311,7 @@
     @media screen and (max-width: 991px){
       padding-top: 6rem;
       display: flex !important;
-      height: 100vh;
+      height: 100dvh;
       overflow: auto;
       &::-webkit-scrollbar {
         width: 8px; /* Controls the overall width of the scrollbar */
@@ -302,7 +328,6 @@
       /* Handle - This is the bit you actually click and drag */
       &::-webkit-scrollbar-thumb {
         background: #b1a9a9; /* Change the Hex value to change the scroll handle */
-        border-radius: 6px; /* Change the "px" to adjust the scroll handle's border radius*/
         border-right: 1px solid #e6e6e6;
         border-left: 1px solid #e6e6e6;
       }
@@ -344,10 +369,14 @@
       }
       &:hover{
         .nav-main-link-inner{
-          padding-left: 0px !important;
+          @media screen and (min-width: 992px){
+            padding-left: 0px !important;
+          }
         }
         .nav-main-link-arrow{
-          transform: rotate(90deg);
+          @media screen and (min-width: 992px){
+            transform: rotate(90deg);
+          }
         }
       }
     }
@@ -407,7 +436,7 @@
     --swatch--ufo-blue: #FF16BE;
     --swatch--text-black-dark: #F6F6F6;
     --swatch--dark-1: #fff;
-    --color--background-primary: #000;
+    --color--background-primary: #212121;
     --color--text-primary: #fff;
     --swatch--dark-black: #fff;
     .navbar_logo-svg{
@@ -436,7 +465,7 @@
       }
     }
     .menu-button{
-      background-color: #000;
+      background-color: #212121;
     }
 
     .button-wrapper[white-text="false"]{

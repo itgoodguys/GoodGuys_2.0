@@ -124,16 +124,27 @@ const navDropWrapper = document.querySelectorAll('.nav-drop-wrapper');
 const navDropContent = document.querySelectorAll('.nav-drop_content');
 
 function showContent(content) {
-  navDropContent.forEach(item => {
-    item.classList.remove('show-drop-content');
-    // stop propagation so the cleck inside the sidebar wont triger the toggle of the parent link
-    // and thus close the content
-    item.addEventListener('click', (event) => {
-      event.stopPropagation();
+  if (content.classList.contains('show-drop-content')) {
+    navDropContent.forEach(item => {
+      item.classList.remove('show-drop-content');
+      // stop propagation so the cleck inside the sidebar wont triger the toggle of the parent link
+      // and thus close the content
+      item.addEventListener('click', (event) => {
+        event.stopPropagation();
+      });
     });
-  });
-  content.classList.add('show-drop-content');
-
+  }
+  else {
+    navDropContent.forEach(item => {
+      item.classList.remove('show-drop-content');
+      // stop propagation so the cleck inside the sidebar wont triger the toggle of the parent link
+      // and thus close the content
+      item.addEventListener('click', (event) => {
+        event.stopPropagation();
+      });
+    });
+    content.classList.add('show-drop-content');
+  }
 }
 
 // when we click on element we add / remove the show drop content class
@@ -264,8 +275,13 @@ const linkWrappers = navDropList.querySelectorAll('.nav-drop_link-wrapper');
 
 linkWrappers.forEach(wrapper => {
     wrapper.addEventListener('click', () => {
+      if (wrapper.classList.contains('active-link-wrapper')) {
+        linkWrappers.forEach(item => item.classList.remove('active-link-wrapper'));
+      } 
+      else {
         linkWrappers.forEach(item => item.classList.remove('active-link-wrapper'));
         wrapper.classList.add('active-link-wrapper');
+      }
     });
 });
 
