@@ -31,13 +31,6 @@ function createTimeline(zones, target) {
       endTrigger: zones[zones.length - 1],
       end: "top 30%",
       scrub: true,
-      //self.direction === 1: This condition checks if the user is scrolling downwards
-      //self.direction === -1: This checks if the user is scrolling upwards
-      // self.progress > (1 / zones.length): This checks whether the progress of the scroll is greater than a certain threshold.
-      // The progress is a value between 0 and 1 representing how far the scroll has advanced between the start and end points. 
-      // The threshold (1 / zones.length) is calculated based on the number of zones, 
-      // ensuring the clip-path is removed after scrolling past a specific point.
-      // we added the  + 0.2 because iOS has some timing issues 
       onUpdate: (self) => {
         if (self.direction === 1 && self.progress > (1 / zones.length) + 0.2) {
           target.style.clipPath = 'none';
@@ -77,18 +70,40 @@ function createTimeline(zones, target) {
   });
 }
 
-// Initialize timelines for both sets of elements
-createTimeline(zonesLeft, targetLeft);
-createTimeline(zonesRight, targetRight);
+// Function to check screen size and initialize/remove animations
+function checkScreenSize() {
+  if (window.innerWidth > 767) {
+    // If screen size is larger than 767px, create timelines and hide the video wrapper
+    videoWrapper.style.opacity = 0;
+    videoElement.pause();
+    createTimeline(zonesLeft, targetLeft);
+    createTimeline(zonesRight, targetRight);
+  } else {
+    // Kill ScrollTriggers and reset elements if screen size is less than 768px
+    ScrollTrigger.getAll().forEach(st => st.kill());
+    gsap.set([targetLeft, targetRight], { clearProps: "all" });
+
+    // Make the videoWrapper visible and set up a ScrollTrigger to play the video when scrolled to 90% of the viewport
+    videoWrapper.style.opacity = 1;
+
+    ScrollTrigger.create({
+      trigger: videoWrapper,
+      start: "top 90%",  // 90% from the top of the viewport
+      end: "bottom top",
+      onEnter: () => videoElement.play(),
+      onLeaveBack: () => videoElement.pause(),
+      onLeave: () => videoElement.pause(),
+      onEnterBack: () => videoElement.play(),
+    });
+  }
+}
+
+// Run on load
+checkScreenSize();
 
 // SETUP RESIZE
 let resizeTimer;
 window.addEventListener("resize", function () {
   clearTimeout(resizeTimer);
-  resizeTimer = setTimeout(function () {
-    createTimeline(zonesLeft, targetLeft);
-    createTimeline(zonesRight, targetRight);
-  }, 250);
+  resizeTimer = setTimeout(checkScreenSize, 250);
 });
-
-

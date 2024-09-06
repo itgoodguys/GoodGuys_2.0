@@ -31,7 +31,7 @@ if (textBottomToTop.length > 0) {
         trigger: element, // Use the element as the trigger
         start: "top 95%", // Start the animation when the top of the element is 95% from the top of the viewport
         toggleActions: "play none none none", // Play only when scrolling down, do nothing on reverse
-        markers: true,
+        // markers: true,
       },
       
     });
