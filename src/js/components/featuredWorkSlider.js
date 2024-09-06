@@ -1,31 +1,38 @@
 // // import Swiper JS
 import Swiper from 'swiper';
+import { Pagination } from 'swiper/modules';
 
 // // import Swiper styles
 import 'swiper/css';
+import 'swiper/css/pagination';
 import '../../css/components/_featured-work-slider.scss'
 
 let featuredWorkSlider;
 
-let spaceBetweenValue = -350; // Default value
+let spaceBetweenValue = -150; // Default value
 
 // Adjust spaceBetween based on screen size
 if (window.innerWidth < 479) {
-  spaceBetweenValue = -80;
+  spaceBetweenValue = -50;
 } else if (window.innerWidth < 767) {
-  spaceBetweenValue = -150;
+  spaceBetweenValue = -50;
 } else if (window.innerWidth < 991) {
-  spaceBetweenValue = -200;
+  spaceBetweenValue = -150;
 } else if (window.innerWidth < 1350) {
-  spaceBetweenValue = -250;
+  spaceBetweenValue = -150;
 }
 
 
 featuredWorkSlider = new Swiper('.featured-slider', {
+  modules: [Pagination],
   slidesPerView: 'auto', // Adjust based on how many slides you want to show
   centeredSlides: true,
   spaceBetween: spaceBetweenValue, // Adjust space between slides
-  loop: true,
+  // loop: true,
+  pagination: {
+    el: ".featured-slider_pagination",
+    clickable: true
+  },
   on: {
     slideChange: function () {
       updateSlideContent(this.realIndex);
