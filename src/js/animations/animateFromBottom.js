@@ -29,9 +29,11 @@ if (textBottomToTop.length > 0) {
       stagger: targets.length > 1 ? 0.2 : 0, // Apply stagger only if it's a collection of elements
       scrollTrigger: {
         trigger: element, // Use the element as the trigger
-        start: "top 90%", // Start the animation when the top of the element is 80% from the top of the viewport
+        start: "top 95%", // Start the animation when the top of the element is 95% from the top of the viewport
         toggleActions: "play none none none", // Play only when scrolling down, do nothing on reverse
-      }
+        markers: true,
+      },
+      
     });
   });
 }
