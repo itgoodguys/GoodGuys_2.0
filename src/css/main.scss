@@ -65,6 +65,17 @@ body { overscroll-behavior: none; }
   }
 }
 
+/***********************************************
+  bredcrumbs
+***********************************************/
+.dark-background{
+  .bredcrumbs-manuell{
+    border: 1px solid #fff;
+    a, p{
+      color: #fff;
+    }
+  }
+}
 
 
 
