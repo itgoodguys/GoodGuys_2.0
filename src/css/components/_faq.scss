@@ -73,6 +73,26 @@
   //   background-color: #EFFF32;
   // }
 }
+.dark-background{
+  [faq-color="yellow"]{
+    --color--text-primary: #fff;
+    .faq_accordion-question-text{
+      color: #fff;
+    }
+    .faq_accordion-answer-inner p{
+      color: #B7B7B7;
+    }
+    .faq_bottom{
+      color: #fff;
+    }
+    .faq_accordion-block{
+      border-bottom: 1px solid #fff;
+    }
+    .faq_accordion-answer-inner-line{
+      background-color: #fff;
+    }
+  }
+}
 
 /**************
   Blue
@@ -83,6 +103,9 @@
 .dark-background{
   [faq-color="blue"]{
     --color--text-primary: #fff;
+    .faq_accordion-question-text{
+      color: #fff;
+    }
     .faq_accordion-answer-inner p{
       color: #B7B7B7;
     }
