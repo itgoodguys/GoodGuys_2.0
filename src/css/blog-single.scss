@@ -134,6 +134,26 @@
         }
       }
     }
+    .blog_links-sticky-table{
+      &::-webkit-scrollbar {
+        width: 8px; /* Controls the overall width of the scrollbar */
+        padding: 2.5px; /* Controls the padding of the Scrollbar */
+        border-right: 1px solid #e6e6e6;
+        border-left: 1px solid #e6e6e6;
+      }
+    
+      /* Track - This is the part that contains the bit you click and drag */
+      &::-webkit-scrollbar-track {
+        background: transparent; /* Sets the background to transparent, change to a Hex or RGB value if you would like */
+      }
+    
+      /* Handle - This is the bit you actually click and drag */
+      &::-webkit-scrollbar-thumb {
+        background: #b1a9a9; /* Change the Hex value to change the scroll handle */
+        border-right: 1px solid #e6e6e6;
+        border-left: 1px solid #e6e6e6;
+      }
+    }
     .blog_links-sticky-table .blog_links-sticky-link-wrapper:not(:has(.blog_links-sticky-link-wrapper)) .blog_links-anchor {
       margin-bottom: 0px;
     }
