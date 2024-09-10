@@ -118,17 +118,26 @@ document.addEventListener('click', function(event) {
 
 
 const form = document.querySelector('.contact-form'); // Select the form element
-const lottieAnimationLeft = document.querySelector('.contact-form_success-confeti-left');
-const lottieAnimationRight = document.querySelector('.contact-form_success-confeti-right'); 
+// const lottieAnimationLeft = document.querySelector('.contact-form_success-confeti-left');
+// const lottieAnimationRight = document.querySelector('.contact-form_success-confeti-right'); 
+
+// var confettiAnimation = document.querySelector('.contact-form_success-confeti-left');
+    
+
 
 form.addEventListener('submit', function (e) {
-    // e.preventDefault(); // Prevent the form from submitting immediately
+//   console.log('aaaaa')
+//     // e.preventDefault(); // Prevent the form from submitting immediately
+//    // Reset the animation
+// confettiAnimation.setAttribute('data-autoplay', '1'); // Turn on autoplay
+// confettiAnimation.setAttribute('data-direction', '1'); // Ensure direction is forward
+// confettiAnimation.setAttribute('data-loop', '0'); // No loop, play once
 
-    form.addEventListener('wfFormDone', function () {
-        // The form has been successfully submitted and success message is displayed
-        lottieAnimationLeft.play(); // Play the Lottie animation
-        lottieAnimationRight.play(); // Play the Lottie animation
-    });
+// // Reset the animation to start
+// confettiAnimation.dispatchEvent(new Event('animationstart'));
+    // lottieAnimationLeft.goToAndPlay(0, true); // Play the Lottie animation
+    // lottieAnimationRight.goToAndPlay(0, true); // Play the Lottie animation
+
 });
 
 
