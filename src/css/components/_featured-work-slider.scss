@@ -29,14 +29,15 @@
   }
 
   .swiper-pagination-bullet{
-    width: 12px;
-    height: 12px;
+    width: 16px;
+    height: 16px;
     transition: 0.3s ease;
+    margin: 0 0.4rem !important;
   }
 
   .swiper-pagination-bullet-active{
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
     background: #000;
   }
 }

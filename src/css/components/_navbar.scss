@@ -295,8 +295,8 @@
     justify-content: space-between;
     background: var(--color--background-primary);
     padding-bottom: 3rem;
-    padding-left: 2.4375rem;
-    padding-right: 2.4375rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
     width: 100%;
     max-width: 151.69rem;
     margin-left: auto;
@@ -331,6 +331,10 @@
         border-right: 1px solid #e6e6e6;
         border-left: 1px solid #e6e6e6;
       }
+    }
+    @media screen and (max-width: 767px){
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
     }
     .nav-drop-wrapper_bonus{
       display: block;
