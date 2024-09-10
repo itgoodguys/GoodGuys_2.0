@@ -73,19 +73,7 @@
 
   /* Background Blue */
   &[background-color="blue"]{
-    --swatch--dark-1: #fff;
-    --color--text-primary: #fff;
-    --color--text-secondary: #fff;
 
-    .button-text{
-      color: #fff;
-    }
-    .button-wrapper{
-      border-top: 1px solid #fff;
-    }
-    .button-icon path{
-      stroke: #fff;
-    }
     &:hover{
       background: radial-gradient(94.64% 108.53% at 52.36% 100%, rgba(3, 45, 107, 0.60) 0%, rgba(6, 135, 255, 0.60) 100%), #146EF5;
       box-shadow: 0px 12px 20px 0px rgba(20, 110, 245, 0.20);
@@ -96,7 +84,21 @@
       .services_card-heading-arrow,
       .services_card-number{
         color: #fff;
+      } 
+
+      --swatch--dark-1: #fff;
+      --color--text-primary: #fff;
+      --color--text-secondary: #fff;
+      .button-text{
+        color: #fff;
       }
+      .button-wrapper{
+        border-top: 1px solid #fff;
+      }
+      .button-icon path{
+        stroke: #fff; 
+      }
+
 
       .button-wrapper:hover{
         .button-text{
