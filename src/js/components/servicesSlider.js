@@ -4,10 +4,12 @@
 // import Swiper JS
 import Swiper from 'swiper';
 import { Scrollbar } from 'swiper/modules';
+import { Navigation } from 'swiper/modules';
 
 // import Swiper styles
 import 'swiper/css';
 import 'swiper/css/scrollbar';
+import 'swiper/css/navigation';
 
 // import custom styling
 import '../../css/components/_services-slider.scss';
@@ -15,13 +17,12 @@ import '../../css/components/_services-slider.scss';
 
 let servicesSlider;
 
-
 function initSwiper() {
   const screenWidth = window.innerWidth;
   if ((screenWidth > 991) || (screenWidth < 767)) {
     if (!servicesSlider) {
       servicesSlider = new Swiper('.services-slider', {
-        modules: [Scrollbar],
+        modules: [Scrollbar, Navigation],
         direction: 'horizontal',
         slidesPerView: screenWidth < 767 ? 'auto' : 4,
         spaceBetween: 0,

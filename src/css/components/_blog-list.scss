@@ -81,11 +81,17 @@
 }
 
 .home_resources{
+  .blog {
+    @media screen and (max-width: 991px){
+      border-bottom: 1px solid #000;
+    }
+  }
   .blog:last-child{
     @media (min-width: 768px) and (max-width: 991px){
       grid-area: span 1 / span 8 / span 1 / span 8 !important;
       display: flex;
       gap: 16px;
+      border-bottom: 0px solid #000;
     }
     .blog_media{
       @media (min-width: 768px) and (max-width: 991px){

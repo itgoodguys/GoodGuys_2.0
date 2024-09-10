@@ -79,8 +79,6 @@ function checkScreenSize() {
     createTimeline(zonesLeft, targetLeft);
     createTimeline(zonesRight, targetRight);
   } else {
-    // Kill ScrollTriggers and reset elements if screen size is less than 768px
-    ScrollTrigger.getAll().forEach(st => st.kill());
     gsap.set([targetLeft, targetRight], { clearProps: "all" });
 
     // Make the videoWrapper visible and set up a ScrollTrigger to play the video when scrolled to 90% of the viewport
@@ -88,7 +86,7 @@ function checkScreenSize() {
 
     ScrollTrigger.create({
       trigger: videoWrapper,
-      start: "top 90%",  // 90% from the top of the viewport
+      start: "top 50%",  // 90% from the top of the viewport
       end: "bottom top",
       onEnter: () => videoElement.play(),
       onLeaveBack: () => videoElement.pause(),
