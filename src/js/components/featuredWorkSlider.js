@@ -28,7 +28,7 @@ featuredWorkSlider = new Swiper('.featured-slider', {
   slidesPerView: 'auto', // Adjust based on how many slides you want to show
   centeredSlides: true,
   spaceBetween: spaceBetweenValue, // Adjust space between slides
-  // loop: true,
+  loop: true,
   pagination: {
     el: ".featured-slider_pagination",
     clickable: true
