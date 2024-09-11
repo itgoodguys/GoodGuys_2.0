@@ -33,10 +33,10 @@ let testimonialSlider = new Swiper('.testimonials-slider', {
     init() {
       updateActiveTestimonial();
     },
-    click() {
-      // set clicked slide to be active slide
-      testimonialSlider.slideTo(this.clickedIndex);
-    },
+    // click() {
+    //   // set clicked slide to be active slide
+    //   testimonialSlider.slideTo(this.clickedIndex);
+    // },
   },
 });
 
