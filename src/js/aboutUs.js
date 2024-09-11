@@ -26,7 +26,10 @@ hero logo animation
 // Select all SVGs representing the letters
 const letters = document.querySelectorAll('.logo-letter');
 const stickyElement = document.querySelector('.about-hero_sticky');
+const stickyLogo = document.querySelector('.about-hero_logo');
 const introText = document.querySelector('.about-hero_sticky-intro');
+
+
 
 
 // Define an array of 7 positions with x and y coordinates
@@ -102,79 +105,97 @@ letters.forEach((letter, index) => {
       // markers: true, // Enable markers to visualize trigger points
     }
   });
+
+  gsap.fromTo(stickyLogo, 
+    {
+      scale: 1,
+      opacity: 1  
+    },
+    {
+    scale: 0.2,
+    ease: "power2.inOut", // Easing function (optional)
+    scrollTrigger: {
+      trigger: '.about-hero', // Trigger the animation when stickyElement is in view
+      start: 'center 40%',       // Start the animation at 40% scroll progress
+      end: 'bottom 25%',         // End the animation at 10% scroll progress
+      scrub: 1,               // Smoothly animate with scrolling
+      // markers: true, // Enable markers to visualize trigger points
+    }
+  });
 });
+
 
 
 /************************************
 blurScrollEffect
 https://tympanus.net/Development/ScrollBlurTypography/
 **************************************/
-// Define the class for the Blur Scroll Effect
-export class BlurScrollEffect {
-  constructor(textElement) {
-    // Check if the provided element is valid
-    if (!textElement || !(textElement instanceof HTMLElement)) {
-      throw new Error('Invalid text element provided.');
-    }
+// // Define the class for the Blur Scroll Effect
+// export class BlurScrollEffect {
+//   constructor(textElement) {
+//     // Check if the provided element is valid
+//     if (!textElement || !(textElement instanceof HTMLElement)) {
+//       throw new Error('Invalid text element provided.');
+//     }
 
-    this.textElement = textElement;
+//     this.textElement = textElement;
 
-    // Set up the effect for the provided text element
-    this.initializeEffect();
-  }
+//     // Set up the effect for the provided text element
+//     this.initializeEffect();
+//   }
 
-  // Sets up the initial text effect on the provided element
-  initializeEffect() {
-    // Split text for animation using SplitType and store the reference
-    this.splitter = new SplitType(this.textElement, {
-      types: 'words, chars', // Split into words and characters
-    });
+//   // Sets up the initial text effect on the provided element
+//   initializeEffect() {
+//     // Split text for animation using SplitType and store the reference
+//     this.splitter = new SplitType(this.textElement, {
+//       types: 'words, chars', // Split into words and characters
+//     });
 
-    // Trigger the initial scroll effect
-    this.scroll();
-  }
+//     // Trigger the initial scroll effect
+//     this.scroll();
+//   }
 
-  // Animates text based on the scroll position
-  scroll() {
-    // Query all individual characters in the line for animation
-    const chars = this.splitter.chars;
+//   // Animates text based on the scroll position
+//   scroll() {
+//     // Query all individual characters in the line for animation
+//     const chars = this.splitter.chars;
 
-    gsap.fromTo(
-      chars,
-      {
-        filter: 'blur(10px) opacity(40%)',
-        willChange: 'filter',
-      },
-      {
-        ease: 'none', // Animation easing
-        filter: 'blur(0px) opacity(100%)',
-        stagger: 0.05, // Delay between starting animations for each character
-        scrollTrigger: {
-          trigger: this.textElement, // Element that triggers the animation
-          start: 'top bottom-=15%', // Animation starts when element hits the bottom of viewport
-          end: 'bottom center+=15%', // Animation ends in the center of the viewport
-          scrub: true, // Animation progress tied to scroll position
-        },
-      }
-    );
-  }
-}
+//     gsap.fromTo(
+//       chars,
+//       {
+//         filter: 'blur(10px) opacity(40%)',
+//         willChange: 'filter',
+//       },
+//       {
+//         ease: 'none', // Animation easing
+//         filter: 'blur(0px) opacity(100%)',
+//         stagger: 0.05, // Delay between starting animations for each character
+//         scrollTrigger: {
+//           trigger: this.textElement, // Element that triggers the animation
+//           start: 'top bottom-=15%', // Animation starts when element hits the bottom of viewport
+//           end: 'bottom center+=15%', // Animation ends in the center of the viewport
+//           scrub: true, // Animation progress tied to scroll position
+//         },
+//       }
+//     );
+//   }
+// }
 
-// Initialize the blur scroll effect
-const init = () => {
-  const effects = [
-    { selector: '[blur-text-reveal]', effect: BlurScrollEffect },
-  ];
+// // Initialize the blur scroll effect
+// const init = () => {
+//   const effects = [
+//     { selector: '[blur-text-reveal]', effect: BlurScrollEffect },
+//   ];
 
-  // Iterate over each effect configuration and apply the effect to all matching elements
-  effects.forEach(({ selector, effect }) => {
-    document.querySelectorAll(selector).forEach((el) => {
-      new effect(el);
-    });
-  });
-};
+//   // Iterate over each effect configuration and apply the effect to all matching elements
+//   effects.forEach(({ selector, effect }) => {
+//     document.querySelectorAll(selector).forEach((el) => {
+//       new effect(el);
+//     });
+//   });
+// };
 
-init();
+// init();
 
 
 /************************************
