@@ -24,6 +24,8 @@ function createTimeline(zones, target) {
 
   const originalClipPath = target.style.clipPath || '';
 
+
+
   tl = gsap.timeline({
     scrollTrigger: {
       trigger: zones[0],
@@ -32,9 +34,12 @@ function createTimeline(zones, target) {
       end: "top 30%",
       scrub: true,
       onUpdate: (self) => {
-        if (self.direction === 1 && self.progress > (1 / zones.length) + 0.2) {
+        if (self.direction === 1 && self.progress > (1 / zones.length) + 0.4) {
+          console.log('self.direction', self.direction)
+          console.log('self.progress', self.progress)
+          console.log('zones.length', zones.length)
           target.style.clipPath = 'none';
-        } else if (self.direction === -1 && self.progress <= (1 / zones.length) + 0.2) {
+        } else if (self.direction === -1 && self.progress <= (1 / zones.length) + 0.4) {
           target.style.clipPath = originalClipPath;
         }
       },
