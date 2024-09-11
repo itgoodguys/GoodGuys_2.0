@@ -35,9 +35,6 @@ function createTimeline(zones, target) {
       scrub: true,
       onUpdate: (self) => {
         if (self.direction === 1 && self.progress > (1 / zones.length) + 0.4) {
-          console.log('self.direction', self.direction)
-          console.log('self.progress', self.progress)
-          console.log('zones.length', zones.length)
           target.style.clipPath = 'none';
         } else if (self.direction === -1 && self.progress <= (1 / zones.length) + 0.4) {
           target.style.clipPath = originalClipPath;

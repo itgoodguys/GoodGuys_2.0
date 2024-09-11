@@ -30,7 +30,9 @@ a{
   opacity: 0 !important; 
 }
 
-
+.cursor-dot{
+  text-align: center;
+}
 .cursor-text{
   transition: all 1s;
   display: none;
@@ -50,5 +52,6 @@ a{
 .cursor-text.custom-cursor{
   opacity: 1;
   display: inline;
-  font-size: 2rem;
+  font-size: 2cqw;
+  width: fit-content;
 }
