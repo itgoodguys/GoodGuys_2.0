@@ -90,21 +90,35 @@ letters.forEach((letter, index) => {
     {
       maxWidth: "100vw", // Change this value to your desired max-width
       maxHeight: "100vh",
-      opacity: 1  
     },
     {
     maxWidth: "0px", // Change this value to your desired max-width
     maxHeight: "0px", // Change this value to your desired max-height
     ease: "power2.inOut", // Easing function (optional)
-    opacity: 0, 
     scrollTrigger: {
       trigger: '.about-hero', // Trigger the animation when stickyElement is in view
       start: 'center 40%',       // Start the animation at 40% scroll progress
-      end: 'bottom 25%',         // End the animation at 10% scroll progress
+      end: 'bottom 25%',         // End the animation at 25% scroll progress
       scrub: 1,               // Smoothly animate with scrolling
       // markers: true, // Enable markers to visualize trigger points
     }
   });
+
+  gsap.fromTo(stickyElement, 
+    {
+      opacity: 1  
+    },
+    {
+      opacity: 0,
+      ease: "power2.inOut",
+      scrollTrigger: {
+        trigger: '.about-hero', // Trigger the animation when stickyElement is in view
+        start: 'center 40%',    // Start the animation at 40% scroll progress
+        end: 'bottom 40%',      // End the animation at 30% scroll progress
+        scrub: 1,               // Smoothly animate with scrolling
+        // markers: true, // Enable markers to visualize trigger points
+      }
+    });
 
   gsap.fromTo(stickyLogo, 
     {
