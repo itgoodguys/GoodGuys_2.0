@@ -1,5 +1,3 @@
-
-
 // swiper docs
 // https://swiperjs.com/get-started
 
@@ -14,6 +12,23 @@ import '../../css/components/_ads-slider.scss'
 
 let adsSlider;
 
+function updateButtonOpacity() {
+  const prevButton = document.querySelector('.ads-slider-prev');
+  const nextButton = document.querySelector('.ads-slider-next');
+  
+  if (adsSlider.isBeginning) {
+    prevButton.style.opacity = '0.5';
+  } else {
+    prevButton.style.opacity = '1';
+  }
+
+  if (adsSlider.isEnd) {
+    nextButton.style.opacity = '0.5';
+  } else {
+    nextButton.style.opacity = '1';
+  }
+}
+
 function initSwiper() {
   if (window.innerWidth > 767) {
     if (!adsSlider) {
@@ -21,10 +36,14 @@ function initSwiper() {
         modules: [Navigation],
         direction: 'horizontal',
         slidesPerView: 'auto',
-        spaceBetween: 24, 
+        spaceBetween: 24,
         navigation: {
           nextEl: '.ads-slider-next',
           prevEl: '.ads-slider-prev',
+        },
+        on: {
+          init: updateButtonOpacity,   // Update on init
+          slideChange: updateButtonOpacity, // Update on slide change
         },
       });
     }
