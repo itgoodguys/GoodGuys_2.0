@@ -112,6 +112,17 @@ hamburgerBtn.addEventListener('click', function () {
     disablePageScroll();
   } else {
     enablePageScroll();
+
+    //close all active submenu items
+    navDropContent.forEach(item => {
+      item.classList.remove('show-drop-content');
+    });
+    
+    // remove blur effect from inactive links
+    const dim = document.querySelectorAll('.dim');
+    dim.forEach(dimElement => {
+      dimElement.classList.remove('dim');
+    });
   }
 });
 
