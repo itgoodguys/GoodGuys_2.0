@@ -117,7 +117,12 @@ hamburgerBtn.addEventListener('click', function () {
     navDropContent.forEach(item => {
       item.classList.remove('show-drop-content');
     });
-    
+
+    const activeWrapper = document.querySelectorAll('.active-link-wrapper');
+    activeWrapper.forEach(activeWrap => {
+      activeWrap.classList.remove('active-link-wrapper');
+    });
+
     // remove blur effect from inactive links
     const dim = document.querySelectorAll('.dim');
     dim.forEach(dimElement => {
