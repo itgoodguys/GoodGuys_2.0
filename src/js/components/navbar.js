@@ -266,7 +266,7 @@ window.addEventListener('resize', applyNavDropWrapperEventListeners);
 
 
 ///////////////////////////////////////////////
-// acordion for tablet / mobile integrations submenu links
+// accordion for tablet / mobile integrations submenu links
 // since they are no longer side by side, but one bellow the other
 // we then target the second list that was hidden on desktop but showed on tablet / mobile
 ///////////////////////////////////////////////
@@ -284,6 +284,59 @@ linkWrappers.forEach(wrapper => {
       }
     });
 });
+
+///////////////////////////////////////////////
+// disable link click for Resources main links on tablet and mobile (so the submeni can open on click)
+// on desktop it opens on hover, so there its not a problem there
+///////////////////////////////////////////////
+// Function to detect mobile and tablet devices
+function isMobileOrTablet() {
+  return /Mobi|Android/i.test(navigator.userAgent) || /iPad|Tablet/i.test(navigator.userAgent);
+}
+
+// Function to prevent link navigation
+function preventLinkNavigation(event) {
+  event.preventDefault(); // Prevent the default link behavior
+  event.stopPropagation(); // Stop event propagation
+}
+
+// Function to handle links based on device type
+function handleLinks() {
+  const links = document.querySelectorAll('.resources_drop-links .nav-dropdown-link');
+
+  if (isMobileOrTablet()) {
+    // Add event listeners for mobile and tablet
+    links.forEach(link => {
+      link.addEventListener('click', preventLinkNavigation);
+      // link.classList.add('disabled');
+    });
+  } else {
+    // Remove event listeners for desktop
+    links.forEach(link => {
+      link.removeEventListener('click', preventLinkNavigation);
+      // link.classList.remove('disabled');
+    });
+  }
+}
+
+// Debounce function to limit the rate at which the handleLinks function is called
+function debounce(func, wait) {
+  let timeout;
+  return function(...args) {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => func.apply(this, args), wait);
+  };
+}
+
+// Handle links after scrolling stops
+const handleLinksAfterScroll = debounce(handleLinks, 200);
+
+// Initialize links handling on page load
+handleLinks();
+
+// Reapply links handling after scrolling stops
+window.addEventListener('scroll', handleLinksAfterScroll);
+window.addEventListener('resize', handleLinksAfterScroll);
 
 /////////////////////////////////////////////
 // menu peekaboo
