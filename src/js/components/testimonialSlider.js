@@ -59,7 +59,7 @@ function updateActiveTestimonial() {
 }
 
 // JavaScript to stop click event propagation
-document.querySelectorAll('.testimonial-slide_media').forEach((element) => {
+document.querySelectorAll('.testimonial-slide_media-video').forEach((element) => {
   element.addEventListener('click', (event) => {
     event.stopPropagation();
   });
