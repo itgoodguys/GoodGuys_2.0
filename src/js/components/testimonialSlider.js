@@ -58,9 +58,14 @@ function updateActiveTestimonial() {
 
 }
 
+// JavaScript to stop click event propagation
+document.querySelectorAll('.testimonial-slide_media').forEach((element) => {
+  element.addEventListener('click', (event) => {
+    event.stopPropagation();
+  });
+});
 
 
-    
 
 
 
