@@ -11,6 +11,8 @@ const nameForm = document.querySelector("#full-name");
 const companyForm = document.querySelector("#company-name");
 const emailForm = document.querySelector("#company-email");
 const submitButton = document.querySelector("#contact-submit");
+const submitWrapper = document.querySelector("#submit-wrapper");
+const buttonText = document.querySelector("#submit-wrapper .button-text");
 
 // Variables
 let nameIsValid = false;
@@ -33,12 +35,12 @@ const applyValidStyles = (el) => {
 
 const disableSubmitButton = () => {
   submitButton.disabled = true;
-  submitButton.classList.add("submit-disabled-state");
+  submitWrapper.classList.add("submit-disabled-state");
 };
 
 const enableSubmitButton = () => {
   submitButton.disabled = false;
-  submitButton.classList.remove("submit-disabled-state");
+  submitWrapper.classList.remove("submit-disabled-state");
 };
 
 const updateSubmitButton = () => {
@@ -86,9 +88,17 @@ emailForm.addEventListener("input", (event) => {
   updateSubmitButton();
 });
 
+function updateDivContent() {
+  buttonText.textContent = submitButton.value;
+}
+
+// Observe for changes to the button text
+const observer = new MutationObserver(updateDivContent);
+observer.observe(submitButton, { attributes: true, attributeFilter: ['value'] });
+
 // Execution
 updateSubmitButton();
-
+updateDivContent();
 
 
 
