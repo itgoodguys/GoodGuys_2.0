@@ -297,7 +297,7 @@ function isMobileOrTablet() {
 // Function to prevent link navigation
 function preventLinkNavigation(event) {
   event.preventDefault(); // Prevent the default link behavior
-  event.stopPropagation(); // Stop event propagation
+  // event.stopPropagation(); // Stop event propagation
 }
 
 // Function to handle links based on device type
