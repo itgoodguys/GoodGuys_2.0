@@ -16,14 +16,19 @@ function updateButtonOpacity() {
   const prevButton = document.querySelector('.ads-slider-prev');
   const nextButton = document.querySelector('.ads-slider-next');
   
-  if (adsSlider.isBeginning) {
-    prevButton.style.opacity = '0.5';
+  // Get total slides and active slide index
+  const totalSlides = adsSlider.slides.length;
+  const activeIndex = adsSlider.activeIndex;
+
+  // Apply opacity based on the active index
+  if (activeIndex === 0) {
+    prevButton.style.opacity = '0.5'; // First slide
   } else {
     prevButton.style.opacity = '1';
   }
 
-  if (adsSlider.isEnd) {
-    nextButton.style.opacity = '0.5';
+  if (activeIndex === totalSlides - 1) {
+    nextButton.style.opacity = '0.5'; // Last slide
   } else {
     nextButton.style.opacity = '1';
   }
@@ -42,8 +47,12 @@ function initSwiper() {
           prevEl: '.ads-slider-prev',
         },
         on: {
-          init: updateButtonOpacity,   // Update on init
-          slideChange: updateButtonOpacity, // Update on slide change
+          init() {
+            updateButtonOpacity();
+          },
+          slideChange() {
+            updateButtonOpacity();
+          }
         },
       });
     }
