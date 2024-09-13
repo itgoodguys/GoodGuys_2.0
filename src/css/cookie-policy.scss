@@ -100,6 +100,17 @@
 
 }
 
+.w--current .cookie_links-anchor{
+  padding-left: 2.5rem;
+  color: #000;
+  @media screen and (max-width: 991px){
+    padding-left: 1.75rem;
+  }
+  &:before{
+    opacity: 1
+  }
+}
+
 .cookie_links-sticky{
   .cookie_links-anchor{
     transition: all 0.2s ease;

@@ -99,6 +99,17 @@
     }
   
   }
+
+  .w--current .blog_links-anchor{
+    padding-left: 2.5rem;
+    color: #000;
+    @media screen and (max-width: 991px){
+      padding-left: 1.75rem;
+    }
+    &:before{
+      opacity: 1
+    }
+  }
   
   .blog_links-sticky{
     .blog_links-anchor{
