@@ -22,6 +22,8 @@ let testimonialSlider = new Swiper('.testimonials-slider', {
   // centeredSlidesBounds: true,
   initialSlide: 0,
   loop: true,
+  preventClicks: false,
+  preventClicksPropagation: false,
   pagination: {
     el: ".testimonial-pagination.desktop-pagination",
     clickable: true
