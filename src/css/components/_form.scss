@@ -140,6 +140,21 @@
   padding-right: 0.75rem;
   padding-bottom: 0.5rem;
   padding-left: 0.75rem;
+  border-radius: 1.5rem;
+  border-top: 0px;
+  &:after{
+    background-color: #000;
+    top: 0;
+    content: "";
+    left: 0.5rem;
+    padding-bottom: 1px;
+    pointer-events: none;
+    position: absolute;
+    right: auto;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+  }
 }
 
 .contact-form-submit:before{
