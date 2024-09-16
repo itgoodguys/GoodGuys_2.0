@@ -1,4 +1,4 @@
-[data-attribute='mask-text'] .word{
+[data-attribute='mask-text'] .line{
   position: relative;
 }
 
@@ -14,4 +14,8 @@
   @media screen and (max-width: 767px){
     width: 105%;
   }
+}
+
+.dark-background .line-mask{
+  background-color: #212121;
 }

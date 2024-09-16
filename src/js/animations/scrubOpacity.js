@@ -10,11 +10,11 @@ function runSplit() {
   document.querySelectorAll("[data-attribute='mask-text']").forEach(element => {
     // Split the text for each element
     const typeSplit = new SplitType(element, {
-      types: "lines, words"
+      types: "lines"
     });
 
     // Add line mask to each word
-    element.querySelectorAll(".word").forEach(word => {
+    element.querySelectorAll(".line").forEach(word => {
       const lineMask = document.createElement('div');
       lineMask.classList.add('line-mask');
       word.appendChild(lineMask);
@@ -27,7 +27,7 @@ function runSplit() {
 
 function createAnimation(element) {
   // Select all line masks for the given element
-  const allMasks = Array.from(element.querySelectorAll(".word .line-mask"));
+  const allMasks = Array.from(element.querySelectorAll(".line .line-mask"));
 
   // Create a timeline for the given element
   const tl = gsap.timeline({
@@ -86,3 +86,5 @@ runSplit();
 
 // // Initialize the animation
 // initializeScrubOpacityAnimation();
+
+
