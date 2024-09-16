@@ -5,50 +5,54 @@ import SplitType from 'split-type';
 
 gsap.registerPlugin(ScrollTrigger);
 
-function runSplit() {
-  // Target each element with data-attribute='mask-text'
-  document.querySelectorAll("[data-attribute='mask-text']").forEach(element => {
-    // Split the text for each element
-    const typeSplit = new SplitType(element, {
-      types: "lines"
+// need to set this in settimeout because horizontal scroll trigger section is mesing up with the ScrollTrigger
+setTimeout(() => {
+  function runSplit() {
+    // Target each element with data-attribute='mask-text'
+    document.querySelectorAll("[data-attribute='mask-text']").forEach(element => {
+      // Split the text for each element
+      const typeSplit = new SplitType(element, {
+        types: "lines"
+      });
+
+      // Add line mask to each word
+      element.querySelectorAll(".line").forEach(word => {
+        const lineMask = document.createElement('div');
+        lineMask.classList.add('line-mask');
+        word.appendChild(lineMask);
+      });
+
+      // Create animation for each element
+      createAnimation(element);
+    });
+  }
+
+  function createAnimation(element) {
+    // Select all line masks for the given element
+    const allMasks = Array.from(element.querySelectorAll(".line .line-mask"));
+
+    // Create a timeline for the given element
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: element,
+        start: "top 90%",
+        end: "bottom 80%",
+        scrub: 1,
+      }
     });
 
-    // Add line mask to each word
-    element.querySelectorAll(".line").forEach(word => {
-      const lineMask = document.createElement('div');
-      lineMask.classList.add('line-mask');
-      word.appendChild(lineMask);
+    // Animate the line masks
+    tl.to(allMasks, {
+      width: "0%",
+      duration: 1,
+      stagger: 0.5
     });
+  }
 
-    // Create animation for each element
-    createAnimation(element);
-  });
-}
+  // Run the split and animation setup
+  runSplit();
+}, 1000);
 
-function createAnimation(element) {
-  // Select all line masks for the given element
-  const allMasks = Array.from(element.querySelectorAll(".line .line-mask"));
-
-  // Create a timeline for the given element
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: element,
-      start: "top 90%",
-      end: "bottom 80%",
-      scrub: 1
-    }
-  });
-
-  // Animate the line masks
-  tl.to(allMasks, {
-    width: "0%",
-    duration: 1,
-    stagger: 0.5
-  });
-}
-
-// Run the split and animation setup
-runSplit();
 
 
 // ovo je druga varijanta gde ne koristimo pseudo element .line-mask
