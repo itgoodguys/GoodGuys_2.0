@@ -1,8 +1,10 @@
 
 .nav-drop-wrapper{
-  // .nav-main-link-arrow{
-  //   transform: rotate(0deg);
-  // }
+  .nav-main-link-arrow{
+    @media screen and (max-width: 991px){
+      transform: rotate(-90deg);
+    }
+  }
   // &.nav-drop-wrapper_active{
   //   .nav-main-link-arrow{
   //     transform: rotate(90deg);
@@ -47,6 +49,12 @@
     @media screen and (max-width: 991px){
       display: none;
     }
+  }
+}
+
+.active-dropdown{
+  .nav-main-link-arrow{
+    transform: rotate(0deg);
   }
 }
 

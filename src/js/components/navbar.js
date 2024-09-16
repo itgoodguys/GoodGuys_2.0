@@ -166,6 +166,7 @@ function showContent(content) {
 // when we click on element we add / remove the show drop content class
 function toggleContent(event) {
   // event.currentTarget.classList.toggle('nav-drop-wrapper_active');
+  event.currentTarget.classList.toggle('active-dropdown')
   const content = event.currentTarget.querySelector('.nav-drop_content');
   if (content) {
     if (content.classList.contains('show-drop-content')) {
