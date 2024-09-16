@@ -1,3 +1,8 @@
+.process_slide{
+  display: grid;
+}
+
+
 .process_slide-bottom-small{
   position: relative;
   &:after{
@@ -30,9 +35,9 @@
 //   opacity: 1;
 // }
 
-body::-webkit-scrollbar {
-  display: none;
-}
+// body::-webkit-scrollbar {
+//   display: none;
+// }
 
 // .proces_slide-last {
 //   .process_slide-bottom-big,
@@ -40,6 +45,33 @@ body::-webkit-scrollbar {
 //     color: #fff;
 //   }
 // }
+
+.swiper-scrollbar {
+  position: absolute !important;
+  width: 100% !important;
+  border-bottom: 2px solid #000;
+  border-top: 2px solid #000;
+  height: 0.56rem !important;
+  padding: 0;
+  border-radius: 0 !important;
+  background-color: transparent !important;
+  bottom: 0px !important;
+  left: 0px !important;
+
+  &-drag {
+    background: #FF16BE !important; /* Color of the scrollbar thumb */
+    border-radius: 0px !important;
+  }
+}
+
+.process_navigation{
+  .swiper-button-disabled{
+    path{
+      stroke: #ccc;
+    }
+  }
+}
+
 
 // 100 / 6 = 16.66%
 .process_slide-numbers-track.active-slide-1{
