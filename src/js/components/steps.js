@@ -46,8 +46,8 @@ function initAnimations() {
           strokeDashoffset: 0, // Fill the stroke by reducing dashoffset to 0
           scrollTrigger: {
             trigger: path, // Trigger the animation when the path is in view
-            start: "top 60%", // Start the animation when the top of the SVG is 60% from the top of the viewport
-            end: "top 20%", // End the animation when the top of the SVG is 20% from the top
+            start: "top 80%", // Start the animation when the top of the SVG is 60% from the top of the viewport
+            end: "top 50%", // End the animation when the top of the SVG is 20% from the top
             scrub: true, // Smoothly animate in sync with the scroll position
           }
         }
@@ -76,44 +76,72 @@ window.addEventListener('resize', () => {
 });
 
 
+
+// Function to find the closest visible '.animated_line' higher up in the DOM
+// because we want to set the line as a trigger for starting the animation of the text bellow
+// so we set the end of line animation to be the begining of the text animation
+function findClosestVisibleStepLine(element) {
+  let currentElement = element;
+
+  // Loop through parents and previous siblings
+  while (currentElement) {
+    // Check for previous siblings
+    let previousSibling = currentElement.previousElementSibling;
+
+    while (previousSibling) { 
+      if (previousSibling.classList.contains("animated_line") && window.getComputedStyle(previousSibling).display !== "none") {
+        return previousSibling; // Found a visible element with class 'step_line'
+      }
+
+      // Continue checking further previous siblings
+      previousSibling = previousSibling.previousElementSibling;
+    }
+
+    // Move to the parent element and repeat the process
+    currentElement = currentElement.parentElement;
+  }
+
+  return null; // No matching element found
+}
+
 // Select all elements with the class name 'step'
 const steps = document.querySelectorAll('.step');
 
-if (steps.length > 0) {
-  // Loop through each 'step' element and create the animation
-  steps.forEach(step => {
-    // Select all child elements of the current 'step' element
-    const childElements = step.children;
+steps.forEach(step => {
+  // Select all child elements of the current 'step' element
+  const childElements = step.children;
 
-    // Create the staggered animation for child elements
-    gsap.fromTo(childElements, 
-      {
-        y: 50, // Start 50px below the original position
-        opacity: 0, // Start fully transparent
-      }, 
-      {
-        y: 0, // End at the original position
-        opacity: 1, // Fully visible
-        duration: 0.8, // Duration for each element's animation
-        ease: "power2.out", // Easing for smooth effect
-        stagger: 0.2, // Stagger delay of 0.2s between each child element
-        scrollTrigger: {
-          trigger: step, // Trigger the animation when the 'step' element is in view
-          start: "top 60%", // Start the animation when the top of the 'step' element is 60% from the top of the viewport
-          onEnter: () => {
-            // Add the 'active-step' class when the animation starts
-            let activeStep = document.querySelector('.active-step');
-            // if(activeStep){
-            //   activeStep.classList.remove('active-step');
-            // }
-            step.classList.add('active-step');
-          },
-          onLeaveBack: () => {
-            // Remove the 'active-step' class when scrolling back up
-            step.classList.remove('active-step');
+  // Find the closest visible '.step_line' higher up in the DOM
+  const closestVisibleStepLine = findClosestVisibleStepLine(step);
+
+  // Create the staggered animation for child elements
+  gsap.fromTo(childElements, 
+    {
+      y: 50, // Start 50px below the original position
+      opacity: 0, // Start fully transparent
+    }, 
+    {
+      y: 0, // End at the original position
+      opacity: 1, // Fully visible
+      duration: 0.8, // Duration for each element's animation
+      ease: "power2.out", // Easing for smooth effect
+      stagger: 0.2, // Stagger delay of 0.2s between each child element
+      scrollTrigger: {
+        trigger: closestVisibleStepLine || step, // Use the closest '.step_line' or fallback to the step itself
+        start: "top 55%", // Start the animation when the top of the 'step' element is 60% from the top of the viewport
+        onEnter: () => {
+          // Add the 'active-step' class when the animation starts
+          let activeStep = document.querySelector('.active-step');
+          if (activeStep) {
+            activeStep.classList.remove('active-step');
           }
+          step.classList.add('active-step');
+        },
+        onLeaveBack: () => {
+          // Remove the 'active-step' class when scrolling back up
+          step.classList.remove('active-step');
         }
       }
-    );
-  });
-}
+    }
+  );
+});
