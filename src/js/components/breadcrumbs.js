@@ -18,8 +18,6 @@ function truncateText() {
 // Run the function on initial load
 truncateText();
 
-// Add an event listener to recheck on window resize
-window.addEventListener("resize", truncateText);
 
 
 // if (document.querySelector(".breadcrumbs")) {
