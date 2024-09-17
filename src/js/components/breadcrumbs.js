@@ -8,7 +8,7 @@ function truncateText() {
   if (window.matchMedia("(max-width: 500px)").matches) {
     excerpts.forEach(item => {
       const lastParagraph = item.querySelector("p:last-of-type"); // Select the last paragraph inside the container
-      if (lastParagraph) {
+      if (lastParagraph && lastParagraph.innerText.length > 24) {
         lastParagraph.innerText = lastParagraph.innerText.slice(0, 24) + "...";
       }
     });
