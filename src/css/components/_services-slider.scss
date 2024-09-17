@@ -9,6 +9,13 @@
     }
   }
 
+  &_slide:nth-child(3),
+  &_slide:nth-child(4) {
+    @media (min-width: 768px) and (max-width: 991px) {
+      border-top: 0px;
+    }
+  }
+
   &_slide * {
     transition: all 0.3s ease;
   }
