@@ -170,20 +170,15 @@
     }
   }
   
-  .purple-star-text{
+  .blog_links-sticky-cta-heading{
     position: relative;
-    padding-right: 6.45rem;
-    @media screen and (max-width: 991px){
-      padding-right: 0px;
-    }
     &:after{
       position: absolute;
       content: '';
       width: 5.45rem;
       height: 2.88rem;
-      right: -30px;
-      top: 50%;
-      transform: translateY(-50%);
+      right: 0px;
+      bottom: 0px;
       background-repeat: no-repeat;
       background-size: contain;
       background-position: center;
@@ -191,6 +186,13 @@
       @media screen and (max-width: 991px){
         display: none;
       }
+    }
+  }
+
+  .purple-star-text{
+    padding-right: 6.45rem;
+    @media screen and (max-width: 991px){
+      padding-right: 0px;
     }
   }
   

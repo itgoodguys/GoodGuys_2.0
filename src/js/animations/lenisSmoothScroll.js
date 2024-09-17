@@ -58,6 +58,16 @@ navInnerLinks.forEach(element => {
   });
 
   element.style.touchAction = 'auto'; // Ensure touch-action is set to auto for touch devices
+
+  element.addEventListener('touchstart', (event) => {
+    event.stopPropagation(); 
+  });
+  element.addEventListener('touchmove', (event) => {
+    event.stopPropagation(); 
+  });
+  element.addEventListener('touchend', (event) => {
+    event.stopPropagation(); 
+  });
 });
 
 
