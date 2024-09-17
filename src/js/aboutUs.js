@@ -114,7 +114,7 @@ letters.forEach((letter, index) => {
       scrollTrigger: {
         trigger: '.about-hero', // Trigger the animation when stickyElement is in view
         start: 'center 40%',    // Start the animation at 40% scroll progress
-        end: 'bottom 40%',      // End the animation at 30% scroll progress
+        end: 'bottom 70%',      // End the animation at 30% scroll progress
         scrub: 1,               // Smoothly animate with scrolling
         // markers: true, // Enable markers to visualize trigger points
       }

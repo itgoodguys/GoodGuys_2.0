@@ -61,3 +61,32 @@ navInnerLinks.forEach(element => {
 });
 
 
+// Fix for scrolling over Testimonial iFrame elemenets
+// on scroll, we create a class that has a pseudo element attached
+// that element will go over the iFrame and iteract with the Lenis scroll
+// when scroll is finished, we remove the class that has the pseudo element
+// so we can interact with the iFrame 
+const peraElements = document.querySelectorAll('.testimonial-slide_media-video');
+
+if (peraElements.length > 0) {
+  let scrollTimeout;
+
+  window.addEventListener('scroll', () => {
+    peraElements.forEach(element => {
+      element.classList.add('overflow-scroll-element');
+    });
+
+    // Clear the timeout if it's already set
+    if (scrollTimeout) {
+      clearTimeout(scrollTimeout);
+    }
+
+    // Set a timeout to remove the class "overflow-scroll-element" after scrolling stops
+    scrollTimeout = setTimeout(() => {
+      peraElements.forEach(element => {
+        element.classList.remove('overflow-scroll-element');
+      });
+    }, 150); // Adjust the delay as needed
+  });
+}
+
