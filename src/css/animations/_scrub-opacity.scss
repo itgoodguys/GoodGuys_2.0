@@ -7,13 +7,13 @@
   height: 110%;
   opacity: .8;
   position: absolute;
-  right: -5%;
+  left: -1%;
   top: 0;
-  width: 110%;
+  width: 102%;
   z-index: 2;
-  @media screen and (max-width: 767px){
-    width: 105%;
-  }
+  // @media screen and (max-width: 767px){
+  //   width: 105%;
+  // }
 }
 
 .dark-background .line-mask{
