@@ -70,7 +70,7 @@ navInnerLinks.forEach(element => {
   // });
 });
 
-const navMobileSublinks = document.querySelectorAll('.nav-drop_content-media_sublinks-mobile');
+const navMobileSublinks = document.querySelectorAll('[lenis-scroll-fix]');
 navMobileSublinks.forEach(element => {
   element.addEventListener('touchstart', (event) => {
     event.stopPropagation(); 
