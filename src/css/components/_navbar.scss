@@ -362,8 +362,9 @@
       grid-column: 1 / 4;
     }
     .nav-drop-wrapper{
-      position: static;
+      position: relative;
       width: 100%;
+      z-index: 200;
       // when menu is open, we set the content to be relative to the nav-menu
       // and not to the nav-drop-wrapper, so we can place them all in the same place on the right side
       .nav-drop_content{
@@ -374,6 +375,7 @@
         padding: 0px;
         @media screen and (max-width: 991px){
           position: static;
+          max-width: 100%;
         }
       }
       .nav-main-link-star{

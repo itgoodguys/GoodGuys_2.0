@@ -59,15 +59,15 @@ navInnerLinks.forEach(element => {
 
   element.style.touchAction = 'auto'; // Ensure touch-action is set to auto for touch devices
 
-  element.addEventListener('touchstart', (event) => {
-    event.stopPropagation(); 
-  });
-  element.addEventListener('touchmove', (event) => {
-    event.stopPropagation(); 
-  });
-  element.addEventListener('touchend', (event) => {
-    event.stopPropagation(); 
-  });
+  // element.addEventListener('touchstart', (event) => {
+  //   event.stopPropagation(); 
+  // });
+  // element.addEventListener('touchmove', (event) => {
+  //   event.stopPropagation(); 
+  // });
+  // element.addEventListener('touchend', (event) => {
+  //   event.stopPropagation(); 
+  // });
 });
 
 
@@ -76,13 +76,13 @@ navInnerLinks.forEach(element => {
 // that element will go over the iFrame and iteract with the Lenis scroll
 // when scroll is finished, we remove the class that has the pseudo element
 // so we can interact with the iFrame 
-const peraElements = document.querySelectorAll('.testimonial-slide_media-video');
+const testimonialVideo = document.querySelectorAll('.testimonial-slide_media-video');
 
-if (peraElements.length > 0) {
+if (testimonialVideo.length > 0) {
   let scrollTimeout;
 
   window.addEventListener('scroll', () => {
-    peraElements.forEach(element => {
+    testimonialVideo.forEach(element => {
       element.classList.add('overflow-scroll-element');
     });
 
@@ -93,7 +93,7 @@ if (peraElements.length > 0) {
 
     // Set a timeout to remove the class "overflow-scroll-element" after scrolling stops
     scrollTimeout = setTimeout(() => {
-      peraElements.forEach(element => {
+      testimonialVideo.forEach(element => {
         element.classList.remove('overflow-scroll-element');
       });
     }, 150); // Adjust the delay as needed
