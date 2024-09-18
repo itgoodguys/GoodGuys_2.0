@@ -17,18 +17,18 @@ function animateIcon(icon) {
   const originalY = parseFloat(getComputedStyle(icon).top);
 
   function move() {
-      // Random new position within a 20px radius
-      const newX = originalX + getRandomPosition();
-      const newY = originalY + getRandomPosition();
+    // Random new position within a 20px radius
+    const newX = originalX + getRandomPosition();
+    const newY = originalY + getRandomPosition();
 
-      // Animate the icon to the new position
-      gsap.to(icon, {
-          x: newX - originalX, // Offset from the original position
-          y: newY - originalY,
-          duration: getRandomDuration(), // Duration of 2 seconds for the transition
-          ease: "power1.inOut", // Smooth easing for the movement
-          onComplete: move // Call move again when the animation is done to repeat
-      });
+    // Animate the icon to the new position
+    gsap.to(icon, {
+      x: newX - originalX, // Offset from the original position
+      y: newY - originalY,
+      duration: getRandomDuration(), // Duration of 2 seconds for the transition
+      ease: "power1.inOut", // Smooth easing for the movement
+      onComplete: move // Call move again when the animation is done to repeat
+    });
   }
 
   move(); // Start the initial movement

@@ -70,6 +70,18 @@ navInnerLinks.forEach(element => {
   // });
 });
 
+const navMobileSublinks = document.querySelectorAll('.nav-drop_content-media_sublinks-mobile');
+navMobileSublinks.forEach(element => {
+  element.addEventListener('touchstart', (event) => {
+    event.stopPropagation(); 
+  });
+  element.addEventListener('touchmove', (event) => {
+    event.stopPropagation(); 
+  });
+  element.addEventListener('touchend', (event) => {
+    event.stopPropagation(); 
+  });
+});
 
 // Fix for scrolling over Testimonial iFrame elemenets
 // on scroll, we create a class that has a pseudo element attached
