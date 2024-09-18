@@ -18,6 +18,5 @@ import './animations/fadeTextFromLeft.js'
 import './animations/scrubOpacity.js'
 import './animations/imageParallax.js'
 import './animations/developmentProcess.js'
-
-
+import './animations/heroIconsMovement.js'
 
