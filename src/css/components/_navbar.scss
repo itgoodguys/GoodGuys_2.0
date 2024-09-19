@@ -179,6 +179,12 @@
   .nav-drop_content-media_sublinks-mobile{
     max-height: 11rem;
   }
+  .nav-dropdown-link_bellow{
+    @media screen and (max-width: 991px){
+      max-height: 1000px;
+      opacity: 1;
+    }
+  }
 }
 
 
@@ -501,6 +507,11 @@
       }
       .button-link:before{
         background-color: #fff;
+      }
+    }
+    .nav-dropdown-link_bellow-arrow{
+      path{
+        stroke: #fff;
       }
     }
   }

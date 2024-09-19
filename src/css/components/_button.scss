@@ -52,12 +52,12 @@
       }
     }
     @media screen and (max-width: 991px){
-      scale: 0.85;
+      scale: 0.85 !important;
     }
   }
   &:has(.button-link:active){
     @media screen and (max-width: 991px){
-      scale: 0.85;
+      scale: 0.85 !important;
     }
   }
 }
