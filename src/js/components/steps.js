@@ -46,8 +46,8 @@ function initAnimations() {
           strokeDashoffset: 0, // Fill the stroke by reducing dashoffset to 0
           scrollTrigger: {
             trigger: path, // Trigger the animation when the path is in view
-            start: "top 80%", // Start the animation when the top of the SVG is 60% from the top of the viewport
-            end: "top 50%", // End the animation when the top of the SVG is 20% from the top
+            start: "top 80%", // Start the animation when the top of the SVG is 80% from the top of the viewport
+            end: "top 50%", // End the animation when the top of the SVG is 50% from the top
             scrub: true, // Smoothly animate in sync with the scroll position
           }
         }
@@ -123,12 +123,13 @@ steps.forEach(step => {
     {
       y: 0, // End at the original position
       opacity: 1, // Fully visible
-      duration: 0.8, // Duration for each element's animation
+      // duration: 0.8, // Duration for each element's animation
       ease: "power2.out", // Easing for smooth effect
       stagger: 0.2, // Stagger delay of 0.2s between each child element
       scrollTrigger: {
         trigger: closestVisibleStepLine || step, // Use the closest '.step_line' or fallback to the step itself
-        start: "top 55%", // Start the animation when the top of the 'step' element is 60% from the top of the viewport
+        start: "top 55%", // Start the animation when the top of the 'step' element is 55% from the top of the viewport
+        end: "top 40%",
         onEnter: () => {
           // Add the 'active-step' class when the animation starts
           let activeStep = document.querySelector('.active-step');

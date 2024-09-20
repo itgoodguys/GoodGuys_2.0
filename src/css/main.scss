@@ -92,3 +92,21 @@ body { overscroll-behavior: none; }
   border-right: none !important;
 }
 
+/***********************************************
+  cookie banner
+***********************************************/
+.coockie-accept-all{
+  .button-link::before{
+    transform: translateY(0em);
+    border-radius: 0%;
+    transition: border-radius 0.15s cubic-bezier(0.61, 1, 0.88, 1) 0.15s, 0.2s cubic-bezier(0.61, 1, 0.88, 1);
+  }
+  color: #fff;
+  svg {
+    transform: rotate(45deg);
+    path {
+      stroke: #EFFF32;
+    }
+  }
+} 
+
