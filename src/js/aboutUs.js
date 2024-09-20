@@ -357,84 +357,84 @@ function floatElement() {
 /************************************
       Typing hero text
 **************************************/ 
-//--------------------------------//
+// --------------------------------//
 // Initial animation: typing out #startText 
+// --------------------------------//
+const tl = gsap.timeline({
+  onStart: () => blinking.play(),
+  onComplete: () => animation.play()
+});
+tl.from(".sentance", {
+  text: {
+    value: "",
+    delimiter: ""
+  },
+  duration: 4,
+  ease: "none"
+});
+// END Initial animation: typing out #startText --------------//
+
+let startText = document.querySelector("#startText");
+let cursor = document.querySelector("#cursor");
+let words = gsap.utils.toArray(".type-del");
+
 //--------------------------------//
-// const tl = gsap.timeline({
-//   onStart: () => blinking.play(),
-//   onComplete: () => animation.play()
-// });
-// tl.from(".sentance", {
-//   text: {
-//     value: "",
-//     delimiter: ""
-//   },
-//   duration: 4,
-//   ease: "none"
-// });
-// // END Initial animation: typing out #startText --------------//
-
-// let startText = document.querySelector("#startText");
-// let cursor = document.querySelector("#cursor");
-// let words = gsap.utils.toArray(".type-del");
-
-// //--------------------------------//
-// // Blinking animation 
-// //--------------------------------//
+// Blinking animation 
+//--------------------------------//
 
 
-// const blinking = gsap.timeline({
-//   repeat: -1,
-//   paused: true
-// });
+const blinking = gsap.timeline({
+  repeat: -1,
+  paused: true
+});
 
-// blinking.from(cursor, {
-//   opacity: -100,
-//   ease: "steps(1)"
-// });
+blinking.from(cursor, {
+  opacity: -100,
+  ease: "steps(1)"
+});
 
-// // END Blinking animation --------------//
+// END Blinking animation --------------//
 
-// //--------------------------------//
-// // Creative coding club GSAP Staggers with Seamless Loops  
-// // https://www.youtube.com/watch?v=0DSkgXNFZHs
-// //--------------------------------//
-// let animation = gsap.timeline({ repeat: 20, paused: true, });
-// let targets = document.querySelectorAll('.type-del');
-// let numberOfTargets = targets.length;
+//--------------------------------//
+// Creative coding club GSAP Staggers with Seamless Loops  
+// https://www.youtube.com/watch?v=0DSkgXNFZHs
+//--------------------------------//
+let animation = gsap.timeline({ repeat: 20, paused: true, });
+let targets = document.querySelectorAll('.type-del');
+let numberOfTargets = targets.length;
 
-// let duration = 1; //change this
-// let pause = 2; // change this
+let duration = 1; //change this
+let pause = 2; // change this
 
-// let stagger = duration + pause;
-// let repeatDelay = stagger * (numberOfTargets - 1) + pause;
+let stagger = duration + pause;
+let repeatDelay = stagger * (numberOfTargets - 1) + pause;
 
-// // gsap.set(".demo", {autoAlpha:1})
-// animation.from('.type-del', {
-//    text: {
-//       value: '',
-//     },
-//   duration: duration,
-//   // opacity: 0,
-//   stagger: {
-//     each: stagger,
-//     repeat: -1,
-//     repeatDelay: repeatDelay
-//   }
-// });
-// animation.to(
-//   '.type-del',
-//   {
-//     text: {
-//       value: '',
-//     },
-//     duration: duration,
-//     // opacity: 0,
-//     stagger: {
-//       each: stagger,
-//       repeat: -1,
-//       repeatDelay: repeatDelay
-//     }
-//   },
-//   stagger
-// );
+// gsap.set(".demo", {autoAlpha:1})
+animation.from('.type-del', {
+   text: {
+      value: '',
+    },
+  duration: duration,
+  // opacity: 0,
+  stagger: {
+    each: stagger,
+    repeat: -1,
+    repeatDelay: repeatDelay
+  }
+});
+animation.to(
+  '.type-del',
+  {
+    text: {
+      value: '',
+    },
+    duration: duration,
+    // opacity: 0,
+    stagger: {
+      each: stagger,
+      repeat: -1,
+      repeatDelay: repeatDelay
+    }
+  },
+  stagger
+);
