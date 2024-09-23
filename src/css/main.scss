@@ -95,6 +95,11 @@ body { overscroll-behavior: none; }
 /***********************************************
   cookie banner
 ***********************************************/
+.dark-background .fs-consent_banner{
+  p{
+    color: #212121;
+  }
+}
 .coockie-accept-all{
   .button-link::before{
     transform: translateY(0em);
