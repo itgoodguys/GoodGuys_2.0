@@ -62,7 +62,7 @@ function updateActiveTestimonial() {
 document.querySelectorAll('.testimonial-slide_media-video').forEach((element) => {
   element.addEventListener('click', (event) => {
     event.stopPropagation();
-  });
+  }, { passive: true });
 });
 
 

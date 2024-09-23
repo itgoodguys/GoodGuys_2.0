@@ -147,7 +147,7 @@ function showContent(content) {
       // and thus close the content
       item.addEventListener('click', (event) => {
         event.stopPropagation();
-      });
+      }, { passive: true });
     });
   }
   else {
@@ -157,7 +157,7 @@ function showContent(content) {
       // and thus close the content
       item.addEventListener('click', (event) => {
         event.stopPropagation();
-      });
+      }, { passive: true });
     });
     content.classList.add('show-drop-content');
   }
@@ -299,7 +299,7 @@ linkWrappers.forEach(wrapper => {
         linkWrappers.forEach(item => item.classList.remove('active-link-wrapper'));
         wrapper.classList.add('active-link-wrapper');
       }
-    });
+    }, { passive: true });
 });
 
 ///////////////////////////////////////////////
@@ -352,7 +352,7 @@ const handleLinksAfterScroll = debounce(handleLinks, 200);
 handleLinks();
 
 // Reapply links handling after scrolling stops
-window.addEventListener('scroll', handleLinksAfterScroll);
+window.addEventListener('scroll', handleLinksAfterScroll, { passive: true } );
 window.addEventListener('resize', handleLinksAfterScroll);
 
 /////////////////////////////////////////////
@@ -390,7 +390,7 @@ window.addEventListener('scroll', function() {
 
   lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
 
-});
+}, { passive: true });
 
 // Initializing GSAP animation variables
 // var lastScrollTop = 0;

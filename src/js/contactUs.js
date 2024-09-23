@@ -62,7 +62,7 @@ nameForm.addEventListener("input", (event) => {
     applyInvalidStyles(nameForm);
   }
   updateSubmitButton();
-});
+}, { passive: true });
 
 companyForm.addEventListener("input", (event) => {
   const companyFormValue = event.target.value.trim();
@@ -74,7 +74,7 @@ companyForm.addEventListener("input", (event) => {
     applyInvalidStyles(companyForm);
   }
   updateSubmitButton();
-});
+}, { passive: true });
 
 emailForm.addEventListener("input", (event) => {
   const emailFormValue = event.target.value.trim();
@@ -86,7 +86,7 @@ emailForm.addEventListener("input", (event) => {
     applyInvalidStyles(emailForm);
   }
   updateSubmitButton();
-});
+}, { passive: true });
 
 function updateDivContent() {
   buttonText.textContent = submitButton.value;
@@ -106,7 +106,7 @@ updateDivContent();
 document.querySelector('.custom-select-trigger').addEventListener('click', function() {
   document.querySelector('.custom-options').classList.toggle('show');
   document.querySelector('.custom-select-trigger-icon').classList.toggle('dropdown-open');
-});
+}, { passive: true });
 
 document.querySelectorAll('.custom-option').forEach(function(option) {
   option.addEventListener('click', function() {
@@ -115,7 +115,7 @@ document.querySelectorAll('.custom-option').forEach(function(option) {
       document.querySelector('.custom-select-trigger-icon').classList.remove('dropdown-open');
       // Set the value of the input field with id "budget"
       document.getElementById('budget').value = this.textContent;
-  });
+  }, { passive: true });
 });
 
 document.addEventListener('click', function(event) {
@@ -123,7 +123,7 @@ document.addEventListener('click', function(event) {
       document.querySelector('.custom-options').classList.remove('show');
       document.querySelector('.custom-select-trigger-icon').classList.remove('dropdown-open');
   }
-});
+}, { passive: true });
 
 
 

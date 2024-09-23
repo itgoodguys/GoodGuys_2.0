@@ -47,15 +47,15 @@ const navInnerLinks = document.querySelectorAll('[data-lenis-prevent]');
 navInnerLinks.forEach(element => {
   element.addEventListener('wheel', (event) => {
     event.stopPropagation(); // Stop the event from propagating
-  });
+  }, { passive: true });
 
   element.addEventListener('mousedown', (event) => {
     event.stopPropagation(); // Stop the event from propagating for mousedown as well
-  });
+  }, { passive: true });
 
   element.addEventListener('mousemove', (event) => {
     event.stopPropagation(); // Stop the event from propagating for mousemove
-  });
+  }, { passive: true });
 
   element.style.touchAction = 'auto'; // Ensure touch-action is set to auto for touch devices
 
@@ -74,13 +74,13 @@ const navMobileSublinks = document.querySelectorAll('[lenis-scroll-fix]');
 navMobileSublinks.forEach(element => {
   element.addEventListener('touchstart', (event) => {
     event.stopPropagation(); 
-  });
+  }, { passive: true });
   element.addEventListener('touchmove', (event) => {
     event.stopPropagation(); 
-  });
+  }, { passive: true });
   element.addEventListener('touchend', (event) => {
     event.stopPropagation(); 
-  });
+  }, { passive: true });
 });
 
 // Fix for scrolling over Testimonial iFrame elemenets
@@ -109,6 +109,6 @@ if (testimonialVideo.length > 0) {
         element.classList.remove('overflow-scroll-element');
       });
     }, 150); // Adjust the delay as needed
-  });
+  }, { passive: true });
 }
 

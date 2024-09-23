@@ -106,4 +106,4 @@ let resizeTimer;
 window.addEventListener("resize", function () {
   clearTimeout(resizeTimer);
   resizeTimer = setTimeout(checkScreenSize, 250);
-});
+}, { passive: true });

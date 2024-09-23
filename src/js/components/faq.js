@@ -72,7 +72,7 @@ accordions.forEach(accordion => {
                   svg.querySelector('.faq_accordion-icon-line2').style.opacity = '0';
               });
             }
-        });
+        }, { passive: true });
     });
 });
 	
