@@ -53,12 +53,21 @@
     height: 18px;
     transition: 0.3s ease;
     margin: 0 0.4rem !important;
+    @media screen and (max-width: 767px){
+      width: 24px;
+      height: 24px;
+      margin: 0 0.7rem !important;
+    }
   }
 
   .swiper-pagination-bullet-active{
     width: 20px;
     height: 20px;
     background: #000;
+    @media screen and (max-width: 767px){
+      width: 30px;
+      height: 30px;
+    }
   }
 }
 
