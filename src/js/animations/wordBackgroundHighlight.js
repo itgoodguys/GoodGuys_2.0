@@ -54,3 +54,5 @@ function animateHighlight(highlight) {
 
 // Initialize the animation
 initializeHighlightAnimation();
+
+
