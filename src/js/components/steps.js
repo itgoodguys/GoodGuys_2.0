@@ -89,7 +89,7 @@ function findClosestVisibleStepLine(element) {
     let previousSibling = currentElement.previousElementSibling;
 
     while (previousSibling) { 
-      if (previousSibling.classList.contains("animated_line") && window.getComputedStyle(previousSibling).display !== "none") {
+      if (previousSibling.classList.contains("animated-line") && window.getComputedStyle(previousSibling).display !== "none") {
         return previousSibling; // Found a visible element with class 'step_line'
       }
 
