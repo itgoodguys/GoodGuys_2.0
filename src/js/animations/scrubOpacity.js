@@ -44,7 +44,7 @@ setTimeout(() => {
     // Animate the line masks
     tl.to(allMasks, {
       width: "0%",
-      duration: 1,
+      duration: 0.5,
       stagger: 0.5
     });
   }
