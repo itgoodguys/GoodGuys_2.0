@@ -66,7 +66,31 @@ document.querySelectorAll('.testimonial-slide_media-video').forEach((element) =>
 });
 
 
+const overlays = document.querySelectorAll('.testimonial-slide_media-overlay');
 
+overlays.forEach(overlay => {
+  // Add a click event listener to each overlay
+  overlay.addEventListener('click', function() {
+    // Find the sibling video element
+    const video = this.previousElementSibling.querySelector('video');
+    const playButton = this.nextElementSibling; 
+
+    // Toggle play/pause
+    if (video) { // Ensure the video exists
+      if (video.paused) {
+        video.play();
+        if (playButton) { // Ensure playButton exists
+          playButton.style.opacity = '0';
+        } 
+      } else {
+        video.pause();
+        if (playButton) { // Ensure playButton exists
+          playButton.style.opacity = '1';
+        }
+      }
+    } 
+  });
+});
 
 
 

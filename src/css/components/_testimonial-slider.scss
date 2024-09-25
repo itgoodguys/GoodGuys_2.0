@@ -117,3 +117,7 @@
   z-index: 1; /* Ensure it's above the parent */
 }
 
+.testimonial-slide_media-video{
+  object-fit: cover;
+  object-position: top;
+}
