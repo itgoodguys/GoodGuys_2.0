@@ -1,13 +1,13 @@
 .form-input:focus,
 .form-textarea:focus{
-  border-radius: 0.125rem;
+  // border-radius: 0.125rem;
   outline: 1px solid #2562EA;
   outline-offset: 2px;
   border-color: #b3b3b3;
 }
 
 .input-error-state{
-  border-radius: 0.125rem;
+  // border-radius: 0.125rem;
   outline: 1px solid #B91C1B !important;
   outline-offset: 2px;
   position: relative;
