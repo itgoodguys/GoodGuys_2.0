@@ -17,7 +17,7 @@ if (window.innerWidth < 479) {
 } else if (window.innerWidth < 767) {
   spaceBetweenValue = -50;
 } else if (window.innerWidth < 991) {
-  spaceBetweenValue = -50;
+  spaceBetweenValue = -100;
 } else if (window.innerWidth < 1350) {
   spaceBetweenValue = -150;
 }

@@ -516,7 +516,7 @@
       }
     }
   }
-  .button-wrapper[white-text]{
+  .button-wrapper[white-text]:not(.fs-consent_banner .button-wrapper[white-text]):not(.fs-consent_prefs_popup .button-wrapper[white-text]){
     color: #fff;
     border-top-color: #fff;
     svg {

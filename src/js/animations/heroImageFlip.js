@@ -34,9 +34,9 @@ function createTimeline(zones, target) {
       end: "top 30%",
       scrub: true,
       onUpdate: (self) => {
-        if (self.direction === 1 && self.progress > (1 / zones.length) + 0.4) {
+        if (self.direction === 1 && self.progress > (1 / zones.length) ) {
           target.style.clipPath = 'none';
-        } else if (self.direction === -1 && self.progress <= (1 / zones.length) + 0.4) {
+        } else if (self.direction === -1 && self.progress <= (1 / zones.length) ) {
           target.style.clipPath = originalClipPath;
         }
       },
