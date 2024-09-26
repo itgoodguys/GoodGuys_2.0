@@ -6,6 +6,12 @@ import '../../css/animations/_fade-text-from-bottom.scss';
 
 
 gsap.registerPlugin(ScrollTrigger);
+ScrollTrigger.normalizeScroll(true);
+
+ScrollTrigger.config({
+  limitCallbacks: true,
+  ignoreMobileResize: true,
+});
 
 // Function to initialize animations
 function initializeAnimations() {

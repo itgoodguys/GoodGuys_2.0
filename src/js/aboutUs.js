@@ -21,6 +21,11 @@ gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(TextPlugin);
 ScrollTrigger.normalizeScroll(true);
 
+ScrollTrigger.config({
+  limitCallbacks: true,
+  ignoreMobileResize: true,
+});
+
 /************************************
 hero logo animation
 **************************************/ 

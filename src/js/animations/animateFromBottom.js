@@ -4,6 +4,11 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 ScrollTrigger.normalizeScroll(true);
 
+ScrollTrigger.config({
+  limitCallbacks: true,
+  ignoreMobileResize: true,
+});
+
 // Wrap the ScrollTrigger setup in a setTimeout to delay execution
 setTimeout(() => {
   // Select all elements with the custom attribute "animate-from-bottom"

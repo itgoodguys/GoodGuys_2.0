@@ -6,6 +6,11 @@ gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(Flip);
 ScrollTrigger.normalizeScroll(true);
 
+ScrollTrigger.config({
+  limitCallbacks: true,
+  ignoreMobileResize: true,
+});
+
 // SETUP ELEMENTS
 const zonesLeft = document.querySelectorAll("[js-scrollflip-element-left='zone']");
 const targetLeft = document.querySelector("[js-scrollflip-element-left='target']");
