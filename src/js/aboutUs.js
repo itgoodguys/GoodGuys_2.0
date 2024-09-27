@@ -30,120 +30,120 @@ ScrollTrigger.config({
 hero logo animation
 **************************************/ 
 
-// Select all SVGs representing the letters
-const letters = document.querySelectorAll('.logo-letter');
-const stickyElement = document.querySelector('.about-hero_sticky');
-const stickyLogo = document.querySelector('.about-hero_logo');
-const introText = document.querySelector('.about-hero_sticky-intro');
+// // Select all SVGs representing the letters
+// const letters = document.querySelectorAll('.logo-letter');
+// const stickyElement = document.querySelector('.about-hero_sticky');
+// const stickyLogo = document.querySelector('.about-hero_logo');
+// const introText = document.querySelector('.about-hero_sticky-intro');
 
 
 
 
-// Define an array of 7 positions with x and y coordinates
-const positions = [
-  { x: -50, y: -50 },  // Position for the first letter
-  { x: -150, y: -100 },    // Position for the second letter
-  { x: 0, y: -150 },  // Position for the third letter
-  { x: 250, y: -120 },  // Position for the fourth letter
-  { x: 100, y: 50 },  // Position for the fifth letter
-  { x: -20, y: 200 },  // Position for the sixth letter
-  { x: -100, y: 100 }   // Position for the seventh letter
-];
+// // Define an array of 7 positions with x and y coordinates
+// const positions = [
+//   { x: -50, y: -50 },  // Position for the first letter
+//   { x: -150, y: -100 },    // Position for the second letter
+//   { x: 0, y: -150 },  // Position for the third letter
+//   { x: 250, y: -120 },  // Position for the fourth letter
+//   { x: 100, y: 50 },  // Position for the fifth letter
+//   { x: -20, y: 200 },  // Position for the sixth letter
+//   { x: -100, y: 100 }   // Position for the seventh letter
+// ];
 
-letters.forEach((letter, index) => {
-  // Get the corresponding position from the array
-  const { x, y } = positions[index % positions.length]; // Use modulo to prevent out-of-bounds access
+// letters.forEach((letter, index) => {
+//   // Get the corresponding position from the array
+//   const { x, y } = positions[index % positions.length]; // Use modulo to prevent out-of-bounds access
 
-  gsap.fromTo(
-    letter,
-    {
-      y: y * window.innerHeight / 100, // Start from the specified Y position
-      x: x * window.innerWidth / 100,  // Start from the specified X position
-      scale: 6,         // Start with each letter scaled up
-      opacity: 0        // Start with each letter invisible
-    },
-    {
-      y: 0,             // Move the letter to its original position
-      x: 0,             // Move the letter to its original X position
-      scale: 1,         // Scale down to the original size
-      opacity: 1,       // Fade in the letter
-      stagger: 0.3, 
-      scrollTrigger: {
-        trigger: '.about-hero', // Trigger animation when .about-hero_trigger is in view
-        start: `center ${90 - index * 5}%`,  // Dynamic start value based on index
-        end: 'center 50%',             // End when the top of .about-hero_trigger is 50% from the top of the viewport
-        scrub: 1,                   // Scrub smoothly with a duration of 1 second
-        // markers: true, // Enable markers to visualize trigger points
-      }
-    }
-  );
+//   gsap.fromTo(
+//     letter,
+//     {
+//       y: y * window.innerHeight / 100, // Start from the specified Y position
+//       x: x * window.innerWidth / 100,  // Start from the specified X position
+//       scale: 6,         // Start with each letter scaled up
+//       opacity: 0        // Start with each letter invisible
+//     },
+//     {
+//       y: 0,             // Move the letter to its original position
+//       x: 0,             // Move the letter to its original X position
+//       scale: 1,         // Scale down to the original size
+//       opacity: 1,       // Fade in the letter
+//       stagger: 0.3, 
+//       scrollTrigger: {
+//         trigger: '.about-hero', // Trigger animation when .about-hero_trigger is in view
+//         start: `center ${90 - index * 5}%`,  // Dynamic start value based on index
+//         end: 'center 50%',             // End when the top of .about-hero_trigger is 50% from the top of the viewport
+//         scrub: 1,                   // Scrub smoothly with a duration of 1 second
+//         // markers: true, // Enable markers to visualize trigger points
+//       }
+//     }
+//   );
 
-  gsap.fromTo(introText, 
-    {
-      opacity: 1  
-    },
-    {
-    opacity: 0, 
-    ease: "power2.inOut", // Easing function (optional)
-    scrollTrigger: {
-      trigger: '.about-hero', // Trigger the animation when stickyElement is in view
-      start: 'center 90%',      
-      end: 'center 80%',        
-      scrub: 1,   
-    }
-  });
+//   gsap.fromTo(introText, 
+//     {
+//       opacity: 1  
+//     },
+//     {
+//     opacity: 0, 
+//     ease: "power2.inOut", // Easing function (optional)
+//     scrollTrigger: {
+//       trigger: '.about-hero', // Trigger the animation when stickyElement is in view
+//       start: 'center 90%',      
+//       end: 'center 80%',        
+//       scrub: 1,   
+//     }
+//   });
 
-  gsap.fromTo(stickyElement, 
-    {
-      maxWidth: "100vw", // Change this value to your desired max-width
-      maxHeight: "100vh",
-    },
-    {
-    maxWidth: "0px", // Change this value to your desired max-width
-    maxHeight: "0px", // Change this value to your desired max-height
-    ease: "power2.inOut", // Easing function (optional)
-    scrollTrigger: {
-      trigger: '.about-hero', // Trigger the animation when stickyElement is in view
-      start: 'center 40%',       // Start the animation at 40% scroll progress
-      end: 'bottom 25%',         // End the animation at 25% scroll progress
-      scrub: 1,               // Smoothly animate with scrolling
-      // markers: true, // Enable markers to visualize trigger points
-    }
-  });
+//   gsap.fromTo(stickyElement, 
+//     {
+//       maxWidth: "100vw", // Change this value to your desired max-width
+//       maxHeight: "100vh",
+//     },
+//     {
+//     maxWidth: "0px", // Change this value to your desired max-width
+//     maxHeight: "0px", // Change this value to your desired max-height
+//     ease: "power2.inOut", // Easing function (optional)
+//     scrollTrigger: {
+//       trigger: '.about-hero', // Trigger the animation when stickyElement is in view
+//       start: 'center 40%',       // Start the animation at 40% scroll progress
+//       end: 'bottom 25%',         // End the animation at 25% scroll progress
+//       scrub: 1,               // Smoothly animate with scrolling
+//       // markers: true, // Enable markers to visualize trigger points
+//     }
+//   });
 
-  gsap.fromTo(stickyElement, 
-    {
-      opacity: 1  
-    },
-    {
-      opacity: 0,
-      ease: "power2.inOut",
-      scrollTrigger: {
-        trigger: '.about-hero', // Trigger the animation when stickyElement is in view
-        start: 'center 40%',    // Start the animation at 40% scroll progress
-        end: 'bottom 70%',      // End the animation at 30% scroll progress
-        scrub: 1,               // Smoothly animate with scrolling
-        // markers: true, // Enable markers to visualize trigger points
-      }
-    });
+//   gsap.fromTo(stickyElement, 
+//     {
+//       opacity: 1  
+//     },
+//     {
+//       opacity: 0,
+//       ease: "power2.inOut",
+//       scrollTrigger: {
+//         trigger: '.about-hero', // Trigger the animation when stickyElement is in view
+//         start: 'center 40%',    // Start the animation at 40% scroll progress
+//         end: 'bottom 70%',      // End the animation at 30% scroll progress
+//         scrub: 1,               // Smoothly animate with scrolling
+//         // markers: true, // Enable markers to visualize trigger points
+//       }
+//     });
 
-  gsap.fromTo(stickyLogo, 
-    {
-      scale: 1,
-      opacity: 1  
-    },
-    {
-    scale: 0.2,
-    ease: "power2.inOut", // Easing function (optional)
-    scrollTrigger: {
-      trigger: '.about-hero', // Trigger the animation when stickyElement is in view
-      start: 'center 40%',       // Start the animation at 40% scroll progress
-      end: 'bottom 25%',         // End the animation at 10% scroll progress
-      scrub: 1,               // Smoothly animate with scrolling
-      // markers: true, // Enable markers to visualize trigger points
-    }
-  });
-});
+//   gsap.fromTo(stickyLogo, 
+//     {
+//       scale: 1,
+//       opacity: 1  
+//     },
+//     {
+//     scale: 0.2,
+//     ease: "power2.inOut", // Easing function (optional)
+//     scrollTrigger: {
+//       trigger: '.about-hero', // Trigger the animation when stickyElement is in view
+//       start: 'center 40%',       // Start the animation at 40% scroll progress
+//       end: 'bottom 25%',         // End the animation at 10% scroll progress
+//       scrub: 1,               // Smoothly animate with scrolling
+//       // markers: true, // Enable markers to visualize trigger points
+//     }
+//   });
+// });
 
 
 
