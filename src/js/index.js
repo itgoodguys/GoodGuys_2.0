@@ -7,7 +7,7 @@ import './components/breadcrumbs.js'
 import './components/navbar.js'
 import './components/customCursor.js'
 import './components/footer.js'
-import './animations/animateFromBottom.js'
+// import './animations/animateFromBottom.js'
 // import './animations/lenisSmoothScroll.js'
 
 
