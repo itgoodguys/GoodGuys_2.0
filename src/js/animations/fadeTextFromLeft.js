@@ -6,7 +6,7 @@ import '../../css/animations/_fade-text-from-left.scss';
 
 
 gsap.registerPlugin(ScrollTrigger);
-ScrollTrigger.normalizeScroll(true);
+// ScrollTrigger.normalizeScroll(true);
 
 ScrollTrigger.config({
   limitCallbacks: true,

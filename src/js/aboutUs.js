@@ -19,7 +19,7 @@ import SplitType from 'split-type';
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(TextPlugin);
-ScrollTrigger.normalizeScroll(true);
+// ScrollTrigger.normalizeScroll(true);
 
 ScrollTrigger.config({
   limitCallbacks: true,
