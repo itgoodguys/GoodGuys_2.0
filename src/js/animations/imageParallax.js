@@ -6,10 +6,10 @@ import gsap from 'gsap';
 gsap.registerPlugin(ScrollTrigger);
 // ScrollTrigger.normalizeScroll(true);
 
-ScrollTrigger.config({
-  limitCallbacks: true,
-  ignoreMobileResize: true,
-});
+// ScrollTrigger.config({
+//   limitCallbacks: true,
+//   ignoreMobileResize: true,
+// });
 
 // Function to create parallax effect
 function createParallaxEffect(container) {
