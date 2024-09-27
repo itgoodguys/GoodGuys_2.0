@@ -121,3 +121,14 @@ body { overscroll-behavior: none; }
   }
 } 
 
+/***********************************************
+  disable ios showing play button on autoplay videos
+***********************************************/
+[background-animation]::-webkit-media-controls {
+  display:none !important;
+}
+
+[background-animation]::-webkit-media-controls-start-playback-button {
+  display: none!important;
+  -webkit-appearance: none;
+}
