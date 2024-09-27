@@ -6,71 +6,80 @@ import { lenis } from '../animations/lenisSmoothScroll.js';
 // we check the index of the nav-dropdown-link that is hovered
 // and then add the "show" class on the media image that has the same index
 // if the screen size is less than 992px we remove the mouseenter and mouseleave events
-const dropdownLinks = document.querySelectorAll('.nav-dropdown-link');
-const dropdownImages = document.querySelectorAll('.nav-drop_content-media-image');
+// Function to handle the hover events for a specific set of links and images
+function setupDropdownHoverEvents(dropdownLinks, dropdownImages) {
+  let lastHoveredIndex = 0;
 
-
-function showImage(index) {
-  dropdownImages.forEach((img, idx) => {
-    if (idx === index) {
-      img.classList.add('show');
-    } else {
-      img.classList.remove('show');
-    }
-  });
-}
-
-let lastHoveredIndex = 0;
-
-// function that is executed when mouse enter
-function handleMouseEnter(event) {
-  const index = Array.from(dropdownLinks).indexOf(event.currentTarget);
-  lastHoveredIndex = index;
-  showImage(index);
-}
-
-// function that is executed when mouse leave
-function handleMouseLeave() {
-  showImage(lastHoveredIndex);
-}
-
-// add hover event (we will triger this if screen size is more than 991px)
-function addHoverEventListeners() {
-  dropdownLinks.forEach((link) => {
-    link.addEventListener('mouseenter', handleMouseEnter);
-    link.addEventListener('mouseleave', handleMouseLeave);
-  });
-}
-
-// remove hover event (we will triger this if screen size is less than 992px)
-function removeHoverEventListeners() {
-  dropdownLinks.forEach((link) => {
-    link.removeEventListener('mouseenter', handleMouseEnter);
-    link.removeEventListener('mouseleave', handleMouseLeave);
-  });
-}
-
-// check the screen size on page load and screen resize 
-// and apply the hover or remove the hover event listener
-function applyEventListeners() {
-  const mediaQuery = window.matchMedia("(min-width: 992px)");
-
-  if (mediaQuery.matches) {
-    addHoverEventListeners();
-  } else {
-    removeHoverEventListeners();
+  // Show the image based on the index
+  function showImage(index) {
+    dropdownImages.forEach((img, idx) => {
+      if (idx === index) {
+        img.classList.add('show');
+      } else {
+        img.classList.remove('show');
+      }
+    });
   }
+
+  // Function that is executed when mouse enter
+  function handleMouseEnter(event) {
+    const index = Array.from(dropdownLinks).indexOf(event.currentTarget);
+    lastHoveredIndex = index;
+    showImage(index);
+  }
+
+  // Function that is executed when mouse leave
+  function handleMouseLeave() {
+    showImage(lastHoveredIndex);
+  }
+
+  // Add hover event listeners (triggered if screen size is more than 991px)
+  function addHoverEventListeners() {
+    dropdownLinks.forEach((link) => {
+      link.addEventListener('mouseenter', handleMouseEnter);
+      link.addEventListener('mouseleave', handleMouseLeave);
+    });
+  }
+
+  // Remove hover event listeners (triggered if screen size is less than 992px)
+  function removeHoverEventListeners() {
+    dropdownLinks.forEach((link) => {
+      link.removeEventListener('mouseenter', handleMouseEnter);
+      link.removeEventListener('mouseleave', handleMouseLeave);
+    });
+  }
+
+  // Check the screen size and apply/remove hover event listeners
+  function applyEventListeners() {
+    const mediaQuery = window.matchMedia("(min-width: 992px)");
+
+    if (mediaQuery.matches) {
+      addHoverEventListeners();
+    } else {
+      removeHoverEventListeners();
+    }
+  }
+
+  // Initially show the first image
+  showImage(0);
+
+  // Apply the event listeners on load
+  applyEventListeners();
+
+  // Re-apply the event listeners on window resize
+  window.addEventListener('resize', applyEventListeners);
 }
 
-// Initially show the first image
-// so when you open the dropdown, one image is showed by default
-showImage(0);
+// Set up for the core dropdown
+const coreDropdownLinks = document.querySelectorAll('#core-drop .nav-dropdown-link');
+const coreDropdownImages = document.querySelectorAll('#core-drop .nav-drop_content-media-image');
+setupDropdownHoverEvents(coreDropdownLinks, coreDropdownImages);
 
-// Apply the event listeners on load
-applyEventListeners();
+// Set up for the resources dropdown
+const resourcesDropdownLinks = document.querySelectorAll('#resources-drop .nav-dropdown-link');
+const resourcesDropdownImages = document.querySelectorAll('#resources-drop .nav-drop_content-media-image');
+setupDropdownHoverEvents(resourcesDropdownLinks, resourcesDropdownImages);
 
-// Re-apply the event listeners on window resize
-window.addEventListener('resize', applyEventListeners);
 
 
 
