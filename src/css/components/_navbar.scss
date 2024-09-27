@@ -257,9 +257,10 @@
   }
   .nav-drop_content-links{
     @media screen and (max-width: 991px){
-      padding-top: 1.5rem;
+      padding-top: 0rem;
       padding-bottom: 1rem;
       padding-left: 1rem;
+      margin-top: 1.5rem;
       border-bottom: 1px solid var(--swatch--ufo-blue);
       width: 100%;
       grid-row-gap: 0.5rem;
@@ -358,7 +359,7 @@
 
   .nav-menu_links-container{
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 0rem;
     align-items: baseline;
     background-color: var(--swatch--light-1);
     grid-column: 2 / 13;
@@ -372,6 +373,7 @@
       position: relative;
       width: 100%;
       z-index: 200;
+      padding: 0.75rem 0;
       // when menu is open, we set the content to be relative to the nav-menu
       // and not to the nav-drop-wrapper, so we can place them all in the same place on the right side
       .nav-drop_content{
@@ -399,6 +401,9 @@
             transform: rotate(90deg);
           }
         }
+      }
+      .nav-main-link{
+        padding: 0.75rem 0px;
       }
     }
   }
