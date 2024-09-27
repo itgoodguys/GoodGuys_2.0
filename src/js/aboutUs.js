@@ -8,7 +8,7 @@ import '../css/components/_cta.scss'
 
 // animations
 import './animations/fadeTextFromBottom.js'
-// import './animations/imageParallax.js'
+import './animations/imageParallax.js'
 import './animations/fadeTextFromLeft.js'
 import './animations/fadeTextFromRight.js'
 
