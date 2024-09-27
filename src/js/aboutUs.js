@@ -7,24 +7,24 @@ import '../css/components/_cta.scss'
 // components
 
 // animations
-import './animations/fadeTextFromBottom.js'
+// import './animations/fadeTextFromBottom.js'
 import './animations/imageParallax.js'
-import './animations/fadeTextFromLeft.js'
-import './animations/fadeTextFromRight.js'
+// import './animations/fadeTextFromLeft.js'
+// import './animations/fadeTextFromRight.js'
 
-import gsap from 'gsap';
-import { TextPlugin } from "gsap/TextPlugin";
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import SplitType from 'split-type';
+// import gsap from 'gsap';
+// import { TextPlugin } from "gsap/TextPlugin";
+// import { ScrollTrigger } from 'gsap/ScrollTrigger';
+// import SplitType from 'split-type';
 
-gsap.registerPlugin(ScrollTrigger);
-gsap.registerPlugin(TextPlugin);
-ScrollTrigger.normalizeScroll(true);
+// gsap.registerPlugin(ScrollTrigger);
+// gsap.registerPlugin(TextPlugin);
+// ScrollTrigger.normalizeScroll(true);
 
-ScrollTrigger.config({
-  limitCallbacks: true,
-  ignoreMobileResize: true,
-});
+// ScrollTrigger.config({
+//   limitCallbacks: true,
+//   ignoreMobileResize: true,
+// });
 
 /************************************
 hero logo animation
