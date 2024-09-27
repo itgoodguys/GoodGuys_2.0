@@ -1,5 +1,5 @@
 import '../../css/components/_navbar.scss';
-import { lenis } from '../animations/lenisSmoothScroll.js';
+// import { lenis } from '../animations/lenisSmoothScroll.js';
 // import gsap from 'gsap';
 
 // Code for all menu dropdown links and the media content on the right side of each dropdown content
@@ -223,14 +223,14 @@ function applyNavDropWrapperEventListeners() {
 }
 
 function disablePageScroll(){
-  lenis.stop();
+  // lenis.stop();
   document.body.style.overflow = 'hidden';
   document.body.style.touchAction= "none";
   document.body.style.position= "fixed";
 }
 
 function enablePageScroll(){
-  lenis.start();
+  // lenis.start();
   document.body.style.overflow = 'auto';
   document.body.style.touchAction= "auto";
   document.body.style.position= "static";
