@@ -26,6 +26,8 @@ ScrollTrigger.config({
   ignoreMobileResize: true,
 });
 
+console.log('a')
+
 /************************************
 hero logo animation
 **************************************/ 
@@ -50,7 +52,7 @@ const positions = [
   { x: -100, y: 100 }   // Position for the seventh letter
 ];
 
-letters.forEach((letter, index) => {
+letters.forEach((letter, index) => {   
   // Get the corresponding position from the array
   const { x, y } = positions[index % positions.length]; // Use modulo to prevent out-of-bounds access
 
