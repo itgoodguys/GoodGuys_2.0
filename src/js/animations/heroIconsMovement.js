@@ -2,7 +2,7 @@ import gsap from 'gsap';
 
 // Function to generate a random position within a 20px radius
 function getRandomPosition() {
-  return Math.random() * 40 - 20; // Generate a random number between -20 and 20
+  return Math.random() * 20 - 10; // Generate a random number between -20 and 20
 }
 
 // Function to generate a random duration between 5 and 7 seconds
