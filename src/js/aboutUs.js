@@ -9,8 +9,8 @@ import '../css/components/_cta.scss'
 // animations
 import './animations/fadeTextFromBottom.js'
 import './animations/imageParallax.js'
-import './animations/fadeTextFromLeft.js'
-import './animations/fadeTextFromRight.js'
+// import './animations/fadeTextFromLeft.js'
+// import './animations/fadeTextFromRight.js'
 
 import gsap from 'gsap';
 import { TextPlugin } from "gsap/TextPlugin";
