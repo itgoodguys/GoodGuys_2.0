@@ -163,11 +163,10 @@
 }
 
 .nav-drop_content-media_sublinks-mobile{
-  overflow: hidden;
   max-height: 0px;
   transition: all 0.2s;
   display: none;
-  overflow: auto;
+  overflow: hidden;
   padding-left: 1.5rem;
   @media screen and (max-width: 991px){
     display: flex;
@@ -185,6 +184,7 @@
   }
   .nav-drop_content-media_sublinks-mobile{
     max-height: 11rem;
+    overflow: auto;
   }
   .nav-dropdown-link_bellow{
     @media screen and (max-width: 991px){
