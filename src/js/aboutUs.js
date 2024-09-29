@@ -437,10 +437,10 @@ animation.to(
     duration: duration,
     // opacity: 0,
     stagger: {
-      each: 4,
+      each: stagger,
       repeat: -1,
       repeatDelay: repeatDelay
     }
   },
-  stagger
+  4
 );
