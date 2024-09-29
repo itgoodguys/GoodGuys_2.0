@@ -9,7 +9,7 @@
     .time-to-read,
     .text-size-small{
         @media screen and (min-width: 767px) and (max-width: 991px){
-            color: #fff;
+            color: #fff !important;
             opacity: 0.7;
         }
     }
