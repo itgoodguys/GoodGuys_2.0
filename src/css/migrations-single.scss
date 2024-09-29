@@ -20,18 +20,16 @@
       }
     }
     .migrations-process_card-icon{
+      margin-right: 0px;
+      max-width: 0px;
+      max-height: 0px;
+      opacity: 0;
       @media screen and (max-width: 991px){
         margin-right: 0.5rem;
         max-width: 1.5rem;
         max-height:  1.5rem;
         opacity: 1;
       }
-    }
-    .migrations-process_card-icon{
-      margin-right: 0px;
-      max-width: 0px;
-      max-height: 0px;
-      opacity: 0;
     }
   }
 }
