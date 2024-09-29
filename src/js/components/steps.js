@@ -67,11 +67,13 @@ initAnimations();
 // recalculate the elements for animation when screen resize
 let resizeTimeout;
 window.addEventListener('resize', () => {
+  console.log('resize')
   // Clear the existing timeout
   clearTimeout(resizeTimeout);
 
   // Set a new timeout to reinitialize animations after 1 second
   resizeTimeout = setTimeout(() => {
+    console.log('resize timeout')
     // Clear existing ScrollTriggers
     ScrollTrigger.getAll().forEach(trigger => trigger.kill());
 
