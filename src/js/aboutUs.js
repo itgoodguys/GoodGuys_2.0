@@ -276,20 +276,20 @@ function initAnimations() {
 initAnimations();
 
 // recalculate the elements for animation when screen resize
-let resizeTimeout;
-window.addEventListener('resize', () => {
-  // Clear the existing timeout
-  clearTimeout(resizeTimeout);
+// let resizeTimeout;
+// window.addEventListener('resize', () => {
+//   // Clear the existing timeout
+//   clearTimeout(resizeTimeout);
 
-  // Set a new timeout to reinitialize animations after 1 second
-  resizeTimeout = setTimeout(() => {
-    // Clear existing ScrollTriggers
-    ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+//   // Set a new timeout to reinitialize animations after 1 second
+//   resizeTimeout = setTimeout(() => {
+//     // Clear existing ScrollTriggers
+//     ScrollTrigger.getAll().forEach(trigger => trigger.kill());
 
-    // Reinitialize animations
-    initAnimations();
-  }, 1000); // 1000 milliseconds = 1 second
-}, { passive: true });
+//     // Reinitialize animations
+//     initAnimations();
+//   }, 1000); // 1000 milliseconds = 1 second
+// }, { passive: true });
 
 
 /************************************
