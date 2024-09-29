@@ -405,42 +405,38 @@ blinking.from(cursor, {
 // Creative coding club GSAP Staggers with Seamless Loops  
 // https://www.youtube.com/watch?v=0DSkgXNFZHs
 //--------------------------------//
-let animation = gsap.timeline({ repeat: 20, paused: true, });
+let animation = gsap.timeline({ repeat: 20, paused: true });
 let targets = document.querySelectorAll('.type-del');
 let numberOfTargets = targets.length;
 
-let duration = 1; //change this
-let pause = 2; // change this
+let duration = 1; // duration for typing and deleting
+let pause = 2; // pause after typing each word
 
-let stagger = duration + pause;
-let repeatDelay = stagger * (numberOfTargets - 1) + pause;
+let stagger = duration * 2 + pause; // time for typing + deleting + pause
 
 // gsap.set(".demo", {autoAlpha:1})
-animation.from('.type-del', {
-   text: {
-      value: '',
-    },
-  duration: duration,
-  // opacity: 0,
-  stagger: {
-    each: stagger,
-    repeat: -1,
-    repeatDelay: repeatDelay
-  }
-});
-animation.to(
+animation.fromTo(
   '.type-del',
-  {
-    text: {
-      value: '',
-    },
+  { // Typing in the text
+    text: { value: '' }, 
     duration: duration,
-    // opacity: 0,
+    opacity: 1,
     stagger: {
       each: stagger,
       repeat: -1,
-      repeatDelay: repeatDelay
+      repeatDelay: pause
     }
   },
-  stagger
+  { // Deleting the text
+    text: { value: '' }, 
+    duration: duration,
+    opacity: 1,
+    stagger: {
+      each: stagger,
+      repeat: -1,
+      repeatDelay: pause
+    }
+  },
+  duration + pause // delay the deletion until after the word is typed and paused
 );
+
