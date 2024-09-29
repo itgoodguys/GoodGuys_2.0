@@ -111,4 +111,3 @@ if (testimonialVideo.length > 0) {
     }, 150); // Adjust the delay as needed
   }, { passive: true });
 }
-
