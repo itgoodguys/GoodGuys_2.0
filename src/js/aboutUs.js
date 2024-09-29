@@ -442,5 +442,5 @@ animation.to(
       repeatDelay: repeatDelay
     }
   },
-  4
+  2
 );
