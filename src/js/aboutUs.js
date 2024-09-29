@@ -412,7 +412,7 @@ let numberOfTargets = targets.length;
 let duration = 1; //change this
 let pause = 2; // change this
 
-let stagger = duration * 2 + pause;
+let stagger = duration + pause;
 let repeatDelay = stagger * (numberOfTargets - 1) + pause;
 
 // gsap.set(".demo", {autoAlpha:1})
@@ -437,7 +437,7 @@ animation.to(
     duration: duration,
     // opacity: 0,
     stagger: {
-      each: stagger,
+      each: 4,
       repeat: -1,
       repeatDelay: repeatDelay
     }
