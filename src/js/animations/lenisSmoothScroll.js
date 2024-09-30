@@ -4,7 +4,7 @@ import '../../css/animations/_lenis-smooth-scroll.scss'
 import Lenis from 'lenis';
 
 const lenis = new Lenis({
-  lerp: 0.5,
+  lerp: 0.3,
   wheelMultiplier: 0.7,
   infinite: false,
   guestureOrientation: 'vertical',
