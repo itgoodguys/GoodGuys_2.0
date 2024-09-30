@@ -8,9 +8,9 @@ import '../css/components/_cta.scss'
 
 // animations
 import './animations/fadeTextFromBottom.js'
-// import './animations/imageParallax.js'
-import './animations/fadeTextFromLeft.js'
-import './animations/fadeTextFromRight.js'
+import './animations/imageParallax.js'
+// import './animations/fadeTextFromLeft.js'
+// import './animations/fadeTextFromRight.js'
 
 import gsap from 'gsap';
 import { TextPlugin } from "gsap/TextPlugin";
@@ -21,10 +21,11 @@ gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(TextPlugin);
 // ScrollTrigger.normalizeScroll(true);
 
-ScrollTrigger.config({
-  limitCallbacks: true,
-  ignoreMobileResize: true,
-});
+// ScrollTrigger.config({
+//   limitCallbacks: true,
+//   ignoreMobileResize: true,
+// });
+
 
 /************************************
 hero logo animation
@@ -50,7 +51,7 @@ const positions = [
   { x: -100, y: 100 }   // Position for the seventh letter
 ];
 
-letters.forEach((letter, index) => {
+letters.forEach((letter, index) => {   
   // Get the corresponding position from the array
   const { x, y } = positions[index % positions.length]; // Use modulo to prevent out-of-bounds access
 
@@ -275,20 +276,20 @@ function initAnimations() {
 initAnimations();
 
 // recalculate the elements for animation when screen resize
-let resizeTimeout;
-window.addEventListener('resize', () => {
-  // Clear the existing timeout
-  clearTimeout(resizeTimeout);
+// let resizeTimeout;
+// window.addEventListener('resize', () => {
+//   // Clear the existing timeout
+//   clearTimeout(resizeTimeout);
 
-  // Set a new timeout to reinitialize animations after 1 second
-  resizeTimeout = setTimeout(() => {
-    // Clear existing ScrollTriggers
-    ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+//   // Set a new timeout to reinitialize animations after 1 second
+//   resizeTimeout = setTimeout(() => {
+//     // Clear existing ScrollTriggers
+//     ScrollTrigger.getAll().forEach(trigger => trigger.kill());
 
-    // Reinitialize animations
-    initAnimations();
-  }, 1000); // 1000 milliseconds = 1 second
-}, { passive: true });
+//     // Reinitialize animations
+//     initAnimations();
+//   }, 1000); // 1000 milliseconds = 1 second
+// }, { passive: true });
 
 
 /************************************
@@ -441,5 +442,5 @@ animation.to(
       repeatDelay: repeatDelay
     }
   },
-  stagger
+  2
 );

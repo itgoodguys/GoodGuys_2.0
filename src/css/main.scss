@@ -132,3 +132,19 @@ body { overscroll-behavior: none; }
   display: none!important;
   -webkit-appearance: none;
 }
+
+
+/***********************************************
+blog time to read
+***********************************************/
+.blog_content-top-info-block {
+  .time-to-read{
+    font-size: 1rem;
+    line-height: 137.5%;
+    color: var(--color--text-secondary);
+    letter-spacing: -.05625rem;
+    @media screen and (max-width: 767px){
+      letter-spacing: -.05rem;
+    }
+  }
+}

@@ -7,10 +7,10 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 // ScrollTrigger.normalizeScroll(true);
 
-ScrollTrigger.config({
-  limitCallbacks: true,
-  ignoreMobileResize: true,
-});
+// ScrollTrigger.config({
+//   limitCallbacks: true,
+//   ignoreMobileResize: true,
+// });
 
 // Function to initialize the animations
 function initAnimations() {
@@ -65,20 +65,22 @@ function initAnimations() {
 initAnimations();
 
 // recalculate the elements for animation when screen resize
-let resizeTimeout;
-window.addEventListener('resize', () => {
-  // Clear the existing timeout
-  clearTimeout(resizeTimeout);
+// let resizeTimeout;
+// window.addEventListener('resize', () => {
+//   console.log('resize')
+//   // Clear the existing timeout
+//   clearTimeout(resizeTimeout);
 
-  // Set a new timeout to reinitialize animations after 1 second
-  resizeTimeout = setTimeout(() => {
-    // Clear existing ScrollTriggers
-    ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+//   // Set a new timeout to reinitialize animations after 1 second
+//   resizeTimeout = setTimeout(() => {
+//     console.log('resize timeout')
+//     // Clear existing ScrollTriggers
+//     ScrollTrigger.getAll().forEach(trigger => trigger.kill());
 
-    // Reinitialize animations
-    initAnimations();
-  }, 1000); // 1000 milliseconds = 1 second
-});
+//     // Reinitialize animations
+//     initAnimations();
+//   }, 1000); // 1000 milliseconds = 1 second
+// });
 
 
 

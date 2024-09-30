@@ -35,7 +35,7 @@ function animateIcon(icon) {
 }
 
 // Select all elements with the class "hero-dev_media-icon" and animate them
-const icons = document.querySelectorAll(".hero-dev_media-icon");
+const icons = document.querySelectorAll(".animated-image");
 if(icons.length > 0){
   icons.forEach(icon => animateIcon(icon));
 }
