@@ -5,7 +5,7 @@ import Lenis from 'lenis';
 
 const lenis = new Lenis({
   lerp: 0.5,
-  wheelMultiplier: 0.9,
+  wheelMultiplier: 0.7,
   infinite: false,
   guestureOrientation: 'vertical',
   normalizeWheel: false,
