@@ -11,12 +11,9 @@ gsap.registerPlugin(ScrollTrigger);
 
 // Wrap the ScrollTrigger setup in a setTimeout to delay execution
 setTimeout(() => {
-  // Select all elements with the custom attribute "animate-from-bottom"
-  const textBottomToTop = document.querySelectorAll('[animate-from-bottom="true"]');
-
-  if (textBottomToTop.length > 0) {
-    // Loop through each element and create an animation
-    textBottomToTop.forEach(element => {
+  // Function to apply GSAP animation
+  const applyAnimation = (elements) => {
+    elements.forEach(element => {
       gsap.fromTo(element, {
         y: 50, // Start 50px below the original position
         opacity: 0, // Start fully transparent
@@ -33,8 +30,19 @@ setTimeout(() => {
         },
       });
     });
+  };
 
-    // Refresh ScrollTrigger after setup
-    ScrollTrigger.refresh();
+  // Select elements with "animate-from-bottom=true"
+  const textBottomToTop = document.querySelectorAll('[animate-from-bottom="true"]');
+  if (textBottomToTop.length > 0) applyAnimation(textBottomToTop);
+
+  // Apply animation for "animate-from-bottom=mobile" only on screens <= 767px
+  if (window.matchMedia("(max-width: 767px)").matches) {
+    const mobileTextBottomToTop = document.querySelectorAll('[animate-from-bottom="mobile"]');
+    if (mobileTextBottomToTop.length > 0) applyAnimation(mobileTextBottomToTop);
   }
+
+  // Refresh ScrollTrigger after setup
+  ScrollTrigger.refresh();
+
 }, 1000); // Delay execution by 1 second (adjust if necessary)
