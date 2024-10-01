@@ -59,11 +59,11 @@ function updateActiveTestimonial() {
 }
 
 // JavaScript to stop click event propagation
-document.querySelectorAll('.testimonial-slide_media-video').forEach((element) => {
-  element.addEventListener('click', (event) => {
-    event.stopPropagation();
-  }, { passive: true });
-});
+// document.querySelectorAll('.testimonial-slide_media-video').forEach((element) => {
+//   element.addEventListener('click', (event) => {
+//     event.stopPropagation();
+//   }, { passive: true });
+// });
 
 
 const overlays = document.querySelectorAll('.testimonial-slide_media-overlay');

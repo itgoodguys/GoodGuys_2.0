@@ -14,6 +14,6 @@ import './components/faq.js'
 
 // animations
 import './animations/wordBackgroundHighlight.js'
-import './animations/fadeTextFromLeft.js'
+// import './animations/fadeTextFromLeft.js'
 import './animations/scrubOpacity.js'
 import './animations/imageParallax.js'

@@ -14,7 +14,7 @@ import './components/adsSlider.js'
 
 // animations
 import './animations/wordBackgroundHighlight.js'
-import './animations/fadeTextFromLeft.js'
+// import './animations/fadeTextFromLeft.js'
 import './animations/scrubOpacity.js'
 import './animations/imageParallax.js'
 import './animations/developmentProcess.js'
