@@ -3,3 +3,9 @@
     max-height: none !important;
   }
 }
+
+cal-inline{
+	display: flex;
+  align-items: center;
+  overflow: auto;
+}
