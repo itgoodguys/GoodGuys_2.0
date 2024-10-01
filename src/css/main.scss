@@ -121,6 +121,12 @@ body { overscroll-behavior: none; }
   }
 } 
 
+.button-wrapper.button-small.fs_consent-button:hover{
+  .text-color-accent{
+    color: #fff;
+  }
+}
+
 /***********************************************
   disable ios showing play button on autoplay videos
 ***********************************************/
